@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="380" viewBox="0 0 1280 380" role="img" aria-labelledby="title desc">
+  <title id="title">Adherent360 APDU — system engineering</title>
+  <desc id="desc">70 conveyor lanes, 10 lane controllers, 4 controller roles. R27 design review baseline.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#091b30"/><stop offset="1" stop-color="#163b51"/></linearGradient>
+    <linearGradient id="accent"><stop stop-color="#35dfcb"/><stop offset=".55" stop-color="#60a5fa"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+  </defs>
+  <rect width="1280" height="380" rx="20" fill="url(#bg)"/>
+  <rect x="48" y="42" width="64" height="5" rx="2" fill="url(#accent)"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="48" y="83" fill="#64ded2" font-size="14" font-weight="700" letter-spacing="3">BLACKOCEAN TECHNOLOGIES</text>
+    <text x="46" y="149" fill="#fff" font-size="58" font-weight="700">Adherent360</text>
+    <text x="49" y="187" fill="#c7d9eb" font-size="22">Automated pharmaceutical dispensing unit</text>
+    <text x="49" y="221" fill="#94aec4" font-size="16">Electrical architecture · Hardware · Motion · System integration</text>
+    <rect x="993" y="47" width="239" height="34" rx="17" fill="#493c24" stroke="#c2964f"/>
+    <text x="1112" y="69" text-anchor="middle" fill="#ffd996" font-size="13" font-weight="700">R27 · DESIGN REVIEW</text>
+    <g transform="translate(48 265)">
+      <rect width="272" height="76" rx="10" fill="#143e47" stroke="#287465"/>
+      <text x="20" y="34" fill="#5eead4" font-size="27" font-weight="700">70</text>
+      <text x="20" y="58" fill="#cce6e5" font-size="14">CONVEYOR LANES</text>
+    </g>
+    <g transform="translate(352 265)">
+      <rect width="272" height="76" rx="10" fill="#183756" stroke="#355f87"/>
+      <text x="20" y="34" fill="#93c5fd" font-size="27" font-weight="700">10</text>
+      <text x="20" y="58" fill="#d4e3f3" font-size="14">LANECTRL ASSEMBLIES</text>
+    </g>
+    <g transform="translate(656 265)">
+      <rect width="272" height="76" rx="10" fill="#302e55" stroke="#62578c"/>
+      <text x="20" y="34" fill="#c4b5fd" font-size="27" font-weight="700">4</text>
+      <text x="20" y="58" fill="#e1dbf3" font-size="14">CONTROLLER ROLES</text>
+    </g>
+    <g transform="translate(960 265)">
+      <rect width="272" height="76" rx="10" fill="#43382d" stroke="#826345"/>
+      <text x="20" y="34" fill="#fdba74" font-size="27" font-weight="700">24 V / 12 V</text>
+      <text x="20" y="58" fill="#eedccb" font-size="14">SYSTEM / DERIVED RAILS</text>
+    </g>
+  </g>
+</svg>

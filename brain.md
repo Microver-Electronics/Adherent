@@ -10,6 +10,7 @@ This file records project decisions and working assumptions. A diagram label or 
 
 ## Current deliverables
 
+- Project landing page: [README](README.md), with current document links, diagram preview, controller roles and implementation status. Banner source: `docs/assets/adherent-banner.svg`.
 - Current system diagram: [Electrical System Level Wiring Diagram R27](SYS/Electrical_System_Level_Wiring_Diagram_R27.drawio).
 - Diagram preview: [R27 PNG](SYS/Electrical_System_Level_Wiring_Diagram_R27.png).
 - Electrical workbook: [APDU Electrical Tables R27](SYS/APDU_Electrical_Tables_R27.xlsx). BOM, interfaces, cables, protection, power model and open engineering items.
@@ -150,6 +151,10 @@ The four electromagnetic latches are not counted as motors. Door actuator models
 - Document title: **Electrical System Level Wiring Diagram**.
 - Keep only current deliverable revisions under `SYS`. Recover older revisions from Git history. No RAR bundles.
 - Keep diagram blocks and orthogonal routes spacious, labels legible and arrows clear.
+- Put a **red, bold category tag in the upper-left corner inside each applicable component box**: `CONN` for connectors, `PCB` for controller boards, `MTR` for motors. Keep tags attached to their boxes and reserve enough space so they do not overlap content.
+- R27 category tags cover 3 connector/interface boxes (RJ45 panel adapter, optional antenna bulkhead and AC inlet), 13 controller-board boxes, and 15 motor/assembly boxes (five individual motor groups and ten seven-conveyor row groups). Counts refer to diagram boxes, not physical component quantities.
+- Category tags do not replace existing J/W/F identifiers or controller names. Onboard converter sections are not separate PCBs; excluded door actuators remain undefined and are not tagged as selected motors.
+- Edit the `.drawio` source and regenerate its PNG together. README embeds the current PNG from `SYS`.
 - Bold red arrows carry power only. Data/control paths are blue. Clearly distinguish proposed connections.
 - Keep tables in Excel rather than in the diagram. No revision-history or option-item blocks in the diagram.
 - English presentation, concise text and useful visuals. Retain cellular/UPS topics as closed meeting decisions in red.
@@ -179,6 +184,7 @@ The four electromagnetic latches are not counted as motors. Door actuator models
 - 39 cable IDs, 31 required types, five missing route lengths; 111 m is only the known routing subtotal.
 - 17 DIN protection positions plus F14 on SYSCTRL.
 - FW/SW folders contain scope descriptions only, no implemented firmware/application builds.
+- HW contains four reserved board folders; no production PCB designs have been added. README must distinguish planned functions from implemented or validated capabilities.
 
 ## Local build references
 
