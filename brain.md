@@ -14,7 +14,7 @@ This file records project decisions and working assumptions. A diagram label or 
 - Diagram preview: [R26 PNG](SYS/Electrical_System_Level_Wiring_Diagram_R26.png).
 - Latest electrical workbook: [APDU Electrical Tables R23](SYS/APDU_Electrical_Tables_R23.xlsx). **Historical: not aligned with the R25/R26 power changes.**
 - Latest versioned presentation: [Design Review Questions R24](SYS/APDU_Design_Review_Questions_R24.pptx). Records cellular and UPS rejection in red; **not aligned with R25/R26 power changes**.
-- The unversioned `SYS/APDU_Design_Review_Questions.pptx` is an older deck; do not assume it is current.
+- Superseded SYS revisions and the older unversioned presentation were removed from the working folder; recover them from Git history when needed.
 - Mechanical model handoff folder: [Board STEP Models](SYS/Board_STEP_Models/README.md).
 
 ## Confirmed decisions
@@ -167,8 +167,8 @@ The four electromagnetic latches are not counted as motors. Door actuator models
 
 ## Local build references
 
-- `.work/r26_diagram.py`: creates R26 from R25.
-- `.work/r25_diagram.py`: creates R25 from R24.
+- `.work/r26_diagram.py`: creates R26 from R25; restore the R25 input from Git history before rerunning.
+- `.work/r25_diagram.py`: creates R25 from R24; restore the R24 input from Git history before rerunning.
 - `.work/r24/`: presentation edit and validation scripts/artifacts from the R24 update.
 - Each provisional board-model folder contains `build_ocp_R1.py` and validation output.
 - CAD dependencies were installed in `.work/cad-deps`. Direct OpenCascade imports worked; full CadQuery import stalled in VTK. Some dependency access required elevated execution in this environment.
