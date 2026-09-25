@@ -16,7 +16,7 @@ Adherent360 APDU is an automated pharmaceutical dispensing system built around *
 **Current system documents use stable, revision-free filenames.** Electrical design documentation is maintained by **Blackocean Technologies** in the **Microver Electronics / Adherent** repository.
 
 > [!IMPORTANT]
-> This is a design-review baseline. Components marked **TBC**, **candidate** or **HOLD** still need selection or engineering validation. Firmware/application implementations and production PCB designs have not been added yet.
+> This is a design-review baseline. Components marked **TBC**, **candidate** or **HOLD** still need selection or engineering validation. LANECTRL Altium design files and exports are present; production release is not confirmed. Firmware/application implementations have not been added yet.
 
 ## 🗂️ Start with the documents
 
@@ -95,7 +95,7 @@ Adherent/
 └── brain.md   Project decisions and working assumptions
 ```
 
-The HW folders currently reserve the four board identifiers. See [firmware scope](FW/README.md) and [software scope](SW/README.txt) for implementation status. Large CAD files use **Git LFS**; install Git LFS and run `git lfs pull` after cloning to obtain available tracked CAD content.
+The HW folders use the four board identifiers. LANECTRL now contains Altium schematics, PCB layout, libraries, BOMs and STEP/PDF exports; the other board folders remain reserved. See [firmware scope](FW/README.md) and [software scope](SW/README.txt) for implementation status. Large CAD files use **Git LFS**; install Git LFS and run `git lfs pull` after cloning to obtain available tracked CAD content.
 
 ## 🛠️ Next engineering milestones
 

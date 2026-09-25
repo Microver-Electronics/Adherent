@@ -234,3 +234,11 @@ The four electromagnetic latches are not counted as motors. Door actuator models
 - Published 14-slide presentation and both tracked historical PPTX files opened in Microsoft PowerPoint.
 - 72 tracked files passed applicable ZIP CRC, XML/package relationship, PDF parsing, image decoding, JSON or file-signature checks. STEP geometry and DWG mechanical fit are separate from these file-format checks.
 - Future workbook checks must reject duplicate singleton worksheet records and include normal Microsoft Excel opening; a Python reader alone does not prove Excel compatibility.
+
+### Expanded repository check after incoming LANECTRL commits
+
+- Integrated upstream `7fbfe32` and `587bbe7` before pushing the Excel fix; no incoming hardware files were discarded.
+- Repeated applicable structural checks across all 225 tracked files. Both additional LANECTRL BOM workbooks passed normal read-only Microsoft Excel opening, bringing the native-tested workbook count to four.
+- LANECTRL Altium schematics, PCB layout, libraries, BOMs and exported models are now present. Earlier statements that all HW folders were empty no longer describe LANECTRL. Presence and file integrity do not establish production release or resolve electrical design holds.
+- Altium binary container signatures and tracked ZIP checks passed. Native Altium editing/compilation and DWG geometric validation were not performed.
+- All nine tracked STEP/STP files imported successfully into OpenCascade and produced non-null shapes. Full topology, mounting dimensions and physical fit are not certified by this import check.
