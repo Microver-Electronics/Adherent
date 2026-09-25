@@ -5,6 +5,7 @@
 <p align="center">
   <a href="SYS/ADHERENT_Electrical_Tables.xlsx"><strong>Component spreadsheet</strong></a> &nbsp; · &nbsp;
   <a href="SYS/ADHERENT_System_Wiring_Diagram.png"><strong>System diagram</strong></a> &nbsp; · &nbsp;
+  <a href="SYS/ADHERENT_Harness_Wiring_Diagram.png"><strong>Harness diagram</strong></a> &nbsp; · &nbsp;
   <a href="SYS/ADHERENT_Design_Review.pptx"><strong>Design presentation</strong></a> &nbsp; · &nbsp;
   <a href="SYS/ADHERENT_Project_Review.md"><strong>Review findings</strong></a>
 </p>
@@ -34,6 +35,8 @@ Included components and interface positions are identified separately from purch
 </a>
 
 **[Open full-size PNG](SYS/ADHERENT_System_Wiring_Diagram.png)** · **[Edit in draw.io](SYS/ADHERENT_System_Wiring_Diagram.drawio)**
+
+**Pin-level harness:** [ADHERENT_Harness_Wiring_Diagram](SYS/ADHERENT_Harness_Wiring_Diagram.drawio) ([PNG](SYS/ADHERENT_Harness_Wiring_Diagram.png)) shows every device with its product photo, connector pins and lead colours. Its draw.io layers are the build steps (AC → 24 V → branches → CAN → Ethernet / RS485 → drives → labeling → sensors → doors → lane rows), and two further pages hold the cable schedule and the connector reference. Interface conflicts found in the documents are flagged in red there.
 
 Red, bold corner tags identify **CONN** connectors, **PCB** controller boards and **MTR** motor assemblies. These are category labels; the existing board, connector and cable identifiers remain the references used in the schedules.
 
@@ -106,7 +109,7 @@ The HW folders use the four board identifiers. LANECTRL contains the Altium sche
 - Select and validate the SYSCTRL 12 V converter and complete the power budget.
 - Fix the LANECTRL R1 `+24V_PR`/`VM` rail error, decide the single-connector CAN harness (T-splice or second connector) and check the board against the bracket DWG.
 - Conveyor current measured on the bench (190 mA running, ≈0.5 A stalled). Confirm the feedback reference on a real harness and finish the firmware stall/timeout logic.
-- Coordinate motor drivers, transient protection, fuses, wiring and connectors.
+- Coordinate motor drivers, transient protection, fuses, wiring and connectors. Resolve the harness conflicts flagged in the harness diagram: CHUCK 6627T113 is an integrated step driver (SYSCTRL J12 gives coil outputs), the NFC antenna plug does not fit NFC J4, SYSCTRL R1 has 7 protected output headers for about 18–19 branches, and LANECTRL J8 needs a CAN splice rule.
 - Finalize marker, latch and sensor selections; confirm direct harness lengths and bracket fit.
 - Implement and test firmware, startup/fault behavior and system integration.
 

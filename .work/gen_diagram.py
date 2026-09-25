@@ -51,6 +51,10 @@ def box(id, x, y, w, h, value, stroke=INK, fill="#FFFFFF", dashed=False, tag=Non
                "strokeColor=none;fillColor=none;spacing=0;connectable=0;", parent=id)
 
 
+def warn(t):  # red conflict marker text
+    return f'<font color="#C62828"><b>⚠</b> {t}</font>'
+
+
 def text(id, x, y, w, h, value, fs=11, color="#4A5158", align="left", extra=""):
     vertex(id, x, y, w, h, value,
            f"text;html=1;align={align};verticalAlign=top;fontSize={fs};fontColor={color};{FONT}"
@@ -114,7 +118,7 @@ def legend_line(id, x1, y, x2, kind, label):
 text("title", 40, 18, 1150, 60,
      "<b>Electrical System Level Wiring Diagram</b><br>"
      "Adherent360 APDU / AVM · Blackocean Technologies · 10 rows × 7 lanes = 70 conveyors · "
-     "2026-09-25 · design review baseline", fs=20, color=INK)
+     "2026-09-26 · design review baseline", fs=20, color=INK)
 
 # ------------------------------------------------------------------ column A: network / power / NFC
 zone("g_net", 40, 100, 540, 390, "NETWORK / USER ACCESS", stroke=BLUE, fill="#EEF3F9")
@@ -128,7 +132,8 @@ vertex("cloud", 320, 345, 240, 120, "<b>CLOUD · Adherent servers</b><br>interne
        f"ellipse;shape=cloud;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor={BLUE};strokeWidth=2;{FONT}fontSize=12;")
 
 zone("g_power", 40, 530, 540, 330, "AC INPUT & SINGLE 24 V POWER SUPPLY", stroke=RED, fill="#F7F0EE")
-box("acin", 60, 580, 500, 60, "<b>J1 · AC inlet · EMI filter · main breaker</b><br>120 / 230 VAC · IEC C14 + PE", tag="CONN")
+box("acin", 60, 580, 500, 60, "<b>J1 · AC inlet · EMI filter · 2-pole switch</b><br>IEC C14 + PE · FN9264-6-06 candidate · "
+    "fuse / breaker TBC", tag="CONN")
 box("psu24", 60, 690, 500, 100, "<b>PSU1 · Mean Well RSP-500-24</b><br>24 V · 21 A · 504 W rated · single system AC/DC PSU<br>" +
     g("Full load / thermal budget remains HOLD"), stroke=RED, sw=2)
 text("pwr_note", 60, 800, 500, 55,
@@ -139,38 +144,42 @@ zone("g_nfc", 40, 900, 540, 385, "NFC · ANTENNA SELECTED · READER BOARD R1 IN 
 box("nfc_antenna", 60, 950, 210, 125, "<b>ANT-NFC · Molex 1462362151</b><br>13.56 MHz · 15 × 15 mm<br>102 mm cable · adhesive<br>" +
     g("Selected · 1 per machine planned"), stroke=PURPLE)
 box("nfc_pcb", 310, 950, 250, 170, "<b>NFC · HW_ADHERENT_NFC_R1</b><br>Custom PCB · reader board<br>STM32F103C8 + ST25R200<br>"
-    "CAN node · 24 V + CAN in<br>4-pin Micro-Fit (J1)<br>" + g("R1 schematic / layout in progress<br>Not a payment terminal"),
+    "CAN node · 24 V + CAN in<br>4-pin Micro-Fit (J1)<br>" + g("R1 in progress · not a payment terminal"),
     stroke=PURPLE, tag="PCB", sw=2)
 text("nfc_note", 60, 1135, 500, 140,
-     "System wiring of the NFC board is <b>TBC</b>: CAN bus position and node ID, 24 V feed branch and fuse, "
-     "mounting / reading position. No W / F reference is assigned yet, so no harness is drawn.<br>"
-     "Matching / RF termination to the antenna is on the NFC board.", fs=11)
+     "System wiring of the NFC board is <b>TBC</b>: CAN bus position / node ID, 24 V branch and fuse, mounting. "
+     "Drawn dashed; no W / F reference yet. Keep its switchable termination off unless it ends the bus.<br>" +
+     warn("Antenna plug Molex 505565-0201 (Micro-Lock Plus 1.25 mm) does not mate with NFC J4 (2.54 mm header)."),
+     fs=11)
 
 # ------------------------------------------------------------------ column B: control cabinet
 zone("g_cab", 640, 100, 600, 1185, "CONTROL CABINET · base compartment (behind AVM-BASE-COVER)")
 box("sbc", 690, 145, 520, 150,
     "<b>MAINCTRL · MYIR MYD-YF13X · COTS ×1</b><br>HW_ADHERENT_MAINCTRL_R1 · FW_ADHERENT_MAINCTRL_R1<br>"
     "STM32MP135 / Linux · supervisory application<br>CAN master to SYSCTRL / lanes · RS485 master to IOCTRL-01 / -02<br>"
-    "12 V from SYSCTRL via F13 / W05 · native MYIR connectors<br>" + g("Exact SKU, populated interfaces and BSP TBC"),
+    "12 V / 2 A jack from SYSCTRL via F13 / W05 · 1× CAN · 1× RS485 · 2× GbE<br>" +
+    g("Exact SKU, connector pinout and BSP TBC"),
     tag="PCB")
 vertex("motion", 690, 345, 520, 570,
-       "<b>SYSCTRL · custom STM32 machine controller ×1</b><br>HW_ADHERENT_SYSCTRL_R1 · FW_ADHERENT_SYSCTRL_R1<br>"
-       "Gantry: STEP / DIR / ENA, ALARM, brakes (interfaces TBC)<br>Servo: PWM + local regulator (voltage / current TBC)<br>"
-       "Labeling: chuck / jaw motor drivers + jaw home sensor<br>6 gantry sensors direct · CAN node · status light W36",
+       "<b>SYSCTRL · custom STM32 machine controller ×1</b><br>HW_ADHERENT_SYSCTRL_R1 · R1 schematic started 2026-09-25<br>"
+       "X / Z drives J11 / J13: differential STEP / DIR / ENA · ALARM in · brake out<br>"
+       "Chuck J12 (TMC5160) · Jaws J14 (TMC2240) · Servo J15 (own buck)<br>"
+       "6 gantry + jaw sensors direct · CAN node · status light W36",
        f"rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor={INK};strokeWidth=2;{FONT}fontSize=12;"
        "spacing=6;verticalAlign=top;spacingTop=22;")
 vertex("tag_motion", 6, 3, 52, 17, "PCB",
        f"text;html=1;align=left;verticalAlign=top;{FONT}fontSize=13;fontStyle=1;fontColor=#FF0000;strokeColor=none;"
        "fillColor=none;spacing=0;connectable=0;", parent="motion")
 box("sysctrl_buck", 20, 160, 480, 60,
-    "<b>BUCK12 · onboard SMPS 24 V → 12 V</b> · rating / implementation TBC<br>"
-    "Feeds MAINCTRL, local logic / servo / sensors and latch contacts", stroke=RED, fill="#FFF4EE", fs=11, sw=2,
+    "<b>BUCK12 · onboard 24 V → 12 V</b> · LM5146, 12 A design (R1 schematic)<br>"
+    "Feeds MAINCTRL, relay COM / latches and 12 V loads · load budget TBC", stroke=RED, fill="#FFF4EE", fs=11, sw=2,
     parent="motion")
 box("dist", 0, 250, 520, 320,
     "<b>SYSCTRL-PWR · SYSCTRL power connectors</b><br>24 V input from PSU1 (W03)<br>"
     "24 V out: lane rows F1–F10 · X / Z drives F15 / F16 (TBC) · IOCTRL F17<br>"
     "12 V out: MAINCTRL F13 · IOCTRL relay COM F18<br>"
     "F1–F18 are branch references; protection implementation TBC<br>" +
+    warn("R1 schematic: 7 protected output headers (6 fused + 1 eFuse) vs ≈18–19 branches listed here") + "<br>" +
     g("Connectors on the SYSCTRL PCB, not a separate distribution assembly"),
     stroke=RED, fill="#FFFAF8", tag="CONN", sw=1.5, parent="motion")
 box("ioctrl_02_stack", 698, 983, 520, 150, "", stroke=BLUE, fill="#EEF3F9", sw=2)
@@ -190,21 +199,22 @@ text("cab_note", 955, 1160, 270, 115,
 # ------------------------------------------------------------------ column C: gantry / labeling / doors
 CX, CW = 1425, 610
 zone("g_gantry", 1400, 100, 660, 445, "GANTRY · 6 direct sensor runs to SYSCTRL · igus chains X 762 mm / Z 1616 mm")
-box("xstep", CX, 145, CW, 80, "<b>X · closed-loop stepper + supplied driver</b> · Emtech 57BYG250-76 · 2 N·m · 4 A · brake · X-GB 3:1 gearbox<br>" +
-    g("24 V input proposed, supplier confirmation required · STEP / DIR / ENA in · ALARM out · brake 24 V (TBC)"),
+box("xstep", CX, 145, CW, 80, "<b>X · closed-loop stepper + supplied driver</b> · Emtech 57BYG250-76 · brake · encoder · X-GB 3:1<br>"
+    "STEP / DIR / ENA in · ALARM out · brake from SYSCTRL J11<br>" + warn("listing: 48 V DC kit · 24 V proposed → confirm"),
     tag="MTR", valign="middle")
-box("zstep", CX, 245, CW, 80, "<b>Z · closed-loop stepper + supplied driver</b> · Emtech 57BYG250-76 · 2 N·m · 4 A · brake holds carriage<br>" +
-    g("24 V input proposed, supplier confirmation required · STEP / DIR / ENA in · ALARM out · brake 24 V (TBC)"),
+box("zstep", CX, 245, CW, 80, "<b>Z · closed-loop stepper + supplied driver</b> · Emtech 57BYG250-76 · brake holds carriage<br>"
+    "STEP / DIR / ENA in · ALARM out · brake from SYSCTRL J13<br>" + warn("listing: 48 V DC kit · 24 V proposed → confirm"),
     tag="MTR")
-box("servo", CX, 345, CW, 80, "<b>SERVO · basket tilt servo · Miuzei DS3218 ×1</b><br>Local regulator on SYSCTRL · exact variant, travel and supply range TBC<br>" +
-    g("Stall / current limit and signal timing require verification"), tag="MTR")
-box("optos", CX, 445, CW, 80, "<b>X-SENS / Z-SENS · 6 × Omron prewired sensors</b><br>EE-SX672-WR ×3 (X) · EE-SX674-WR ×3 (Z) · direct to SYSCTRL J21–J26<br>" +
-    g("1 m supplied leads · actual routes / lead arrangement TBC"))
+box("servo", CX, 345, CW, 80, "<b>SERVO · basket tilt servo · Miuzei DS3218 ×1</b><br>DC 4.8–6.8 V from the SYSCTRL servo buck (J15) · PWM<br>" +
+    g("Travel, stall current and signal timing to verify"), tag="MTR")
+box("optos", CX, 445, CW, 80, "<b>X-SENS / Z-SENS · 6 × Omron prewired sensors</b><br>EE-SX672-WR ×3 (X) · EE-SX674-WR ×3 (Z) · NPN · 5–24 V · direct to SYSCTRL<br>" +
+    g("1 m leads, 4 wires (PNK = light / dark-ON select) · SYSCTRL inputs not yet in R1"))
 
 zone("g_station", 1400, 565, 660, 315, "LABELING MECHANISM · laser platform assembly")
-box("chuck", CX, 610, CW, 70, "<b>CHUCK · chuck rotate stepper</b><br>NEMA23 + gearbox · catalog reference 6627T113 · 4-wire",
+box("chuck", CX, 610, CW, 70, "<b>CHUCK · chuck rotate</b> · 6627T113 = NEMA 23 integrated step driver (Anaheim 23MSD) + gearbox<br>" +
+    warn("needs CLK / DIR / ON-OFF logic + 12–24 V · SYSCTRL J12 gives coil outputs → decide motor or interface"),
     tag="MTR")
-box("jaws", CX, 700, CW, 70, "<b>JAWS · chuck jaw stepper + JAW-SENS home sensor</b><br>NEMA11 · catalog reference 6627T357 · T5 belt · 4-wire",
+box("jaws", CX, 700, CW, 70, "<b>JAWS · chuck jaw stepper + JAW-SENS home sensor</b><br>NEMA 11 bipolar · catalog reference 6627T357 · 0.67 A · 4 leads · T5 belt",
     tag="MTR")
 box("camq", CX, 790, 290, 75, "<b>CAM · camera / OCR · excluded</b><br>Pending decision · no power or cable allocated",
     stroke=AMBER, dashed=True, fs=11)
@@ -225,23 +235,23 @@ zone("g_lanes", 2140, 100, 790, 1185,
 vertex("busbar", 2160, 150, 6, 1010, "", f"rounded=0;html=1;fillColor={RED};strokeColor={RED};")
 for i in range(1, 11):
     y = 150 + (i - 1) * 103
-    node = {1: "CAN node 1 · 120 Ω termination (jumper)", 10: "CAN node 10 · bus entry"}.get(i, f"CAN node {i}")
+    node = {1: "node 1 · P1 = 120 Ω (bus end)", 10: "node 10 · bus entry (W25)"}.get(i, f"node {i}")
     box(f"lc{i}", 2205, y, 320, 83,
-        f"<b>LANECTRL-{i:02d}</b> · {node}<br>7 × high-side switch · 7 × feedback · 7 × rocker + LED<br>" +
-        g(f"24 V + CAN in (F{i}) · 4-pin Micro-Fit"), stroke=RED, tag="PCB", fs=11, sw=2)
+        f"<b>LANECTRL-{i:02d}</b> · {node}<br>" + g(f"24 V (F{i}) + CAN on J8 · 7 lane outputs"),
+        stroke=RED, tag="PCB", fs=12, sw=2)
     box(f"lanes{i}", 2610, y, 300, 83,
-        f"<b>CONVEYOR-{i:02d}</b> · 7 × CB002-24V-573mm<br>24 V · ≤0.2 A no-load · 5.8 cm/s · ≤6 kg<br>" +
-        g("0.19 A run · ≈0.5 A stall (bench test)"), tag="MTR", fs=11)
+        f"<b>CONVEYOR-{i:02d}</b><br>" + g("7 × CB002-24V-573mm"), tag="MTR", fs=12)
     edge(f"e_f{i}", "busbar", f"lc{i}", f"F{i}", "p12", (1, (y + 41.5 - 150) / 1010), (0, 0.5), fs=10, lx=-0.2)
     edge(f"e_l{i}", f"lc{i}", f"lanes{i}", "W27 · 7 × 3-pos", "mot", (1, 0.5), (0, 0.5), start="block", fs=10)
     if i < 10:
         edge(f"e_rs{i + 1}", f"lc{i}", f"lc{i + 1}", "W26", "data", (0.5, 1), (0.5, 0), end="none", fs=10)
 text("lane_note", 2160, 1195, 760, 90,
-     "Rocker switches on board, lane LEDs via headers · busbar = 10 separately fused row feeds F1–F10 (W24) · W26 = CAN daisy-chain between rows; harness form TBC "
-     "(one 4-pin bus connector per board).<br>LANECTRL boards sit at the front of each row behind the metal bracket "
-     "(DWG in MEC/01_CAD_MODELS/Drawıng) · PCB 504 × 60 mm · 72 mm lane pitch · fit to verify.<br>"
-     "W27: 70 motor / signal leads stay in rows · on/off high-side drive, no reversal · signal pin reference to confirm.<br>"
-     "Lane n = 1…70: row = floor((n−1)/7)+1 · channel = ((n−1) mod 7)+1.")
+     "Each LANECTRL: 7 × high-side switch (on/off, no reversal) · 7 × 24 V feedback · 7 × rocker + off-board LED · "
+     "J8 = +24 V / GND / CAN_H / CAN_L. Busbar = 10 separately fused row feeds F1–F10 (W24); W26 = CAN daisy-chain "
+     "(two pairs share J8 pins 3 / 4 → splice rule TBC). Conveyor: 24 V · 0.19 A run / ≈0.5 A stall (bench) · "
+     "JST VH3.96 (meter-check pin 1 / 3). Boards behind the front bracket (DWG) · 504 × 60 mm · 72 mm pitch · fit to "
+     "verify. Lane n: row = floor((n−1)/7)+1 · channel = ((n−1) mod 7)+1.<br>" +
+     warn("LANECTRL R1: +24V_PR not joined to VM (driver / buck rail) — fix before fabrication."))
 
 # ------------------------------------------------------------------ edges: network / power / cabinet
 edge("e_sbc_rj45", "sbc", "rj45", "W09 · Ethernet", "data", (0, 40 / 150), (1, 0.5), at=(625, 185))
@@ -290,6 +300,8 @@ edge("e_dooract", "ioctrl", "dooract", "W28 · excluded", "excl", (1, 115 / 150)
 
 # NFC RF link
 edge("e_nfc_rf", "nfc_antenna", "nfc_pcb", "RF", "rf", (1, 0.5), (0, 62 / 170), end="none")
+edge("e_nfc_feed", "dist", "nfc_pcb", "NFC J1 · 24 V + CAN (TBC)", "pTBC", (0, (905 - 595) / 320), (1, 30 / 170),
+     pts=[(600, 905), (600, 980)], at=(600, 940), vlabel=True, fs=10)
 
 # ------------------------------------------------------------------ legend / references
 text("legend_hdr", 40, 1311, 120, 20, "<b>Legend</b>", fs=12, color=INK)
@@ -298,10 +310,11 @@ legend_line("lg_m", 450, 1320, 500, "mot", "AC / motor phases")
 legend_line("lg_d", 700, 1320, 750, "data", "data / control")
 legend_line("lg_t", 900, 1320, 950, "dataTBC", "proposed / unconfirmed / optional")
 text("lg_box", 1230, 1311, 700, 20, f'<font color="{AMBER}">▭ dashed amber box</font> = excluded / not selected · '
-     '<font color="#FF0000"><b>CONN · PCB · MTR</b></font> = category tags', fs=12, color=INK)
+     '<font color="#FF0000"><b>CONN · PCB · MTR</b></font> = category tags · '
+     '<font color="#C62828"><b>⚠</b></font> = conflict found in the documents', fs=12, color=INK)
 text("tables_ref", 1950, 1302, 980, 45,
-     "Parts and mounting references: ADHERENT_Electrical_Tables.xlsx (same references as this diagram). "
-     "TBC = selection or dimensions pending. Provisional STEP models are placement references only.", fs=11,
+     "Parts: ADHERENT_Electrical_Tables.xlsx (same references). Connector pins, lead colours and cable schedule: "
+     "ADHERENT_Harness_Wiring_Diagram.drawio. TBC = selection or dimensions pending.", fs=11,
      extra="strokeColor=#D4D9E0;fillColor=#F7EEDC;spacingLeft=8;spacingTop=4;")
 
 xml = ('<?xml version="1.0" encoding="UTF-8"?>\n<mxfile host="Electron" agent="Blackocean Technologies">'
