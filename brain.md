@@ -1,6 +1,6 @@
 # Adherent APDU project brain
 
-Last updated: 2026-09-24
+Last updated: 2026-09-25
 
 Project: Adherent360 APDU / AVM pharmaceutical vending machine.
 Working repository: https://github.com/Microver-Electronics/Adherent
@@ -31,7 +31,8 @@ This file records project decisions and working assumptions. A diagram label or 
 - The separate 12 V and 48 V PSUs were removed.
 - **24 V to 12 V conversion is on the custom SYSCTRL PCB.** There is no separate cabinet DC/DC module.
 - The customer requires CAN for the custom-board network.
-- IOCTRL is an explicit exception: **RS485 to MAINCTRL**. Its Ethernet and wireless functions are unused.
+- IOCTRL is an explicit exception: **both IOCTRL modules (IOCTRL-01, IOCTRL-02) connect to MAINCTRL over RS485**. Their Ethernet and wireless functions are unused.
+- **IOCTRL quantity is 2 per system** (customer/user decision, 2026-09-25). Supersedes the earlier quantity of 1.
 - No Ethernet switch in the system. Provide a hardwired Ethernet connection to the site network.
 - The iPad is external and uses the customer's app or a browser; it is not integrated into the cabinet.
 - LANEPANEL was merged into LANECTRL. There is no separate LANEPANEL PCB.
@@ -59,15 +60,21 @@ This file records project decisions and working assumptions. A diagram label or 
 - Official product page: https://www.myirtech.com/list.asp?id=727
 - Product document: https://www.myirtech.com/download/STM32/MYD-YF13X.pdf
 
-### IOCTRL — off the shelf, quantity 1
+### IOCTRL — off the shelf, quantity 2
+
+- **Two identical modules per system: IOCTRL-01 and IOCTRL-02** (decision 2026-09-25; previously 1). Same product and variant for both.
+- Combined capacity: 16 relay outputs and 16 isolated digital inputs.
 
 - **Waveshare ESP32-S3-ETH-8DI-8RO**, RS485 version with standard Ethernet port. Do not substitute the CAN `-C` or PoE version without a decision.
 - Eight relay outputs and eight isolated digital inputs.
 - Module input range 7–36 V; current design powers the module from 24 V.
 - RS485 connection to MYD-YF13X. Modbus RTU firmware is planned; do not assume the factory firmware meets the required protocol and behavior without testing.
+- Proposed: both modules on one multi-drop RS485 bus from MAINCTRL, with distinct Modbus slave addresses and termination at the two bus ends only. Topology (shared bus vs two MAINCTRL ports), addressing and termination are **TBC**.
 - RO1–RO4 switch four 12 V electromechanical latches: main, retrieval, return and table doors.
 - Relay COM receives **separate 12 V derived on SYSCTRL**. The module's 24 V input does not supply or convert the relay-contact voltage.
 - DI1–DI5 are allocated to door sensors in the diagram. RO5–RO8 remain reserved for undefined actuator requirements.
+- The latch/door-sensor allocation above describes the original single module. **How the four latches, five door sensors and any new functions are split between IOCTRL-01 and IOCTRL-02 is TBC.** The functions assigned to the second module have not been defined; do not invent them.
+- Power: two module 24 V feeds and 12 V relay-contact feeds must be accounted for (per-module or shared branches TBC; see W34/W35).
 - Ethernet, Wi-Fi and BLE unused.
 - Official documentation: https://www.waveshare.com/wiki/ESP32-S3-ETH-8DI-8RO
 
@@ -109,11 +116,11 @@ This file records project decisions and working assumptions. A diagram label or 
 - F14: lane-logic protection on SYSCTRL; 12 V passes into the CAN/lane harness.
 - W24 / F1–F10: 24 V row-motor feeders.
 - W29 / F15 and W30 / F16: proposed 24 V gantry drive feeds, pending supplier confirmation.
-- W34 / F17: 24 V IOCTRL module power.
-- W35 / F18: derived 12 V feed to IOCTRL relay contacts.
-- W33: MAINCTRL–IOCTRL RS485.
+- W34 / F17: 24 V IOCTRL module power. With two IOCTRL modules, per-module feeds or a shared branch are TBC; cable quantity and fuse rating need updating.
+- W35 / F18: derived 12 V feed to IOCTRL relay contacts. Second-module relay-contact feed TBC; 12 V converter load depends on the latches actually switched.
+- W33: MAINCTRL–IOCTRL RS485. Now serves two modules; add the IOCTRL-01 to IOCTRL-02 segment (or a second run) once topology is fixed.
 - W02, W31 and W32 retired with the removed PSUs. W14 and W22 retired with the cancelled intermediate sensor trunks.
-- W15: six direct gantry sensor runs to SYSCTRL. W23: five direct door sensor runs to IOCTRL. No junction boxes.
+- W15: six direct gantry sensor runs to SYSCTRL. W23: five direct door sensor runs to IOCTRL (module split TBC). No junction boxes.
 - W36 status light, W37 PE bonding, W38 site-supplied Ethernet and W39 unresolved marker supply are explicitly scheduled.
 - Fuse ratings, wire sizes, connector loading, DC/DC losses and simultaneous motor loads need recalculation. Older spreadsheet currents are estimates, not verified sizing.
 
@@ -121,7 +128,7 @@ This file records project decisions and working assumptions. A diagram label or 
 
 - Proposed CAN backbone: MAINCTRL → SYSCTRL → LANECTRL-10 through LANECTRL-01.
 - Diagram baseline: CAN 2.0B, 500 kbit/s, termination at MAINCTRL and LANECTRL-01. Validate implementation and cable routing.
-- Separate RS485 link: MAINCTRL ↔ IOCTRL.
+- Separate RS485 link: MAINCTRL ↔ IOCTRL-01 and IOCTRL-02 (proposed shared multi-drop bus; TBC).
 - Site Ethernet connection serves the external iPad/app and server communication. Optional Wi-Fi/BLE arrangements remain distinct from rejected cellular connectivity.
 
 ## Motors and mechanisms
@@ -149,6 +156,7 @@ The four electromagnetic latches are not counted as motors. Door actuator models
 ### Provisional reconstructed board models
 
 - IOCTRL: `MEC/Board_STEP_Models/IOCTRL_Waveshare_ESP32-S3-ETH-8DI-8RO/IOCTRL_Provisional_Placement_R1.step`.
+  - One model covers both IOCTRL placements; cabinet space, DIN mounting and cable clearance must be reserved for **two** modules.
   - Nominal 175 × 90 × 40 mm envelope from the user image.
   - Reference image is the **PoE variant**; compatibility with the selected non-PoE product is unverified.
   - Slots and connector geometry are estimated; DIN clip and antenna are omitted.
@@ -252,3 +260,12 @@ The four electromagnetic latches are not counted as motors. Door actuator models
 - Presentation architecture reflects one SYSCTRL onboard 24 V-to-12 V SMPS and integrated power connectors. W04/W06/W07 are internal SYSCTRL links. Removed stale external cable totals and old document filenames.
 - The overview image is a presentation-specific view of the current draw.io diagram with excluded blocks omitted. The source system diagram is unchanged.
 - Final PPTX passed package/layout validation, a normal Microsoft PowerPoint opening, and visual review of all slides. README links now point to the current presentation.
+
+## IOCTRL quantity change — 2026-09-25
+
+- The Waveshare **ESP32-S3-ETH-8DI-8RO** IOCTRL module is used **twice per system**: IOCTRL-01 and IOCTRL-02. This supersedes every earlier "IOCTRL quantity 1" statement.
+- System controller count: MAINCTRL ×1 and IOCTRL ×2 purchased (**3 purchased controller assemblies**), plus the custom boards.
+- Open for the second module: assigned functions and I/O allocation, RS485 topology/addressing/termination, 24 V and 12 V feed branches (W34/W35, F17/F18), cabinet placement, and the updated power budget.
+- Aligned to IOCTRL ×2 on 2026-09-25: `README.md`, `SYS/README.md`, `SYS/ADHERENT_Electrical_Tables.xlsx` (row IOCTRL-01, -02, qty 2), `SYS/ADHERENT_System_Wiring_Diagram.drawio` + PNG, `SYS/ADHERENT_Design_Review.pptx` (slides 3, 7, 10 and notes), `MEC/Board_STEP_Models/README.md` and `FW/README.md`.
+- Diagram shows IOCTRL-01/-02 as one stacked block ("COTS ×2") because the I/O split is undefined; draw two separate blocks once the allocation is decided. The PNG was rendered with the draw.io viewer, not the desktop CLI; re-export from draw.io desktop if exact font rendering matters.
+- The small overview image on presentation slide 3 is an earlier presentation-specific render and still shows one IOCTRL; its text is not legible at slide size. Regenerate it with the next diagram change.

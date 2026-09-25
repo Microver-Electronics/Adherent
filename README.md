@@ -38,10 +38,10 @@ Included components and interface positions are identified separately from purch
 Red, bold corner tags identify **CONN** connectors, **PCB** controller boards and **MTR** motor assemblies. These are category labels; the existing board, connector and cable identifiers remain the references used in the schedules.
 
 - **Power:** one Mean Well **RSP-500-24**, rated 24 V / 21 A / 504 W. SYSCTRL generates the derived 12 V rail on board; converter selection and the full load budget remain open.
-- **Control network:** CAN links MAINCTRL, SYSCTRL and the ten LANECTRL boards. IOCTRL uses a separate RS485 connection to MAINCTRL.
+- **Control network:** CAN links MAINCTRL, SYSCTRL and the ten LANECTRL boards. The two IOCTRL modules (IOCTRL-01, IOCTRL-02) use a separate RS485 connection to MAINCTRL; bus topology and addressing are TBC.
 - **Site connection:** McMaster-Carr **1422N13** rear-panel Ethernet adapter, quantity one. The iPad is external and uses the site network.
-- **Direct sensors:** six gantry sensors connect to SYSCTRL; five door sensors connect to IOCTRL. **No junction boxes.**
-- **IOCTRL power:** 24 V supplies the module; a separate SYSCTRL-derived 12 V feed supplies the latch relay contacts.
+- **Direct sensors:** six gantry sensors connect to SYSCTRL; five door sensors connect to IOCTRL (split between the two modules TBC). **No junction boxes.**
+- **IOCTRL power:** 24 V supplies each module; a separate SYSCTRL-derived 12 V feed supplies the latch relay contacts. Feed branches for the second module are TBC.
 
 ### NFC antenna
 
@@ -68,10 +68,10 @@ Seven conveyor channels, seven buttons and seven LEDs per row. Ten rows provide 
 
 ### 🟧 IOCTRL — door inputs and latch outputs
 
-**Waveshare ESP32-S3-ETH-8DI-8RO · purchased board · 1 assembly**  
-Eight relays and eight isolated digital inputs. The baseline allocates four latch outputs and five door-sensor inputs; RS485 firmware behavior needs validation. [Hardware folder →](HW/HW_ADHERENT_IOCTRL_R1)
+**Waveshare ESP32-S3-ETH-8DI-8RO · purchased board · 2 assemblies (IOCTRL-01, IOCTRL-02)**  
+Eight relays and eight isolated digital inputs per module, 16 of each in total. The baseline allocates four latch outputs and five door-sensor inputs; their split between the two modules and the second module's additional functions are TBC. RS485 firmware behavior needs validation. [Hardware folder →](HW/HW_ADHERENT_IOCTRL_R1)
 
-**Two custom PCB designs, eleven custom assemblies, two purchased controller assemblies.**
+**Two custom PCB designs, eleven custom assemblies, three purchased controller assemblies (MAINCTRL ×1, IOCTRL ×2).**
 
 ## ⚙️ Mechanical integration
 

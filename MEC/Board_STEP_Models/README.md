@@ -5,7 +5,7 @@ Blackocean Technologies / Adherent360 APDU
 Mechanical integration handoff folder. Models are available, but they are not all verified manufacturer models or production PCB exports.
 
 - `MAINCTRL_MYIR_MYD-YF13X/`: off-the-shelf MYIR central controller, 1 unit.
-- `IOCTRL_Waveshare_ESP32-S3-ETH-8DI-8RO/`: off-the-shelf relay and digital input module, 1 unit.
+- `IOCTRL_Waveshare_ESP32-S3-ETH-8DI-8RO/`: off-the-shelf relay and digital input module, 2 identical units (IOCTRL-01, IOCTRL-02). One model is sufficient for both placements; reserve cabinet space and cable clearance for two.
 - `SYSCTRL_Custom/`: custom machine controller, 1 PCB assembly. Export the STEP assembly from the PCB design when available.
 - `LANECTRL_Custom/`: custom row controller, 10 identical PCB assemblies. One board model is sufficient for the ten placements. Buttons and LEDs are part of this board; no separate LANEPANEL.
 
