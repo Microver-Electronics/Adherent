@@ -1,0 +1,22 @@
+Change Component Footprint: Designator=MTG1 Old Footprint=MTG-PTH-2MM New Footprint=MTG-PTH-3MM
+Change Component Footprint: Designator=MTG2 Old Footprint=MTG-PTH-2MM New Footprint=MTG-PTH-3MM
+Change Component Footprint: Designator=MTG3 Old Footprint=MTG-PTH-2MM New Footprint=MTG-PTH-3MM
+Change Component Footprint: Designator=MTG4 Old Footprint=MTG-PTH-2MM New Footprint=MTG-PTH-3MM
+Change Component Comment : Designator=MTG1 Old Comment=Mounting Hole, 2MM New Comment=Mounting Hole, 3MM
+Change Component Comment : Designator=MTG2 Old Comment=Mounting Hole, 2MM New Comment=Mounting Hole, 3MM
+Change Component Comment : Designator=MTG3 Old Comment=Mounting Hole, 2MM New Comment=Mounting Hole, 3MM
+Change Component Comment : Designator=MTG4 Old Comment=Mounting Hole, 2MM New Comment=Mounting Hole, 3MM
+Add Component: Footprint Not Found SMBJ12A
+Add Component: Footprint Not Found SMBJ12A
+Add Component: Footprint Not Found DIOM7959X250N
+Add Component: Footprint Not Found SODFL1608X70N
+Add Component: Footprint Not Found BEADC2012X105N
+Add Component: Footprint Not Found SOIC127P600X170-9N
+Add Component: Footprint Not Found 436500300
+Add Class Member: Failed to add class member : Component D13 SMBJ33A
+Add Class Member: Failed to add class member : Component D14 SMBJ24A
+Add Class Member: Failed to add class member : Component D15 B560C
+Add Class Member: Failed to add class member : Component D16 ESD5Z5V0
+Add Class Member: Failed to add class member : Component FL BLM21SP601SN1D
+Add Class Member: Failed to add class member : Component IC2 TPS54560BDDAR
+Add Class Member: Failed to add class member : Component J15 43650-0300
