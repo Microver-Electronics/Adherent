@@ -11,3 +11,6 @@ __pycache__/
 
 # Unresolved legacy LFS pointer; restore the actual CAD file before tracking.
 /MEC/01_CAD_MODELS/U bracket.SLDPRT
+
+# Artifact staging; released workbooks live in SYS or MEC.
+/outputs/

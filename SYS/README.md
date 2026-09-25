@@ -1,14 +1,13 @@
-# Current system documents
+# Adherent system documents
 
-Electrical tables and the component register now match the merged SYSCTRL power-connector architecture and selected Molex 1462362151 NFC antenna. The presentation remains an earlier review snapshot; update its topology, cable totals and NFC scope before using it as the current design.
+- [Electrical parts sheet](ADHERENT_Electrical_Tables.xlsx): one worksheet, 32 grouped entries. Diagram reference, component, part number, quantity, location, product/source link, STEP/drawing link and rough dimensions in mm.
+- [System wiring diagram](ADHERENT_System_Wiring_Diagram.drawio) and [PNG preview](ADHERENT_System_Wiring_Diagram.png): matching part references, no displayed revision tags.
+- [Design review snapshot](ADHERENT_Design_Review_Snapshot.pptx): earlier presentation, not the current topology reference.
+- [Earlier engineering review](ADHERENT_Project_Review.md): historical validation and open engineering issues.
+- [Mechanical BOM](../MEC/ADHERENT_Mechanical_BOM.xlsx) and [board STEP models](../MEC/Board_STEP_Models/README.md).
 
-- [System diagram components and part numbers R27](ADHERENT_System_Diagram_Components_R27.xlsx): 82 component/interface rows, manufacturers, part numbers or explicit TBC entries, quantities, selection status and sources.
-- [Electrical tables R27](APDU_Electrical_Tables_R27.xlsx): assembly BOM, boards, connectors, cables, protection, power calculations and unresolved engineering items.
-- [System wiring diagram R27](Electrical_System_Level_Wiring_Diagram_R27.drawio) and [PNG preview](Electrical_System_Level_Wiring_Diagram_R27.png).
-- [Design review presentation R27](APDU_Design_Review_Questions_R27.pptx).
-- [Mechanical BOM](VENDING%20MACHINE%20GANTRY%20BILL%20OF%20MATERIALS%20-%20OFF%20THE%20SHELF%20COMPONENTS.xlsx).
-- [Review findings and validation](PROJECT_REVIEW_R27.md).
+Use MAINCTRL, SYSCTRL, LANECTRL and IOCTRL everywhere. LANECTRL-01 through LANECTRL-10 are ten instances of HW_ADHERENT_LANECTRL_R1. CONVEYOR-01 through CONVEYOR-10 identify row groups, each containing seven CB002-24V-573mm conveyors. References are identical in the diagram and parts sheet.
 
-Junction boxes are cancelled. Six gantry sensors connect directly to SYSCTRL; five door sensors connect directly to IOCTRL. W14 and W22 are retired, while W15 and W23 identify the direct runs.
+TBC means not confirmed. Missing part selections, source links and dimensions remain explicitly marked. MAINCTRL and IOCTRL STEP models are provisional; the IOCTRL reconstruction uses a PoE reference whose fit to the selected non-PoE variant is unverified. Internal SYSCTRL functions are not additional purchased assemblies. Zero-quantity rows identify excluded or external blocks.
 
-Only current editable system revisions are kept here; earlier versions remain in Git history. The supplied conveyor and test-rig PDFs remain reference inputs. Candidate/TBC part numbers are not finalized procurement selections. The component spreadsheet includes parts within assemblies and interface positions; summing every row would double-count assemblies and their contents.
+Detailed multi-tab engineering schedules and the previous component register are retained in Git history at commit aef502b. They are superseded as customer deliverables by the single parts sheet. No junction boxes are used.

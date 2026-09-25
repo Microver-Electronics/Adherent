@@ -1,40 +1,39 @@
 <p align="center">
-  <img src="docs/assets/adherent-banner.svg" alt="Adherent360 APDU — 70 lanes, 10 LANECTRL assemblies, four controller roles; R27 design review" width="100%">
+  <img src="docs/assets/adherent-banner.svg" alt="Adherent360 APDU — 70 lanes, 10 LANECTRL assemblies, four controller roles" width="100%">
 </p>
 
 <p align="center">
-  <a href="SYS/ADHERENT_System_Diagram_Components_R27.xlsx"><strong>Component spreadsheet</strong></a> &nbsp; · &nbsp;
-  <a href="SYS/Electrical_System_Level_Wiring_Diagram_R27.png"><strong>System diagram</strong></a> &nbsp; · &nbsp;
-  <a href="SYS/APDU_Design_Review_Questions_R27.pptx"><strong>Design presentation</strong></a> &nbsp; · &nbsp;
-  <a href="SYS/PROJECT_REVIEW_R27.md"><strong>Review findings</strong></a>
+  <a href="SYS/ADHERENT_Electrical_Tables.xlsx"><strong>Component spreadsheet</strong></a> &nbsp; · &nbsp;
+  <a href="SYS/ADHERENT_System_Wiring_Diagram.png"><strong>System diagram</strong></a> &nbsp; · &nbsp;
+  <a href="SYS/ADHERENT_Design_Review_Snapshot.pptx"><strong>Design presentation</strong></a> &nbsp; · &nbsp;
+  <a href="SYS/ADHERENT_Project_Review.md"><strong>Review findings</strong></a>
 </p>
 
 ## The project
 
 Adherent360 APDU is an automated pharmaceutical dispensing system built around **70 conveyor lanes**, a gantry, a labeling mechanism and monitored access doors. This repository holds the electrical architecture, component registers, mechanical references and planned hardware/firmware work for the system.
 
-**Current baseline: R27.** Electrical design documentation is maintained by **Blackocean Technologies** in the **Microver Electronics / Adherent** repository.
+**Current system documents use stable, revision-free filenames.** Electrical design documentation is maintained by **Blackocean Technologies** in the **Microver Electronics / Adherent** repository.
 
 > [!IMPORTANT]
 > This is a design-review baseline. Components marked **TBC**, **candidate** or **HOLD** still need selection or engineering validation. Firmware/application implementations and production PCB designs have not been added yet.
 
 ## 🗂️ Start with the documents
 
-- **[Components and part numbers](SYS/ADHERENT_System_Diagram_Components_R27.xlsx)** — 82 component/interface rows with manufacturer, part number, quantity, selection status and sources. Covers every component block in the system diagram.
-- **[Electrical BOM and schedules](SYS/APDU_Electrical_Tables_R27.xlsx)** — boards, connectors, harnesses, fuses, power calculations and open engineering items.
-- **[Mechanical BOM](SYS/VENDING%20MACHINE%20GANTRY%20BILL%20OF%20MATERIALS%20-%20OFF%20THE%20SHELF%20COMPONENTS.xlsx)** — gantry parts and mechanical procurement references.
-- **[Design review presentation](SYS/APDU_Design_Review_Questions_R27.pptx)** — architecture, confirmed decisions and questions to resolve.
+- **[Components and part numbers](SYS/ADHERENT_Electrical_Tables.xlsx)** — One sheet with 32 grouped entries, matching diagram references, part numbers, clickable source and CAD links, locations and rough dimensions.
+- **[Mechanical BOM](MEC/ADHERENT_Mechanical_BOM.xlsx)** — gantry parts and mechanical procurement references.
+- **[Design review presentation](SYS/ADHERENT_Design_Review_Snapshot.pptx)** — architecture, confirmed decisions and questions to resolve.
 - **[Project decisions](brain.md)** — working assumptions, naming conventions and current scope.
 
 Included components and interface positions are identified separately from purchased assemblies. Do not sum every spreadsheet row as an independent purchase quantity.
 
 ## 🔌 Electrical system
 
-<a href="SYS/Electrical_System_Level_Wiring_Diagram_R27.png">
-  <img src="SYS/Electrical_System_Level_Wiring_Diagram_R27.png" alt="R27 electrical system wiring diagram with red CONN, PCB and MTR category tags" width="100%">
+<a href="SYS/ADHERENT_System_Wiring_Diagram.png">
+  <img src="SYS/ADHERENT_System_Wiring_Diagram.png" alt="Electrical system wiring diagram with red CONN, PCB and MTR category tags" width="100%">
 </a>
 
-**[Open full-size PNG](SYS/Electrical_System_Level_Wiring_Diagram_R27.png)** · **[Edit in draw.io](SYS/Electrical_System_Level_Wiring_Diagram_R27.drawio)**
+**[Open full-size PNG](SYS/ADHERENT_System_Wiring_Diagram.png)** · **[Edit in draw.io](SYS/ADHERENT_System_Wiring_Diagram.drawio)**
 
 Red, bold corner tags identify **CONN** connectors, **PCB** controller boards and **MTR** motor assemblies. These are category labels; the existing board, connector and cable identifiers remain the references used in the schedules.
 
@@ -48,7 +47,7 @@ Red, bold corner tags identify **CONN** connectors, **PCB** controller boards an
 
 **Molex 1462362151** is selected: 13.56 MHz, 15 x 15 mm, adhesive mount, 102 mm cable. The NFC reader/front-end, host interface and power budget remain open under O16; no payment terminal is selected. [Supplier listing](https://www.digikey.com/en/products/detail/molex/1462362151/15204370).
 
-The presentation is an earlier review snapshot. Use the current diagram and electrical workbook for the merged SYSCTRL topology and NFC selection.
+The presentation is an earlier review snapshot. Use the current diagram and single-sheet parts workbook for the merged SYSCTRL topology, NFC selection and mounting references.
 
 ## 🧩 Four controller roles
 
@@ -107,12 +106,12 @@ The HW folders currently reserve the four board identifiers. See [firmware scope
 - Finalize marker, latch and sensor selections; confirm direct harness lengths and bracket fit.
 - Implement and test firmware, startup/fault behavior and system integration.
 
-Follow **O01–O16** in the [electrical workbook](SYS/APDU_Electrical_Tables_R27.xlsx) for owners and required evidence. See the [R27 review](SYS/PROJECT_REVIEW_R27.md) for completed checks and unresolved findings.
+See [project decisions](brain.md) for unresolved engineering work. The [earlier engineering review](SYS/ADHERENT_Project_Review.md) records the detailed checks; those schedules remain recoverable in Git history.
 
 ## Working conventions
 
 - Keep only the current system-document revision in `SYS`; recover superseded revisions from Git history.
-- Update the editable `.drawio` and its PNG together. Keep component quantities and identifiers aligned with the spreadsheets.
+- Update the editable `.drawio` and its PNG together. Keep component quantities and identifiers aligned with the single customer parts sheet.
 - Use `HW_ADHERENT_<BOARD>_R<REV>`, `FW_ADHERENT_<BOARD>_R<REV>` and the established `WR_ADHERENT_...` harness identifiers.
 - Keep selected parts, candidates, excluded options and verified results clearly distinguished.
 

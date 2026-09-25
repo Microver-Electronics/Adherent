@@ -11,12 +11,12 @@ This file records project decisions and working assumptions. A diagram label or 
 ## Current deliverables
 
 - Project landing page: [README](README.md), with current document links, diagram preview, controller roles and implementation status. Banner source: `docs/assets/adherent-banner.svg`.
-- Current system diagram: [Electrical System Level Wiring Diagram R27](SYS/Electrical_System_Level_Wiring_Diagram_R27.drawio).
-- Diagram preview: [R27 PNG](SYS/Electrical_System_Level_Wiring_Diagram_R27.png).
-- Electrical workbook: [APDU Electrical Tables R27](SYS/APDU_Electrical_Tables_R27.xlsx). BOM, interfaces, cables, protection, power model and open engineering items.
-- Presentation: [Design Review Questions R27](SYS/APDU_Design_Review_Questions_R27.pptx). Aligned with the current diagram and workbook.
-- Component/part-number register: [System Diagram Components R27](SYS/ADHERENT_System_Diagram_Components_R27.xlsx), 82 rows including interfaces and explicit external/options.
-- [Review findings](SYS/PROJECT_REVIEW_R27.md).
+- Current system diagram: [Electrical System Level Wiring Diagram R27](SYS/ADHERENT_System_Wiring_Diagram.drawio).
+- Diagram preview: [R27 PNG](SYS/ADHERENT_System_Wiring_Diagram.png).
+- Electrical workbook: [APDU Electrical Tables R27](SYS/ADHERENT_Electrical_Tables.xlsx). BOM, interfaces, cables, protection, power model and open engineering items.
+- Presentation: [Design Review Questions R27](SYS/ADHERENT_Design_Review_Snapshot.pptx). Aligned with the current diagram and workbook.
+- Component/part-number register: [System Diagram Components R27](SYS/ADHERENT_Electrical_Tables.xlsx), 82 rows including interfaces and explicit external/options.
+- [Review findings](SYS/ADHERENT_Project_Review.md).
 - Superseded SYS revisions and the older unversioned presentation were removed from the working folder; recover them from Git history when needed.
 - Mechanical model handoff folder: [Board STEP Models](MEC/Board_STEP_Models/README.md).
 - LANECTRL front metal bracket reference: [LANE DRAWING SPACE FOR UMIT.DWG](MEC/01_CAD_MODELS/LANE%20DRAWING%20SPACE%20FOR%20UMIT.DWG). User confirms the bracket is being made to this drawing; PCB fit and clearances have not yet been checked.
@@ -141,7 +141,7 @@ The four electromagnetic latches are not counted as motors. Door actuator models
 ## Mechanical inputs and STEP models
 
 - Machine CAD: `MEC/AVM-FRAME-MAINASSEMBLY_V4.STEP`.
-- Mechanical BOM: `SYS/VENDING MACHINE GANTRY BILL OF MATERIALS - OFF THE SHELF COMPONENTS.xlsx`.
+- Mechanical BOM: `MEC/ADHERENT_Mechanical_BOM.xlsx`.
 - Conveyor reference: `SYS/Conveyor belt(CB002-24V-573mm).pdf`.
 - Test-rig reference: `SYS/APDU-Test-Rig-Drawing-Set-BOT-TR-001-RevD.pdf`; this is not the production electrical design.
 - Approximate CAD envelope used previously for cable estimates: 855 × 890 × 1905 mm. Treat derived routing lengths as estimates.
@@ -214,3 +214,15 @@ The four electromagnetic latches are not counted as motors. Door actuator models
 ## Mechanical model location
 
 - Board STEP models are maintained in `MEC/Board_STEP_Models`, alongside machine CAD. Use MAINCTRL, SYSCTRL, LANECTRL and IOCTRL consistently across model folders and system documents.
+
+## Customer handoff and naming — 2026-09-25 (supersedes earlier workbook instructions)
+
+- The customer needs one short worksheet, not detailed electrical schedules. `SYS/ADHERENT_Electrical_Tables.xlsx` is the only current electrical parts workbook: 32 grouped entries with diagram reference, component, part number, quantity, location, clickable source and STEP/drawing links, and rough dimensions in mm.
+- Removed the duplicate component workbook. Previous engineering schedules remain in Git history at `aef502b`; preserve engineering decisions recorded above until resolved.
+- Current document names use `ADHERENT_<Purpose>` without R27 suffixes. The editable system diagram and PNG share `ADHERENT_System_Wiring_Diagram`. The earlier presentation is explicitly `ADHERENT_Design_Review_Snapshot.pptx`.
+- Mechanical BOM is `MEC/ADHERENT_Mechanical_BOM.xlsx`. Board models are under `MEC/Board_STEP_Models`; supplier part numbers and original supplied CAD/drawing names remain traceable.
+- Canonical board roles: MAINCTRL, SYSCTRL, LANECTRL, IOCTRL. HW/FW board revision identifiers keep R1 because it identifies the board design rather than the documentation revision.
+- Match the visible diagram references to the customer sheet. CONVEYOR-01…10 are row groups of seven; LANECTRL-01…10 are individual row-controller instances. X-GB and JAW-SENS remain subcomponents of their labeled motor blocks.
+- No independent distribution box. BUCK12 and SYSCTRL-PWR are internal SYSCTRL functions. No junction boxes.
+- Manufacturer/source dimensions and provisional model envelopes must remain distinguished. Missing selections, drawings or dimensions stay TBC. Do not invent mounting dimensions.
+- Commit and push completed changes incrementally, as requested by the user.

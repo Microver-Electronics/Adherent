@@ -1,3 +1,5 @@
+> Historical engineering review: workbook tab references and counts below describe commit `aef502b`. The current customer deliverable is [ADHERENT_Electrical_Tables.xlsx](ADHERENT_Electrical_Tables.xlsx), one worksheet. Use the current diagram for component references.
+
 # Adherent R27 document review
 
 ## Subsequent SYSCTRL / NFC correction
