@@ -1,14 +1,14 @@
 Project Outputs Generation Report
 ---------------------------------
-Start Output Generation At 16:25:18 On 25.09.2026
+Start Output Generation At 9:33:20 PM On 9/25/2026
 
-Output: Bill of Materials
-Type  : BOM
-From  : Variant [Variant of HW_ADHERENT_LANECTRL_R1] of Project [HW_ADHERENT_LANECTRL_R1.PrjPcb]
-   Generated File[Bill of Materials-HW_ADHERENT_LANECTRL_R1(Variant of HW_ADHERENT_LANECTRL_R1).xlsx]
+Output: Export STEP
+Type  : ExportSTEP
+From  : Variant [Variant of HW_ADHERENT_LANECTRL_R1] of PCB Document [HW_ADHERENT_LANECTRL_R1.PcbDoc]
+   Generated File[HW_ADHERENT_LANECTRL_R1(Variant of HW_ADHERENT_LANECTRL_R1).step]
 
 
 Files Generated   : 1
 Documents Printed : 0
 
-Finished Output Generation At 16:25:43 On 25.09.2026
+Finished Output Generation At 9:33:42 PM On 9/25/2026

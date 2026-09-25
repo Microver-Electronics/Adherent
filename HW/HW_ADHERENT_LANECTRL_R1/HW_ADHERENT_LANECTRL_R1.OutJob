@@ -17,11 +17,11 @@ RevisionNamingSchemeGUID=
 [OutputGroup1]
 Name=HW_ADHERENT_LANECTRL_R1.OutJob
 Description=
-TargetOutputMedium=SCHEMATICS
+TargetOutputMedium=STEP
 VariantName=Variant of HW_ADHERENT_LANECTRL_R1
 VariantScope=1
 CurrentConfigurationName=
-TargetPrinter=Virtual Printer
+TargetPrinter=Microsoft Print to PDF
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
 OutputMedium1=Print Job
 OutputMedium1_Type=Printer
@@ -54,7 +54,7 @@ OutputName2=Schematic Prints
 OutputCategory2=Documentation
 OutputDocumentPath2=
 OutputVariantName2=
-OutputEnabled2=1
+OutputEnabled2=0
 OutputEnabled2_OutputMedium1=0
 OutputEnabled2_OutputMedium2=1
 OutputEnabled2_OutputMedium3=0
@@ -94,7 +94,7 @@ OutputName4=Export STEP
 OutputCategory4=Export
 OutputDocumentPath4=HW_ADHERENT_LANECTRL_R1.PcbDoc
 OutputVariantName4=
-OutputEnabled4=0
+OutputEnabled4=1
 OutputEnabled4_OutputMedium1=0
 OutputEnabled4_OutputMedium2=0
 OutputEnabled4_OutputMedium3=0
@@ -102,7 +102,7 @@ OutputEnabled4_OutputMedium4=0
 OutputEnabled4_OutputMedium5=1
 OutputDefault4=0
 Configuration4_Name1=OutputConfigurationParameter1
-Configuration4_Item1=Record=ExportSTEPView|ExportComponentOptions=0|ExportModelsOption=2|ExportHolesOption=0|CanSelectPrimitives=False|IncludeMechanicalPadHoles=False|IncludeElectricalPadHoles=False|IncludeFreePadHoles=False|ExportFoldedBoard=True|ExportFoldedBoardRate=0|ComponentSuffixType=0|ComponentSuffix= |ExportCopperOption=0|ExportCopperLayer=1|ExportPadAndViaBarrelsOnly=False|IgnoreBoardCopperLayerColors=False|ExportAsSinglePart=False|IncludeCoverLayer=True|SkipFreeBodies=False|SkipHidden=False|DocumentPath=C:\Github2\HW_TEAM_MIC\HW_ADHERENT_LANECTRL_R1\HW_ADHERENT_LANECTRL_R1.PcbDoc
+Configuration4_Item1=Record=ExportSTEPView|ExportComponentOptions=0|ExportModelsOption=2|ExportHolesOption=0|CanSelectPrimitives=False|IncludeMechanicalPadHoles=True|IncludeElectricalPadHoles=True|IncludeFreePadHoles=True|ExportFoldedBoard=True|ExportFoldedBoardRate=0|ComponentSuffixType=0|ComponentSuffix= |ExportCopperOption=0|ExportCopperLayer=0|ExportPadAndViaBarrelsOnly=False|IgnoreBoardCopperLayerColors=False|ExportAsSinglePart=False|IncludeCoverLayer=True|SkipFreeBodies=False|SkipHidden=False|DocumentPath=D:\HW_TEAM_MIC\HW_ADHERENT_LANECTRL_R1\HW_ADHERENT_LANECTRL_R1.PcbDoc
 
 [PublishSettings]
 OutputFilePath2=D:\HW_TEAM_MIC\HW_ADHERENT_LANECTRL_R1\Project Outputs for HW_ADHERENT_LANECTRL_R1\HW_ADHERENT_LANECTRL_R1.PDF
@@ -158,7 +158,7 @@ OutputFileNameMulti4=
 UseOutputNameForMulti4=1
 OutputFileNameSpecial4=
 OpenOutput4=1
-OutputFilePath5=C:\Github2\HW_TEAM_MIC\HW_ADHERENT_LANECTRL_R1\Project Outputs for HW_ADHERENT_LANECTRL_R1\
+OutputFilePath5=D:\HW_TEAM_MIC\HW_ADHERENT_LANECTRL_R1\Project Outputs for HW_ADHERENT_LANECTRL_R1\
 ReleaseManaged5=1
 OutputBasePath5=Project Outputs for HW_ADHERENT_LANECTRL_R1
 OutputPathMedia5=
@@ -195,7 +195,7 @@ OpenGerberOutput4=0
 OpenNCDrillOutput4=0
 OpenIPCOutput4=0
 EnableReload4=0
-RelativeOutputPath5=C:\Github2\HW_TEAM_MIC\HW_ADHERENT_LANECTRL_R1\Project Outputs for HW_ADHERENT_LANECTRL_R1\
+RelativeOutputPath5=D:\HW_TEAM_MIC\HW_ADHERENT_LANECTRL_R1\Project Outputs for HW_ADHERENT_LANECTRL_R1\
 OpenOutputs5=1
 AddToProject5=1
 TimestampFolder5=0
