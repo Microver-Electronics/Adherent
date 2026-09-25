@@ -18,7 +18,7 @@ This file records project decisions and working assumptions. A diagram label or 
 - Component/part-number register: [System Diagram Components R27](SYS/ADHERENT_System_Diagram_Components_R27.xlsx), 82 rows including interfaces and explicit external/options.
 - [Review findings](SYS/PROJECT_REVIEW_R27.md).
 - Superseded SYS revisions and the older unversioned presentation were removed from the working folder; recover them from Git history when needed.
-- Mechanical model handoff folder: [Board STEP Models](SYS/Board_STEP_Models/README.md).
+- Mechanical model handoff folder: [Board STEP Models](MEC/Board_STEP_Models/README.md).
 - LANECTRL front metal bracket reference: [LANE DRAWING SPACE FOR UMIT.DWG](MEC/01_CAD_MODELS/LANE%20DRAWING%20SPACE%20FOR%20UMIT.DWG). User confirms the bracket is being made to this drawing; PCB fit and clearances have not yet been checked.
 - Hardware folders: `HW/HW_ADHERENT_SYSCTRL_R1`, `HW/HW_ADHERENT_MAINCTRL_R1`, `HW/HW_ADHERENT_LANECTRL_R1`, `HW/HW_ADHERENT_IOCTRL_R1`.
 - Rear-panel Ethernet connector J2: **McMaster-Carr 1422N13**, quantity 1 per system, replaces the previous Neutrik candidate. Shielded Cat5e RJ45 female/female, screw-on mounting, black plastic housing; 0.95 in (24.13 mm) panel cutout and 0.14 in mounting holes, mounting fasteners included. [Product](https://www.mcmaster.com/product/1422N13), [supplier specifications](https://www.mcmaster.com/products/data-transmission-couplers/).
@@ -148,11 +148,11 @@ The four electromagnetic latches are not counted as motors. Door actuator models
 
 ### Provisional reconstructed board models
 
-- IOCTRL: `SYS/Board_STEP_Models/IOCTRL_Waveshare_ESP32-S3-ETH-8DI-8RO/IOCTRL_Provisional_Placement_R1.step`.
+- IOCTRL: `MEC/Board_STEP_Models/IOCTRL_Waveshare_ESP32-S3-ETH-8DI-8RO/IOCTRL_Provisional_Placement_R1.step`.
   - Nominal 175 × 90 × 40 mm envelope from the user image.
   - Reference image is the **PoE variant**; compatibility with the selected non-PoE product is unverified.
   - Slots and connector geometry are estimated; DIN clip and antenna are omitted.
-- MAINCTRL: `SYS/Board_STEP_Models/MAINCTRL_MYIR_MYD-YF13X/MAINCTRL_MYD-YF13X_Provisional_Placement_R1.step`.
+- MAINCTRL: `MEC/Board_STEP_Models/MAINCTRL_MYIR_MYD-YF13X/MAINCTRL_MYD-YF13X_Provisional_Placement_R1.step`.
   - Documented PCB outline 137.29 × 105 mm.
   - PCB thickness, hole positions/diameters, connector heights and component envelopes are estimates.
   - Simplified top- and bottom-side components are included.
@@ -210,3 +210,7 @@ The four electromagnetic latches are not counted as motors. Door actuator models
 - Each provisional board-model folder contains `build_ocp_R1.py` and validation output.
 - CAD dependencies were installed in `.work/cad-deps`. Direct OpenCascade imports worked; full CadQuery import stalled in VTK. Some dependency access required elevated execution in this environment.
 - Render diagrams using the installed draw.io CLI and inspect the PNG before delivery. Check both content and geometry; a successful export alone does not prove correctness.
+
+## Mechanical model location
+
+- Board STEP models are maintained in `MEC/Board_STEP_Models`, alongside machine CAD. Use MAINCTRL, SYSCTRL, LANECTRL and IOCTRL consistently across model folders and system documents.

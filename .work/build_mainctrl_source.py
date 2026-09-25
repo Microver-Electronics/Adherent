@@ -1,5 +1,5 @@
 from pathlib import Path
-root=Path('C:/Projects/Github/Adherent/SYS/Board_STEP_Models')
+root=Path('C:/Projects/Github/Adherent/MEC/Board_STEP_Models')
 old=(root/'IOCTRL_Waveshare_ESP32-S3-ETH-8DI-8RO/build_ocp_R1.py').read_text()
 imports=old[:old.index('base=box(')]
 body='''W,H,T=137.29,105.0,1.6

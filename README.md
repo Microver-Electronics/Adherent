@@ -78,7 +78,7 @@ Eight relays and eight isolated digital inputs. The baseline allocates four latc
 
 - [Machine assembly STEP](MEC/AVM-FRAME-MAINASSEMBLY_V4.STEP)
 - [LANECTRL front-bracket DWG](MEC/01_CAD_MODELS/LANE%20DRAWING%20SPACE%20FOR%20UMIT.DWG)
-- [Board STEP models and qualification notes](SYS/Board_STEP_Models/README.md)
+- [Board STEP models and qualification notes](MEC/Board_STEP_Models/README.md)
 - [Conveyor supplier reference](SYS/Conveyor%20belt%28CB002-24V-573mm%29.pdf)
 
 The front bracket follows the supplied DWG. PCB mounting, button/LED alignment and cable clearance still need a fit check. Provisional reconstructed STEP models support placement studies and are not verified fabrication geometry.
