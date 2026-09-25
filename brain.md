@@ -226,3 +226,11 @@ The four electromagnetic latches are not counted as motors. Door actuator models
 - No independent distribution box. BUCK12 and SYSCTRL-PWR are internal SYSCTRL functions. No junction boxes.
 - Manufacturer/source dimensions and provisional model envelopes must remain distinguished. Missing selections, drawings or dimensions stay TBC. Do not invent mounting dimensions.
 - Commit and push completed changes incrementally, as requested by the user.
+
+## Excel compatibility fix — 2026-09-25
+
+- Fixed duplicate `pageMargins` in `ADHERENT_Electrical_Tables.xlsx`, introduced by the print-settings patch. Cell contents, styles, 27 hyperlinks and one-sheet layout are unchanged.
+- Both released workbooks passed read-only, normal Microsoft Excel opening. Electrical sheet exported from Excel to exactly one A3 landscape PDF page and was visually checked.
+- Published 14-slide presentation and both tracked historical PPTX files opened in Microsoft PowerPoint.
+- 72 tracked files passed applicable ZIP CRC, XML/package relationship, PDF parsing, image decoding, JSON or file-signature checks. STEP geometry and DWG mechanical fit are separate from these file-format checks.
+- Future workbook checks must reject duplicate singleton worksheet records and include normal Microsoft Excel opening; a Python reader alone does not prove Excel compatibility.
