@@ -1,0 +1,11 @@
+{
+  "units": "mm",
+  "reimport_valid": true,
+  "bounding_box_mm": [
+    175.0,
+    90.0,
+    40.0
+  ],
+  "exported_parts": 9,
+  "status": "Provisional; see MODEL_NOTES_R1.md"
+}

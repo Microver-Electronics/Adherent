@@ -1,0 +1,11 @@
+# Private proposal: keep local and never commit, including temporary copies.
+*Melis_Electronics_APDU_Proposal*
+
+# Local dependency cache and Python bytecode.
+/.work/cad-deps/
+node_modules/
+__pycache__/
+*.pyc
+
+# Unresolved legacy LFS pointer; restore the actual CAD file before tracking.
+/MEC/01_CAD_MODELS/U bracket.SLDPRT

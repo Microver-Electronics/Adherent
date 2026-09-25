@@ -1,0 +1,35 @@
+{
+  "units": "mm",
+  "reimport_valid": true,
+  "bounding_box_mm": [
+    137.71836193447,
+    113.126272912417,
+    20.1
+  ],
+  "exported_parts": 104,
+  "pcb_outline_mm": [
+    137.29,
+    105.0
+  ],
+  "assumed_thickness_mm": 1.6,
+  "assumed_mounting_centres_mm": [
+    [
+      4,
+      4
+    ],
+    [
+      133.29,
+      4
+    ],
+    [
+      4,
+      101.0
+    ],
+    [
+      133.29,
+      101.0
+    ]
+  ],
+  "assumed_hole_diameter_mm": 3.2,
+  "status": "Provisional; see MODEL_NOTES_R1.md"
+}

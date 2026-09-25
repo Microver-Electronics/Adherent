@@ -1,0 +1,768 @@
+<title>Lane Driver Test Rig</title>
+<style>
+  :root {
+    --paper:   #FAFBFC;
+    --surface: #F0F2F5;
+    --sunk:    #E7EAEF;
+    --ink:     #171A1F;
+    --ink-2:   #4A5158;
+    --ink-3:   #7C858E;
+    --rule:    #D4D9E0;
+    --rule-2:  #BEC5CE;
+    --power:   #BE3A2B;
+    --signal:  #1D5FA8;
+    --pending: #9A6510;
+    --pending-bg: #F7EEDC;
+
+    --f-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --f-mono: ui-monospace, "SFMono-Regular", "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:   #14171B;
+      --surface: #1C2026;
+      --sunk:    #23282F;
+      --ink:     #E6E9ED;
+      --ink-2:   #A9B1B9;
+      --ink-3:   #79828B;
+      --rule:    #2E343B;
+      --rule-2:  #3D444C;
+      --power:   #E8756A;
+      --signal:  #74ABDF;
+      --pending: #DCA94A;
+      --pending-bg: #2A2418;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper:   #14171B;
+    --surface: #1C2026;
+    --sunk:    #23282F;
+    --ink:     #E6E9ED;
+    --ink-2:   #A9B1B9;
+    --ink-3:   #79828B;
+    --rule:    #2E343B;
+    --rule-2:  #3D444C;
+    --power:   #E8756A;
+    --signal:  #74ABDF;
+    --pending: #DCA94A;
+    --pending-bg: #2A2418;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--f-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 56px 28px 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 52px;
+  }
+
+  header { display: flex; flex-direction: column; gap: 18px; }
+
+  .stamp {
+    font-family: var(--f-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+  }
+  .stamp b { color: var(--power); font-weight: 600; }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(30px, 5vw, 44px);
+    line-height: 1.08;
+    letter-spacing: -0.024em;
+    font-weight: 680;
+    text-wrap: balance;
+  }
+
+  .standfirst {
+    margin: 0;
+    max-width: 62ch;
+    font-size: 17.5px;
+    line-height: 1.62;
+    color: var(--ink-2);
+  }
+
+  .keyline { height: 3px; background: var(--ink); border: 0; margin: 0; }
+
+  .spec {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+    border: 1px solid var(--rule);
+    background: var(--surface);
+  }
+  .spec div {
+    padding: 14px 16px;
+    border-right: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .spec div:last-child { border-right: 0; }
+  .spec dt {
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .spec dd {
+    margin: 0;
+    font-family: var(--f-mono);
+    font-size: 15px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+
+  section { display: flex; flex-direction: column; gap: 20px; }
+
+  .head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    border-bottom: 1.5px solid var(--ink);
+    padding-bottom: 9px;
+  }
+  .head .num {
+    font-family: var(--f-mono);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--power);
+    font-variant-numeric: tabular-nums;
+  }
+  .head h2 {
+    margin: 0;
+    font-size: 21px;
+    letter-spacing: -0.014em;
+    font-weight: 660;
+    text-wrap: balance;
+  }
+
+  h3 { margin: 0; font-size: 15.5px; font-weight: 640; letter-spacing: -0.008em; }
+
+  p { margin: 0; max-width: 68ch; }
+  section > p { color: var(--ink-2); }
+
+  code {
+    font-family: var(--f-mono);
+    font-size: 0.875em;
+    background: var(--sunk);
+    padding: 1.5px 5px;
+    border-radius: 2px;
+    color: var(--ink);
+  }
+
+  a { color: var(--signal); }
+  a:focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; }
+
+  figure { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+  .canvas {
+    overflow-x: auto;
+    border: 1px solid var(--rule);
+    background: var(--surface);
+    padding: 20px 18px;
+  }
+  .canvas svg { display: block; min-width: 640px; max-width: 100%; height: auto; }
+  figcaption {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--ink-3);
+    max-width: 72ch;
+  }
+  figcaption b { color: var(--ink-2); font-weight: 600; }
+
+  .blk  { fill: var(--paper); stroke: currentColor; stroke-width: 1.5; }
+  .blk-a{ fill: var(--paper); stroke: var(--power); stroke-width: 1.8; }
+  .wire { stroke: currentColor; stroke-width: 1.4; fill: none; }
+  .wire-p { stroke: var(--power); stroke-width: 2; fill: none; }
+  .wire-s { stroke: var(--signal); stroke-width: 1.4; fill: none; }
+  .t   { font-family: var(--f-mono); font-size: 12px; fill: currentColor; }
+  .t-s { font-family: var(--f-mono); font-size: 10.5px; fill: var(--ink-3); }
+  .t-p { font-family: var(--f-mono); font-size: 10.5px; fill: var(--power); }
+  .t-g { font-family: var(--f-mono); font-size: 10.5px; fill: var(--signal); }
+  .t-b { font-family: var(--f-mono); font-size: 12px; font-weight: 600; fill: currentColor; }
+
+  .scroll { overflow-x: auto; border: 1px solid var(--rule); }
+  table { border-collapse: collapse; width: 100%; font-size: 13.5px; min-width: 520px; }
+  thead th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--sunk);
+    border-bottom: 1.5px solid var(--rule-2);
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  tbody td {
+    padding: 9px 14px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+    color: var(--ink-2);
+  }
+  tbody tr:last-child td { border-bottom: 0; }
+  tbody td:first-child { color: var(--ink); }
+  .m { font-family: var(--f-mono); font-variant-numeric: tabular-nums; white-space: nowrap; color: var(--ink); }
+  .qty { font-family: var(--f-mono); font-variant-numeric: tabular-nums; text-align: right; color: var(--ink); }
+  th.qty { text-align: right; }
+  .gone { color: var(--ink-3); text-decoration: line-through; }
+
+  .note {
+    border-left: 3px solid var(--pending);
+    background: var(--pending-bg);
+    padding: 14px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .note .tag {
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--pending);
+    font-weight: 600;
+  }
+  .note p { font-size: 14.5px; color: var(--ink-2); }
+
+  ul.plain { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 11px; }
+  ul.plain li {
+    display: grid;
+    grid-template-columns: 26px 1fr;
+    gap: 12px;
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--ink-2);
+    max-width: 76ch;
+  }
+  ul.plain li .n {
+    font-family: var(--f-mono);
+    font-size: 11.5px;
+    color: var(--power);
+    font-weight: 600;
+    padding-top: 3px;
+    font-variant-numeric: tabular-nums;
+  }
+  ul.plain li b { color: var(--ink); font-weight: 620; }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 18px;
+    font-family: var(--f-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.05em;
+    color: var(--ink-3);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+  }
+
+  @media (max-width: 640px) {
+    .wrap { padding: 36px 18px 80px; gap: 40px; }
+    .spec div { border-right: 0; border-bottom: 1px solid var(--rule); }
+  }
+</style>
+
+<div class="wrap">
+
+  <header>
+    <div class="stamp">
+      <span>Adherent</span>
+      <span>Conveyor lane control</span>
+      <span>8-lane bench build</span>
+      <span><b>Rev C · draft</b></span>
+    </div>
+    <h1>Lane Driver Test Rig</h1>
+    <hr class="keyline" />
+    <p class="standfirst">
+      Wiring and bill of materials for driving eight CB002-24V-573mm conveyor lanes,
+      bidirectional with independent speed control, from a stack of three shields on
+      one Arduino. Five parts to order.
+    </p>
+  </header>
+
+  <dl class="spec">
+    <div><dt>Lanes</dt><dd>8</dd></div>
+    <div><dt>Bus voltage</dt><dd>24 VDC</dd></div>
+    <div><dt>Drivers</dt><dd>3 × M3S256</dd></div>
+    <div><dt>Direction</dt><dd>Bidirectional</dd></div>
+    <div><dt>Control</dt><dd>I²C</dd></div>
+    <div><dt>Controller</dt><dd>Uno R4 WiFi</dd></div>
+  </dl>
+
+  <section>
+    <div class="head"><span class="num">01</span><h2>What the rig has to do</h2></div>
+    <p>
+      Each lane is a CB002-24V-573mm belt module: a 24 V brushed DC gearmotor with the
+      motor winding brought straight out on pins 1 and 2, and a feedback output on pin 3.
+      There is no driver inside the module, so the rig supplies the H-bridge.
+    </p>
+    <p>
+      Both directions are required because each conveyor carries a pusher plate that has to
+      be retracted after an unload stroke. That makes an H-bridge per lane mandatory —
+      a simple high-side switch cannot retract the plate.
+    </p>
+    <p>
+      Speed is the parameter under test, so every lane gets its own independently commanded
+      channel and its own physical speed knob.
+    </p>
+  </section>
+
+  <section>
+    <div class="head"><span class="num">02</span><h2>System architecture</h2></div>
+    <p>
+      Three Motoron M3S256 controllers stack directly onto the Arduino. They use only SDA,
+      SCL, GND and IOREF from the headers, so there is no wiring between the controller and
+      the drivers at all — and no wiring for motor PWM, because each Motoron generates its
+      own.
+    </p>
+
+    <figure>
+      <div class="canvas">
+        <svg viewBox="0 0 900 520" role="img"
+             aria-label="Block diagram: a 24 V supply feeds the VIN terminals of three stacked Motoron M3S256 shields on an Arduino Uno R4 WiFi, which drive eight conveyor lanes. An M5Stack 8Angle unit connects over I2C for speed knobs and status LEDs, and lane feedback returns through an opto-isolator to Arduino digital inputs.">
+          <defs>
+            <marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor"/>
+            </marker>
+            <marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--power)"/>
+            </marker>
+            <marker id="a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--signal)"/>
+            </marker>
+          </defs>
+
+          <!-- supply -->
+          <rect class="blk" x="24" y="26" width="110" height="40"/>
+          <text class="t" x="79" y="51" text-anchor="middle">AC mains</text>
+          <rect class="blk-a" x="160" y="26" width="170" height="40"/>
+          <text class="t-b" x="245" y="45" text-anchor="middle">LRS-200-24</text>
+          <text class="t-s" x="245" y="59" text-anchor="middle">24 V · 8.8 A</text>
+          <line class="wire" x1="134" y1="46" x2="156" y2="46" marker-end="url(#a1)"/>
+
+          <!-- 24 V bus to three VIN terminals -->
+          <path class="wire-p" d="M 245 66 V 235"/>
+          <path class="wire-p" d="M 245 143 H 276" marker-end="url(#a2)"/>
+          <path class="wire-p" d="M 245 189 H 276" marker-end="url(#a2)"/>
+          <path class="wire-p" d="M 245 235 H 276" marker-end="url(#a2)"/>
+          <text class="t-p" x="150" y="120">24 V →</text>
+          <text class="t-p" x="150" y="134">3 × VIN</text>
+
+          <!-- the stack -->
+          <rect class="blk-a" x="280" y="120" width="200" height="46"/>
+          <text class="t" x="380" y="139" text-anchor="middle">Motoron A</text>
+          <text class="t-s" x="380" y="155" text-anchor="middle">0x10 · lanes 1–3</text>
+          <rect class="blk-a" x="280" y="166" width="200" height="46"/>
+          <text class="t" x="380" y="185" text-anchor="middle">Motoron B</text>
+          <text class="t-s" x="380" y="201" text-anchor="middle">0x11 · lanes 4–6</text>
+          <rect class="blk-a" x="280" y="212" width="200" height="46"/>
+          <text class="t" x="380" y="231" text-anchor="middle">Motoron C</text>
+          <text class="t-s" x="380" y="247" text-anchor="middle">0x12 · lanes 7–8</text>
+          <rect class="blk" x="280" y="258" width="200" height="54"/>
+          <text class="t-b" x="380" y="281" text-anchor="middle">Arduino Uno R4 WiFi</text>
+          <text class="t-s" x="380" y="298" text-anchor="middle">RA4M1 · 5 V logic</text>
+          <text class="t-s" x="380" y="332" text-anchor="middle">shield stack · I²C through headers</text>
+
+          <line class="wire" x1="196" y1="285" x2="276" y2="285" marker-end="url(#a1)"/>
+          <text class="t-s" x="190" y="289" text-anchor="end">USB</text>
+
+          <!-- motors out -->
+          <line class="wire-p" x1="480" y1="143" x2="596" y2="143" marker-end="url(#a2)"/>
+          <line class="wire-p" x1="480" y1="189" x2="596" y2="189" marker-end="url(#a2)"/>
+          <line class="wire-p" x1="480" y1="235" x2="596" y2="235" marker-end="url(#a2)"/>
+
+          <rect class="blk" x="600" y="112" width="240" height="146"/>
+          <text class="t-b" x="720" y="178" text-anchor="middle">8 × conveyor lane</text>
+          <text class="t-s" x="720" y="196" text-anchor="middle">CB002-24V-573mm</text>
+
+          <!-- 8angle -->
+          <path class="wire-s" d="M 380 312 V 384 H 596" marker-end="url(#a3)"/>
+          <text class="t-g" x="470" y="378">I²C · Grove</text>
+          <rect class="blk" x="600" y="356" width="240" height="56"/>
+          <text class="t-b" x="720" y="379" text-anchor="middle">M5Stack 8Angle</text>
+          <text class="t-s" x="720" y="396" text-anchor="middle">0x43 · 8 knobs, 8 RGB, toggle</text>
+
+          <!-- feedback -->
+          <path class="wire-s" d="M 840 189 H 870 V 466 H 844" marker-end="url(#a3)"/>
+          <rect class="blk" x="600" y="440" width="240" height="52"/>
+          <text class="t" x="720" y="462" text-anchor="middle">8-ch opto isolator</text>
+          <text class="t-s" x="720" y="478" text-anchor="middle">lane pin 3</text>
+          <path class="wire-s" d="M 600 466 H 340 V 316" marker-end="url(#a3)"/>
+          <text class="t-g" x="440" y="459" text-anchor="middle">8 × D2–D9</text>
+        </svg>
+      </div>
+      <figcaption>
+        <b>Only three wire runs leave the stack.</b> 24 V to each shield's VIN terminal,
+        motor pairs out to the lanes, and the feedback return. The 8Angle plugs onto the
+        same I²C bus that the shields already sit on, so the operator panel costs one
+        four-wire cable.
+      </figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <div class="head"><span class="num">03</span><h2>One board, three lanes</h2></div>
+
+    <figure>
+      <div class="canvas">
+        <svg viewBox="0 0 940 440" role="img"
+             aria-label="Detail of one Motoron M3S256: 24 V enters its VIN terminal, I2C arrives through the shield headers, and three channel output pairs drive three conveyor lanes. Conveyor pin 3 returns through an opto-isolator to an Arduino digital input.">
+          <defs>
+            <marker id="b1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor"/>
+            </marker>
+            <marker id="b2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--power)"/>
+            </marker>
+            <marker id="b3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--signal)"/>
+            </marker>
+          </defs>
+
+          <text class="t-p" x="30" y="46">+24 V</text>
+          <path class="wire-p" d="M 30 60 H 380 V 92" marker-end="url(#b2)"/>
+
+          <rect class="blk-a" x="330" y="96" width="200" height="200"/>
+          <text class="t-b" x="430" y="180" text-anchor="middle">Motoron M3S256</text>
+          <text class="t-s" x="430" y="197" text-anchor="middle">0x10 · 3 channels</text>
+          <text class="t-s" x="346" y="114">VIN</text>
+          <text class="t-s" x="338" y="254">I²C</text>
+          <text class="t-s" x="492" y="290" text-anchor="end">GND</text>
+          <text class="t-s" x="522" y="136" text-anchor="end">M1A / M1B</text>
+          <text class="t-s" x="522" y="192" text-anchor="end">M2A / M2B</text>
+          <text class="t-s" x="522" y="248" text-anchor="end">M3A / M3B</text>
+
+          <line class="wire-s" x1="256" y1="250" x2="326" y2="250" marker-end="url(#b3)"/>
+          <text class="t-g" x="250" y="246" text-anchor="end">shield headers · SDA / SCL</text>
+          <text class="t-s" x="250" y="262" text-anchor="end">IOREF supplies 5 V logic</text>
+
+          <path class="wire" d="M 480 296 V 326"/>
+          <path class="wire" d="M 250 326 H 560"/>
+          <text class="t-s" x="250" y="344">24 V return · star point at PSU</text>
+
+          <line class="wire-p" x1="530" y1="140" x2="636" y2="140" marker-end="url(#b2)"/>
+          <line class="wire-p" x1="530" y1="196" x2="636" y2="196" marker-end="url(#b2)"/>
+          <line class="wire-p" x1="530" y1="252" x2="636" y2="252" marker-end="url(#b2)"/>
+
+          <rect class="blk" x="640" y="116" width="230" height="48"/>
+          <text class="t" x="656" y="138">Lane 1</text>
+          <text class="t-s" x="860" y="138" text-anchor="end">pin 1 / pin 2</text>
+          <rect class="blk" x="640" y="172" width="230" height="48"/>
+          <text class="t" x="656" y="194">Lane 2</text>
+          <text class="t-s" x="860" y="194" text-anchor="end">pin 1 / pin 2</text>
+          <rect class="blk" x="640" y="228" width="230" height="48"/>
+          <text class="t" x="656" y="250">Lane 3</text>
+          <text class="t-s" x="860" y="250" text-anchor="end">pin 1 / pin 2</text>
+
+          <path class="wire-s" d="M 870 140 H 905 V 392 H 624" marker-end="url(#b3)"/>
+          <text class="t-g" x="760" y="386" text-anchor="middle">pin 3 · per lane</text>
+          <rect class="blk" x="440" y="368" width="180" height="48"/>
+          <text class="t" x="530" y="390" text-anchor="middle">opto ch n</text>
+          <text class="t-s" x="530" y="405" text-anchor="middle">isolated</text>
+          <line class="wire-s" x1="436" y1="392" x2="280" y2="392" marker-end="url(#b3)"/>
+          <text class="t-g" x="274" y="396" text-anchor="end">Uno R4 · D2–D9</text>
+        </svg>
+      </div>
+      <figcaption>
+        <b>Three wires leave the box per lane</b> — pins 1 and 2 to a Motoron channel pair,
+        pin 3 back through the isolator. Motor power lands on each shield's own VIN terminal;
+        it does not travel through the stacking headers.
+      </figcaption>
+    </figure>
+
+    <div class="note">
+      <span class="tag">Pending supplier confirmation</span>
+      <p>
+        The feedback path is drawn provisionally. Pin 3's output type and voltage level are not
+        given in the datasheet, so the isolator channel spec — and whether external pull-ups are
+        needed — cannot be fixed until the supplier answers questions 2 and 5 in section 07.
+        Everything else on this drawing is final.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="head"><span class="num">04</span><h2>Commanding a lane</h2></div>
+    <p>
+      A lane is addressed by writing a signed speed to one channel over I²C. The range is
+      <code>−800</code> to <code>+800</code>: sign is direction, magnitude is speed, zero stops.
+      Retracting the pusher plate is a negative value on the same channel — there is no
+      direction pin to sequence and no PWM to generate.
+    </p>
+
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Feature</th><th>What it gives us</th></tr></thead>
+        <tbody>
+          <tr><td>Speed −800 … +800</td><td>Direction and magnitude in one write, per channel</td></tr>
+          <tr><td>Max accel / decel</td><td>Ramping happens in the controller, so no soft-start loop in firmware</td></tr>
+          <tr><td>Starting speed</td><td>Sets the minimum duty that actually breaks the gearmotor loose</td></tr>
+          <tr><td>Current limiting</td><td>Per channel — a jammed pusher plate is limited, not fused</td></tr>
+          <tr><td>Command timeout</td><td>Default 1000 ms. Motors stop on their own if the Arduino hangs</td></tr>
+          <tr><td>PWM 1–80 kHz</td><td>Eight options; set above audible and the motor whine goes away</td></tr>
+          <tr><td>VIN measurement</td><td>Rail voltage readable over the same bus — free sag diagnostics</td></tr>
+          <tr><td>General call (addr 0)</td><td>One broadcast stops every lane on the bus simultaneously</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="head"><span class="num">05</span><h2>Operator panel</h2></div>
+    <p>
+      The M5Stack 8Angle carries the whole operator interface on one I²C device: eight
+      potentiometers, eight addressable RGB LEDs beside them, and a toggle switch with its
+      own LED. It replaces what would otherwise be eight panel buttons, eight indicators,
+      a GPIO expander, a LED driver and roughly thirty wires.
+    </p>
+
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Control</th><th>Count</th><th>Assigned to</th></tr></thead>
+        <tbody>
+          <tr><td>Potentiometer</td><td class="qty">8</td><td>Lane 1–8 speed setpoint, and on/off at zero</td></tr>
+          <tr><td>RGB LED</td><td class="qty">8</td><td>Lane 1–8 status</td></tr>
+          <tr><td>Toggle switch</td><td class="qty">1</td><td>Master enable — all lanes stop when off</td></tr>
+          <tr><td>Switch LED</td><td class="qty">1</td><td>Master state</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      Because the indicators are addressable RGB rather than single-colour lamps, lane state
+      can be encoded in colour at no extra cost — for example idle dark, forward green,
+      retracting amber, fault red. Worth defining the scheme before firmware starts so it
+      stays consistent.
+    </p>
+
+    <h3>Per-lane on/off</h3>
+    <p>
+      The unit has one toggle switch, not eight — there is no switch beside each knob. Per-lane
+      on/off comes from the knob itself: zero stops that lane, anything above zero runs it, and
+      the RGB LED beside the knob shows which state it is in. That covers the brief's
+      "LED and power button on every lane" in function, through one control instead of two.
+    </p>
+    <p>
+      Give the bottom of each knob's travel a deadband — roughly the first 3–5 % reading as a
+      hard zero. Without it a knob left just off the stop leaves the lane commanded at a speed
+      too low to turn the gearmotor, which draws current and buzzes without moving. Pair the
+      deadband with the Motoron's starting-speed setting so the first speed the lane accepts is
+      one it can actually act on.
+    </p>
+
+    <div class="note">
+      <span class="tag">Not covered</span>
+      <p>
+        What the knob cannot do is act as a momentary trigger — pressing to start a single
+        unload cycle and having it run to completion by itself. If the brief's "power button"
+        meant that rather than on/off, it needs eight momentary buttons and a GPIO expander
+        added back. Worth confirming which was intended before the panel is built.
+      </p>
+    </div>
+
+    <div class="note">
+      <span class="tag">Check before wiring</span>
+      <p>
+        The 8Angle takes 5 V power but its STM32 runs at 3.3 V, so its I²C lines are natively
+        3.3 V. The Uno R4 bus is 5 V. Confirm the unit tolerates 5 V on SDA and SCL; if not, a
+        bidirectional level shifter goes between them. Do not use the Arduino's Qwiic
+        connector for this — it supplies 3.3 V, and the unit needs 5 V. Take 5 V from the
+        Arduino's 5 V pin instead.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="head"><span class="num">06</span><h2>Pin and channel map</h2></div>
+
+    <h3>Arduino Uno R4 WiFi</h3>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Pin</th><th>Function</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td class="m">SDA / SCL</td><td>I²C</td><td>Reaches the three shields through the headers, plus the 8Angle</td></tr>
+          <tr><td class="m">IOREF</td><td>Shield logic supply</td><td>5 V, taken automatically by each Motoron</td></tr>
+          <tr><td class="m">D2 … D9</td><td>Lane feedback 1–8</td><td>Interrupt-driven counting</td></tr>
+          <tr><td class="m">5 V, GND</td><td>8Angle power</td><td>Not the Qwiic connector — see section 05</td></tr>
+          <tr><td class="m">D10 … D13, A0 … A5</td><td>Free</td><td>SPI and analog left unused</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>I²C bus</h3>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Device</th><th>Address</th><th>Channel</th><th>Goes to</th></tr></thead>
+        <tbody>
+          <tr><td>Motoron A</td><td class="m">0x10</td><td class="m">M1 / M2 / M3</td><td>Lanes 1, 2, 3</td></tr>
+          <tr><td>Motoron B</td><td class="m">0x11</td><td class="m">M1 / M2 / M3</td><td>Lanes 4, 5, 6</td></tr>
+          <tr><td>Motoron C</td><td class="m">0x12</td><td class="m">M1 / M2</td><td>Lanes 7, 8</td></tr>
+          <tr><td>Motoron C</td><td class="m">0x12</td><td class="m">M3</td><td>Spare</td></tr>
+          <tr><td>8Angle</td><td class="m">0x43</td><td class="m">—</td><td>Knobs, RGB LEDs, toggle</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Lane <i>n</i> resolves arithmetically: board index is <code>n ÷ 3</code>, channel is
+      <code>n mod 3</code>. No lookup table, which matters when this grows to seventy.
+      The spare ninth channel is worth landing on a terminal — if a channel fails mid-test,
+      moving a lane onto it is a two-wire change.
+    </p>
+
+    <div class="note">
+      <span class="tag">Sizing risk</span>
+      <p>
+        The RA4M1 has no dedicated pulse-counter block, so the eight feedback channels are
+        counted by interrupt. At the pulse rates a belt conveyor is likely to produce —
+        tens to hundreds of hertz — this is a fraction of a percent of a 48 MHz core. Above
+        roughly 10 kHz per channel it becomes significant. The pulse rate is supplier
+        question 2; if it comes back high, the fallback is an ESP32 board in the same Uno
+        form factor, which has eight hardware pulse counters. The shields and all wiring
+        are unaffected by that swap.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="head"><span class="num">07</span><h2>Bill of materials</h2></div>
+
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>#</th><th>Part</th><th class="qty">Qty</th><th>Why this one</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="m">1</td><td>Arduino Uno R4 WiFi</td><td class="qty">1</td><td>RA4M1 at 48 MHz, 5 V logic, official Uno pinout so the shields seat correctly</td></tr>
+          <tr><td class="m">2</td><td>Pololu Motoron M3S256 (#5030)</td><td class="qty">3</td><td>3 ch, 4.5–48 V, 2.0 A cont / 6.4 A peak. Stacks; uses only SDA, SCL, GND, IOREF</td></tr>
+          <tr><td class="m">3</td><td>M5Stack 8-Angle Unit</td><td class="qty">1</td><td>8 knobs, 8 RGB indicators, toggle — the whole panel on one I²C device</td></tr>
+          <tr><td class="m">4</td><td>8-ch opto-isolated input board</td><td class="qty">1</td><td>Keeps motor-side noise off the feedback inputs</td></tr>
+          <tr><td class="m">5</td><td>Mean Well LRS-200-24</td><td class="qty">1</td><td>24 V / 8.8 A · covers 8 lanes at full load</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      Wire, terminal blocks, DIN rail, fusing and the 3-pin mating connectors are sourced
+      locally and are not listed. The Arduino is USB-powered, so the rig needs a host
+      connection to run. The 8Angle ships with its own Grove cable.
+    </p>
+
+    <h3>What earlier revisions carried</h3>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Part</th><th class="qty">Was</th><th>Why it's gone</th></tr></thead>
+        <tbody>
+          <tr><td class="gone">Adafruit DRV8871 breakout</td><td class="qty">8</td><td>Replaced by 3 stacked Motorons</td></tr>
+          <tr><td class="gone">PCA9685 PWM expander</td><td class="qty">2</td><td>Motorons generate their own PWM</td></tr>
+          <tr><td class="gone">MCP23017 + ULN2803</td><td class="qty">2</td><td>8Angle carries the knobs, indicators and switch</td></tr>
+          <tr><td class="gone">Lit pushbutton, 16 mm</td><td class="qty">8</td><td>Replaced by the 8Angle panel — see the deviation note in section 05</td></tr>
+          <tr><td class="gone">ESP32 DevKitC</td><td class="qty">1</td><td>Uno R4 WiFi seats the shields without adapters</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Board count is down from eleven in Rev A to five, and the roughly thirty panel wires
+      for buttons and indicators are down to one four-wire cable.
+    </p>
+  </section>
+
+  <section>
+    <div class="head"><span class="num">08</span><h2>Questions for the conveyor supplier</h2></div>
+    <p>
+      Seven items the datasheet does not cover. One through three change parts; four and five
+      could change the architecture.
+    </p>
+
+    <ul class="plain">
+      <li><span class="n">01</span><span><b>Stall current, and running current at the rated 6 kg load.</b> The datasheet gives only no-load (0.2 A). This sets the Motoron current limit and confirms the 2.0 A channel rating is sufficient.</span></li>
+      <li><span class="n">02</span><span><b>What exactly is pin 3?</b> Output type — open collector, push-pull, hall, photo-interrupter — plus voltage level, and pulses per revolution or per mm of belt travel. The pulse rate also decides whether the controller choice holds.</span></li>
+      <li><span class="n">03</span><span><b>Acceptable PWM frequency range on pins 1 and 2.</b> The controller offers eight settings between 1 kHz and 80 kHz, so we can match whatever the module prefers.</span></li>
+      <li><span class="n">04</span><span><b>Is reverse operation supported without restriction?</b> We need to retract the pusher plate on every cycle, so reverse is not an occasional case.</span></li>
+      <li><span class="n">05</span><span><b>Is there a built-in end-of-travel limit or home reference for the pusher plate,</b> or do we add external limit sensors?</span></li>
+      <li><span class="n">06</span><span><b>Mating connector part number</b> for the 3-pin header.</span></li>
+      <li><span class="n">07</span><span><b>Duty cycle and thermal rating</b> for continuous operation.</span></li>
+    </ul>
+
+    <div class="note">
+      <span class="tag">Highest risk</span>
+      <p>
+        Question 5 is the one that can move the design. Retracting the pusher plate requires
+        knowing where it is. If pin 3 gives usable position feedback, the drawings above stand
+        as-is. If it does not, each lane needs its own home sensor — which adds eight inputs,
+        eight sensors, and a second connector per lane. Without either, the plate runs into
+        the end stop every cycle.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="head"><span class="num">09</span><h2>Assembly notes</h2></div>
+    <ul class="plain">
+      <li><span class="n">01</span><span><b>Set the I²C addresses before anything is stacked.</b> Every Motoron ships on address 16. Seat them one at a time, write the new address to EEPROM, power-cycle, label the board, then move to the next. Two boards on 0x10 at once is a bus fight that looks like random lane failures.</span></li>
+      <li><span class="n">02</span><span><b>Land all the motor and power wiring before the boards go together.</b> Each shield has six motor terminals and a VIN pair, and the lower two boards are unreachable once the stack is assembled.</span></li>
+      <li><span class="n">03</span><span><b>Star-ground at the PSU.</b> Motor return and logic return meet at the supply terminal and nowhere else. Eight brushed motors sharing a ground path with the I²C bus will corrupt it, and it will look like a firmware bug.</span></li>
+      <li><span class="n">04</span><span><b>If lanes drop out intermittently, suspect supply noise before firmware.</b> The Motorons carry some onboard capacitance and short leads are usually fine, but brushed-motor switching on a shared rail is the classic cause of I²C corruption. An electrolytic at each shield's VIN is the first thing to try.</span></li>
+      <li><span class="n">05</span><span><b>Configure accel, decel and starting speed per channel at boot,</b> rather than ramping in the control loop. Gearmotors need a minimum duty to break loose; starting speed is what stops a lane from sitting still and buzzing at low knob settings.</span></li>
+      <li><span class="n">06</span><span><b>Send a general-call stop when the master toggle goes off.</b> One broadcast reaches all three boards in a single write, faster than iterating them.</span></li>
+      <li><span class="n">07</span><span><b>Keep motor pairs twisted</b> from the terminal block out to each lane, and run them separately from the feedback wiring. Pin 3 shares a cable with two PWM'd motor conductors otherwise.</span></li>
+      <li><span class="n">08</span><span><b>Label every lane at both ends</b> before anything is bolted down. Twenty-four conductors look identical an hour later.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="head"><span class="num">10</span><h2>Scaling to seventy</h2></div>
+    <p>
+      Seventy lanes is 24 Motoron boards. The firmware side scales cleanly — lane index still
+      resolves to board and channel arithmetically, and nothing about the control code
+      changes. Three things do not scale by repeating this drawing.
+    </p>
+    <p>
+      <b>The stack.</b> Shields stop being the right answer past three or four boards. The
+      full build wants the same controllers in a flat, wired arrangement on DIN rail, which
+      is a mechanical change, not an electrical one.
+    </p>
+    <p>
+      <b>The I²C bus.</b> Twenty-four boards on one segment is past what a single bus carries
+      reliably — total capacitance, not addressing, is the limit. Expect to split it behind a
+      multiplexer or move to the Motoron's UART variants.
+    </p>
+    <p>
+      <b>The supply.</b> Seventy lanes at full concurrency is roughly 1.7 kW, which is a
+      distributed-supply problem rather than a bigger-box problem. Sizing it needs one answer
+      nobody has given yet: <b>how many lanes run simultaneously in the unloading
+      routine?</b> If lanes fire in sequence rather than together, the final supply is a
+      fraction of that figure.
+    </p>
+  </section>
+
+  <footer>
+    <span>Lane Driver Test Rig · Rev C draft</span>
+    <span>8 × CB002-24V-573mm</span>
+    <span>Uno R4 WiFi + 3 × Motoron M3S256 + 8Angle</span>
+    <span>Feedback path provisional pending supplier reply</span>
+  </footer>
+
+</div>
