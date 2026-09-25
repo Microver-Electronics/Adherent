@@ -5,6 +5,7 @@
 /.work/cad-deps/
 node_modules/
 /.work/ioctrl/
+/.work/review/
 __pycache__/
 *.pyc
 

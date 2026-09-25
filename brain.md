@@ -10,10 +10,12 @@ This file records project decisions and working assumptions. A diagram label or 
 
 ## Current deliverables
 
-- Current system diagram: [Electrical System Level Wiring Diagram R26](SYS/Electrical_System_Level_Wiring_Diagram_R26.drawio).
-- Diagram preview: [R26 PNG](SYS/Electrical_System_Level_Wiring_Diagram_R26.png).
-- Latest electrical workbook: [APDU Electrical Tables R23](SYS/APDU_Electrical_Tables_R23.xlsx). **Historical: not aligned with the R25/R26 power changes.**
-- Latest versioned presentation: [Design Review Questions R24](SYS/APDU_Design_Review_Questions_R24.pptx). Records cellular and UPS rejection in red; **not aligned with R25/R26 power changes**.
+- Current system diagram: [Electrical System Level Wiring Diagram R27](SYS/Electrical_System_Level_Wiring_Diagram_R27.drawio).
+- Diagram preview: [R27 PNG](SYS/Electrical_System_Level_Wiring_Diagram_R27.png).
+- Electrical workbook: [APDU Electrical Tables R27](SYS/APDU_Electrical_Tables_R27.xlsx). BOM, interfaces, cables, protection, power model and open engineering items.
+- Presentation: [Design Review Questions R27](SYS/APDU_Design_Review_Questions_R27.pptx). Aligned with the current diagram and workbook.
+- Component/part-number register: [System Diagram Components R27](SYS/ADHERENT_System_Diagram_Components_R27.xlsx), 74 rows including interfaces and explicit external/options.
+- [Review findings](SYS/PROJECT_REVIEW_R27.md).
 - Superseded SYS revisions and the older unversioned presentation were removed from the working folder; recover them from Git history when needed.
 - Mechanical model handoff folder: [Board STEP Models](SYS/Board_STEP_Models/README.md).
 - LANECTRL front metal bracket reference: [LANE DRAWING SPACE FOR UMIT.DWG](MEC/01_CAD_MODELS/LANE%20DRAWING%20SPACE%20FOR%20UMIT.DWG). User confirms the bracket is being made to this drawing; PCB fit and clearances have not yet been checked.
@@ -24,7 +26,7 @@ This file records project decisions and working assumptions. A diagram label or 
 
 - Ten rows, seven lanes per row: 70 conveyor channels.
 - One conveyor motor per lane. One momentary button and one LED per lane.
-- Only one AC/DC PSU remains: **PSU1, Mean Well RSP-500-24**, nominal 24 V / 500 W. Recalculate the combined power budget before treating its capacity as sufficient.
+- Only one AC/DC PSU remains: **PSU1, Mean Well RSP-500-24**, rated 24 V / 21 A / 504 W. Recalculate the combined power budget before treating its capacity as sufficient.
 - The separate 12 V and 48 V PSUs were removed.
 - **24 V to 12 V conversion is on the custom SYSCTRL PCB.** There is no separate cabinet DC/DC module.
 - The customer requires CAN for the custom-board network.
@@ -75,12 +77,12 @@ This file records project decisions and working assumptions. A diagram label or 
 - `HW_ADHERENT_LANECTRL_R1` / `FW_ADHERENT_LANECTRL_R1`.
 - One board per row: seven motor H-bridges, seven feedback inputs, seven buttons and seven LEDs.
 - Includes the former LANEPANEL functions. Two custom PCB designs total: SYSCTRL and LANECTRL; 11 custom assemblies total.
-- R26 retains 24 V for conveyor motors and SYSCTRL-derived 12 V for lane logic through the CAN harness.
+- R27 retains 24 V for conveyor motors and SYSCTRL-derived 12 V for lane logic through the CAN harness.
 - Current button candidate: Omron B3F-4055, momentary. Current LED candidate: Kingbright WP7113ID.
 - Driver/TVS choices, connector current capacity, button placement and bezel alignment still need detailed design verification.
 - Diagram assumes front-of-row mounting; confirm mechanically.
 
-## R26 power routing and identifiers
+## R27 power routing and identifiers
 
 - W03: PSU1 24 V output to fused distribution.
 - W06 / F11: 24 V motor supply to SYSCTRL.
@@ -91,9 +93,11 @@ This file records project decisions and working assumptions. A diagram label or 
 - W24 / F1–F10: 24 V row-motor feeders.
 - W29 / F15 and W30 / F16: proposed 24 V gantry drive feeds, pending supplier confirmation.
 - W34 / F17: 24 V IOCTRL module power.
-- W35 / F18: derived 12 V feed to IOCTRL relay contacts; provisional new references.
+- W35 / F18: derived 12 V feed to IOCTRL relay contacts.
 - W33: MAINCTRL–IOCTRL RS485.
-- W02, W31 and W32 retired with the removed PSUs.
+- W02, W31 and W32 retired with the removed PSUs. W14 and W22 retired with the cancelled intermediate sensor trunks.
+- W15: six direct gantry sensor runs to SYSCTRL. W23: five direct door sensor runs to IOCTRL. No junction boxes.
+- W36 status light, W37 PE bonding, W38 site-supplied Ethernet and W39 unresolved marker supply are explicitly scheduled.
 - Fuse ratings, wire sizes, connector loading, DC/DC losses and simultaneous motor loads need recalculation. Older spreadsheet currents are estimates, not verified sizing.
 
 ## Communication
@@ -144,21 +148,21 @@ The four electromagnetic latches are not counted as motors. Door actuator models
 - Use Blackocean Technologies branding; no Melis Electronics branding in new deliverables.
 - Avoid personal names in customer-facing deliverables. Use “the team”, “the mechanical team” or “the customer”.
 - Document title: **Electrical System Level Wiring Diagram**.
-- Keep deliverables under `SYS`. Preserve prior revisions as separate R1, R2, … files.
+- Keep only current deliverable revisions under `SYS`. Recover older revisions from Git history. No RAR bundles.
 - Keep diagram blocks and orthogonal routes spacious, labels legible and arrows clear.
 - Bold red arrows carry power only. Data/control paths are blue. Clearly distinguish proposed connections.
 - Keep tables in Excel rather than in the diagram. No revision-history or option-item blocks in the diagram.
 - English presentation, concise text and useful visuals. Retain cellular/UPS topics as closed meeting decisions in red.
 - Custom PCB I/O connector preference: Molex Micro-Fit 3.0. Purchased boards retain their native connectors; do not assign Micro-Fit MPNs to incompatible COTS sockets.
 - Preferred harness cable: four-conductor 22 AWG, red/black/yellow/green, where electrically suitable. Use appropriately rated exceptions for mains and higher-current circuits.
-- Board ends use crimps/connectors; junction-box ends may use ferrules and WAGO terminals.
+- No junction boxes. Sensors run directly to controller boards. Use crimped mating connectors on custom boards and the native terminals/connectors on COTS hardware.
 - Naming: `HW_ADHERENT_XXX_RY`, `FW_ADHERENT_XXX_RY`, `WR_ADHERENT_AAA_TO_BBB_RY`.
 - Preserve custom PCB quantities unless the user explicitly changes the architecture.
 - Do not send messages or files to third parties without explicit authorization.
 
 ## Outstanding engineering work
 
-1. Align the Excel workbook and presentation with R26; they still contain superseded supply assumptions.
+1. R27 aligns workbook, component register, presentation and diagram. Resolve OpenItems O01-O15 before engineering release; document consistency does not close physical validation.
 2. Size the SYSCTRL 24→12 V converter and review total PSU1 capacity, protection, cable/connector current ratings and power sequencing.
 3. Obtain exact Emtech driver/brake documentation; confirm 24 V performance, wiring and driver packaging.
 4. Confirm latch current, duty cycle, fail behavior and suppression; define any door actuators separately.
@@ -167,6 +171,14 @@ The four electromagnetic latches are not counted as motors. Door actuator models
 7. Obtain manufacturer mechanical CAD or verify reconstructed models against hardware.
 8. Finalize PCB mounting, harness routing, lengths and service clearances with the mechanical team.
 9. Resolve remaining customer questions: camera/OCR, illumination, iPad pairing, NFC/card reader and label marker.
+
+## R27 planning checks
+
+- Known PSU peak subtotal: 268.96 W, excluding three missing load currents and marker power. Not a complete capacity approval.
+- Seven-conveyor row case: 14.05 A versus candidate 5 A protection; concurrency must be constrained and tested.
+- 39 cable IDs, 31 required types, five missing route lengths; 111 m is only the known routing subtotal.
+- 17 DIN protection positions plus F14 on SYSCTRL.
+- FW/SW folders contain scope descriptions only, no implemented firmware/application builds.
 
 ## Local build references
 
