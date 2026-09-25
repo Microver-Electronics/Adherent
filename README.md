@@ -20,7 +20,7 @@ Adherent360 APDU is an automated pharmaceutical dispensing system built around *
 
 ## 🗂️ Start with the documents
 
-- **[Components and part numbers](SYS/ADHERENT_System_Diagram_Components_R27.xlsx)** — 74 component/interface rows with manufacturer, part number, quantity, selection status and sources. Covers every component block in the system diagram.
+- **[Components and part numbers](SYS/ADHERENT_System_Diagram_Components_R27.xlsx)** — 82 component/interface rows with manufacturer, part number, quantity, selection status and sources. Covers every component block in the system diagram.
 - **[Electrical BOM and schedules](SYS/APDU_Electrical_Tables_R27.xlsx)** — boards, connectors, harnesses, fuses, power calculations and open engineering items.
 - **[Mechanical BOM](SYS/VENDING%20MACHINE%20GANTRY%20BILL%20OF%20MATERIALS%20-%20OFF%20THE%20SHELF%20COMPONENTS.xlsx)** — gantry parts and mechanical procurement references.
 - **[Design review presentation](SYS/APDU_Design_Review_Questions_R27.pptx)** — architecture, confirmed decisions and questions to resolve.
@@ -43,6 +43,12 @@ Red, bold corner tags identify **CONN** connectors, **PCB** controller boards an
 - **Site connection:** McMaster-Carr **1422N13** rear-panel Ethernet adapter, quantity one. The iPad is external and uses the site network.
 - **Direct sensors:** six gantry sensors connect to SYSCTRL; five door sensors connect to IOCTRL. **No junction boxes.**
 - **IOCTRL power:** 24 V supplies the module; a separate SYSCTRL-derived 12 V feed supplies the latch relay contacts.
+
+### NFC antenna
+
+**Molex 1462362151** is selected: 13.56 MHz, 15 x 15 mm, adhesive mount, 102 mm cable. The NFC reader/front-end, host interface and power budget remain open under O16; no payment terminal is selected. [Supplier listing](https://www.digikey.com/en/products/detail/molex/1462362151/15204370).
+
+The presentation is an earlier review snapshot. Use the current diagram and electrical workbook for the merged SYSCTRL topology and NFC selection.
 
 ## 🧩 Four controller roles
 
@@ -101,7 +107,7 @@ The HW folders currently reserve the four board identifiers. See [firmware scope
 - Finalize marker, latch and sensor selections; confirm direct harness lengths and bracket fit.
 - Implement and test firmware, startup/fault behavior and system integration.
 
-Follow **O01–O15** in the [electrical workbook](SYS/APDU_Electrical_Tables_R27.xlsx) for owners and required evidence. See the [R27 review](SYS/PROJECT_REVIEW_R27.md) for completed checks and unresolved findings.
+Follow **O01–O16** in the [electrical workbook](SYS/APDU_Electrical_Tables_R27.xlsx) for owners and required evidence. See the [R27 review](SYS/PROJECT_REVIEW_R27.md) for completed checks and unresolved findings.
 
 ## Working conventions
 

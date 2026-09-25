@@ -1,5 +1,17 @@
 # Adherent R27 document review
 
+## Subsequent SYSCTRL / NFC correction
+
+Electrical tables and component register now reflect the merged SYSCTRL power-connector area. W04/W06/W07 are internal functions with zero external cable quantity. DIST24/DIST12 are included SYSCTRL functions, not separate modules; the 17-DIN-holder purchase assumption is withdrawn. F1-F18 remain 18 logical branch references with implementation pending. The presentation validation below refers to the earlier review snapshot, not these subsequent changes.
+
+Selected NFC antenna: Molex 1462362151, planning quantity one. Manufacturer data: 13.56 MHz, 15 x 15 x 0.27 mm, adhesive mount, 102 mm cable and 2.40 uH. Reader/front-end, matching, host interface and supply remain open under O16. No complete reader or payment terminal is selected.
+
+Current schedules: 39 stable W identifiers, 28 required external cable types, 123 grouped external harness runs/assemblies and five unresolved route lengths. Known route allowance subtotal is 109.5 m. Reader host/power harnesses are not yet defined and are additional to this subtotal. The component register contains 82 rows.
+
+Power checks preserve the 268.96 W known subtotal, while explicitly flagging four unresolved load-current entries including the NFC reader; marker power is also unresolved. Tests cover a second peak conveyor (+48 W), zero SMPS efficiency and a concurrency count above installed quantity. Invalid cases produce a HOLD status rather than a capacity approval. No formula error cells were found in the exported workbooks.
+
+## Original review scope and findings
+
 Reviewed against the current system diagram, supplied mechanical BOM and conveyor sheet, recorded project decisions and supplier references in the workbooks. This is a document and architecture review; no physical machine, manufactured PCB or bracket-fit test was performed.
 
 ## Changes completed

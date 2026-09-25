@@ -1,8 +1,8 @@
 # Current system documents
 
-Latest diagram correction: the lower power-connection area is part of SYSCTRL, with one onboard 24 V-to-12 V SMPS. The spreadsheet and presentation snapshots predate this correction; their separate distribution assembly, external W04/W06/W07 loop and DIN-holder assumptions need reconciliation before use for procurement. See [project decisions](../brain.md).
+Electrical tables and the component register now match the merged SYSCTRL power-connector architecture and selected Molex 1462362151 NFC antenna. The presentation remains an earlier review snapshot; update its topology, cable totals and NFC scope before using it as the current design.
 
-- [System diagram components and part numbers R27](ADHERENT_System_Diagram_Components_R27.xlsx): 74 component/interface rows, manufacturers, part numbers or explicit TBC entries, quantities, selection status and sources.
+- [System diagram components and part numbers R27](ADHERENT_System_Diagram_Components_R27.xlsx): 82 component/interface rows, manufacturers, part numbers or explicit TBC entries, quantities, selection status and sources.
 - [Electrical tables R27](APDU_Electrical_Tables_R27.xlsx): assembly BOM, boards, connectors, cables, protection, power calculations and unresolved engineering items.
 - [System wiring diagram R27](Electrical_System_Level_Wiring_Diagram_R27.drawio) and [PNG preview](Electrical_System_Level_Wiring_Diagram_R27.png).
 - [Design review presentation R27](APDU_Design_Review_Questions_R27.pptx).

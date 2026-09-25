@@ -15,7 +15,7 @@ This file records project decisions and working assumptions. A diagram label or 
 - Diagram preview: [R27 PNG](SYS/Electrical_System_Level_Wiring_Diagram_R27.png).
 - Electrical workbook: [APDU Electrical Tables R27](SYS/APDU_Electrical_Tables_R27.xlsx). BOM, interfaces, cables, protection, power model and open engineering items.
 - Presentation: [Design Review Questions R27](SYS/APDU_Design_Review_Questions_R27.pptx). Aligned with the current diagram and workbook.
-- Component/part-number register: [System Diagram Components R27](SYS/ADHERENT_System_Diagram_Components_R27.xlsx), 74 rows including interfaces and explicit external/options.
+- Component/part-number register: [System Diagram Components R27](SYS/ADHERENT_System_Diagram_Components_R27.xlsx), 82 rows including interfaces and explicit external/options.
 - [Review findings](SYS/PROJECT_REVIEW_R27.md).
 - Superseded SYS revisions and the older unversioned presentation were removed from the working folder; recover them from Git history when needed.
 - Mechanical model handoff folder: [Board STEP Models](SYS/Board_STEP_Models/README.md).
@@ -38,6 +38,14 @@ This file records project decisions and working assumptions. A diagram label or 
 - Cellular connectivity and UPS/battery backup were rejected during the meeting as unnecessary.
 - Camera/OCR is outside the current baseline and remains a customer question.
 - The customer requested no emergency stop. This is a recorded scope decision, not a completed machine safety assessment.
+
+## NFC antenna selection
+
+- User-selected antenna: **Molex 1462362151**, planning quantity 1 per machine.
+- Manufacturer: 13.56 MHz, 2.40 uH, 15 x 15 x 0.27 mm, adhesive mount, 102 mm cable.
+- [Molex](https://www.molex.com/en-us/products/part-detail/1462362151), [selected DigiKey listing](https://www.digikey.com/en/products/detail/molex/1462362151/15204370).
+- This is an antenna, not a complete reader. Reader/front-end, matching, termination, host interface, board allocation, mounting and supply remain TBC under O16. Payment-terminal functionality is not selected.
+- Antenna cable is included in the component; do not order it again as a generic patch cable. Any reader power/host harness is still undefined.
 
 ## Boards
 
@@ -89,14 +97,14 @@ This file records project decisions and working assumptions. A diagram label or 
 - Show one onboard 24 V-to-12 V SMPS block. PSU1 supplies 24 V to SYSCTRL; external loads connect through SYSCTRL.
 - Removed the misleading external W04/W06/W07 loop arrows between those two boxes. Their previous external-harness descriptions must not be used as released wiring.
 - F1–F18 remain branch references; the previous 17-DIN-holder placement is not confirmed by this correction. Final protection implementation and connector pinouts remain TBC.
-- The R27 spreadsheet/presentation snapshot predates this representation correction. Reconcile distribution procurement lines, harness classification and protection location at the next schedule update.
+- Electrical tables and component register now reflect this correction. W04/W06/W07 have zero external-harness quantity; DIN-holder procurement is withdrawn. Presentation remains an earlier review snapshot and must be refreshed before presenting the current topology/NFC scope.
 
-## R27 power routing and identifiers (schedule snapshot; correction above takes precedence)
+## R27 power routing and identifiers
 
-- W03: PSU1 24 V output to fused distribution.
-- W06 / F11: 24 V motor supply to SYSCTRL.
-- W07 / F12: 24 V input to the SYSCTRL buck section.
-- W04: SYSCTRL 12 V output back to a **separate** 12 V distribution rail.
+- W03: PSU1 24 V output directly to SYSCTRL system input; connector MPN/pins TBC.
+- W06 internalized: F11 is an internal SYSCTRL motor-rail protection reference, not an external jumper.
+- W07 internalized: F12 is the onboard SMPS input branch; no separate external input cable.
+- W04 internalized: onboard SMPS output feeds internal SYSCTRL 12 V routing; no separate distribution rail assembly.
 - W05 / F13: derived 12 V to MAINCTRL.
 - F14: lane-logic protection on SYSCTRL; 12 V passes into the CAN/lane harness.
 - W24 / F1–F10: 24 V row-motor feeders.
@@ -175,7 +183,7 @@ The four electromagnetic latches are not counted as motors. Door actuator models
 
 ## Outstanding engineering work
 
-1. R27 aligns workbook, component register, presentation and diagram. Resolve OpenItems O01-O15 before engineering release; document consistency does not close physical validation.
+1. R27 aligns workbook, component register, presentation and diagram. Resolve OpenItems O01-O16 before engineering release; document consistency does not close physical validation.
 2. Size the SYSCTRL 24→12 V converter and review total PSU1 capacity, protection, cable/connector current ratings and power sequencing.
 3. Obtain exact Emtech driver/brake documentation; confirm 24 V performance, wiring and driver packaging.
 4. Confirm latch current, duty cycle, fail behavior and suppression; define any door actuators separately.
@@ -187,9 +195,9 @@ The four electromagnetic latches are not counted as motors. Door actuator models
 
 ## R27 planning checks
 
-- Known PSU peak subtotal: 268.96 W, excluding three missing load currents and marker power. Not a complete capacity approval.
+- Known PSU peak subtotal: 268.96 W, excluding four unresolved load-current entries (including NFC reader) and marker power. Not a complete capacity approval.
 - Seven-conveyor row case: 14.05 A versus candidate 5 A protection; concurrency must be constrained and tested.
-- 39 cable IDs, 31 required types, five missing route lengths; 111 m is only the known routing subtotal.
+- 39 cable IDs, 28 required external types, five missing route lengths; 109.5 m is only the known routing subtotal.
 - 18 branch-protection references; physical placement and holder quantities need reconciliation with the merged SYSCTRL connector architecture.
 - FW/SW folders contain scope descriptions only, no implemented firmware/application builds.
 - HW contains four reserved board folders; no production PCB designs have been added. README must distinguish planned functions from implemented or validated capabilities.
