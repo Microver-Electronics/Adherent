@@ -14,7 +14,7 @@ This file records project decisions and working assumptions. A diagram label or 
 - Current system diagram: [Electrical System Level Wiring Diagram R27](SYS/ADHERENT_System_Wiring_Diagram.drawio).
 - Diagram preview: [R27 PNG](SYS/ADHERENT_System_Wiring_Diagram.png).
 - Electrical workbook: [APDU Electrical Tables R27](SYS/ADHERENT_Electrical_Tables.xlsx). BOM, interfaces, cables, protection, power model and open engineering items.
-- Presentation: [Design Review Questions R27](SYS/ADHERENT_Design_Review_Snapshot.pptx). Aligned with the current diagram and workbook.
+- Presentation: [Design Review Questions R27](SYS/ADHERENT_Design_Review.pptx). Aligned with the current diagram and workbook.
 - Component/part-number register: [System Diagram Components R27](SYS/ADHERENT_Electrical_Tables.xlsx), 82 rows including interfaces and explicit external/options.
 - [Review findings](SYS/ADHERENT_Project_Review.md).
 - Superseded SYS revisions and the older unversioned presentation were removed from the working folder; recover them from Git history when needed.
@@ -173,7 +173,7 @@ The four electromagnetic latches are not counted as motors. Door actuator models
 - Edit the `.drawio` source and regenerate its PNG together. README embeds the current PNG from `SYS`.
 - Bold red arrows carry power only. Data/control paths are blue. Clearly distinguish proposed connections.
 - Keep tables in Excel rather than in the diagram. No revision-history or option-item blocks in the diagram.
-- English presentation, concise text and useful visuals. Retain cellular/UPS topics as closed meeting decisions in red.
+- English presentation, concise text and useful visuals. Remove unused interface options from the current presentation; retain historical decisions in project records.
 - Custom PCB I/O connector preference: Molex Micro-Fit 3.0. Purchased boards retain their native connectors; do not assign Micro-Fit MPNs to incompatible COTS sockets.
 - Preferred harness cable: four-conductor 22 AWG, red/black/yellow/green, where electrically suitable. Use appropriately rated exceptions for mains and higher-current circuits.
 - No junction boxes. Sensors run directly to controller boards. Use crimped mating connectors on custom boards and the native terminals/connectors on COTS hardware.
@@ -219,7 +219,7 @@ The four electromagnetic latches are not counted as motors. Door actuator models
 
 - The customer needs one short worksheet, not detailed electrical schedules. `SYS/ADHERENT_Electrical_Tables.xlsx` is the only current electrical parts workbook: 32 grouped entries with diagram reference, component, part number, quantity, location, clickable source and STEP/drawing links, and rough dimensions in mm.
 - Removed the duplicate component workbook. Previous engineering schedules remain in Git history at `aef502b`; preserve engineering decisions recorded above until resolved.
-- Current document names use `ADHERENT_<Purpose>` without R27 suffixes. The editable system diagram and PNG share `ADHERENT_System_Wiring_Diagram`. The earlier presentation is explicitly `ADHERENT_Design_Review_Snapshot.pptx`.
+- Current document names use `ADHERENT_<Purpose>` without R27 suffixes. The editable system diagram and PNG share `ADHERENT_System_Wiring_Diagram`. The earlier presentation is explicitly `ADHERENT_Design_Review.pptx`.
 - Mechanical BOM is `MEC/ADHERENT_Mechanical_BOM.xlsx`. Board models are under `MEC/Board_STEP_Models`; supplier part numbers and original supplied CAD/drawing names remain traceable.
 - Canonical board roles: MAINCTRL, SYSCTRL, LANECTRL, IOCTRL. HW/FW board revision identifiers keep R1 because it identifies the board design rather than the documentation revision.
 - Match the visible diagram references to the customer sheet. CONVEYOR-01…10 are row groups of seven; LANECTRL-01…10 are individual row-controller instances. X-GB and JAW-SENS remain subcomponents of their labeled motor blocks.
@@ -242,3 +242,13 @@ The four electromagnetic latches are not counted as motors. Door actuator models
 - LANECTRL Altium schematics, PCB layout, libraries, BOMs and exported models are now present. Earlier statements that all HW folders were empty no longer describe LANECTRL. Presence and file integrity do not establish production release or resolve electrical design holds.
 - Altium binary container signatures and tracked ZIP checks passed. Native Altium editing/compilation and DWG geometric validation were not performed.
 - All nine tracked STEP/STP files imported successfully into OpenCascade and produced non-null shapes. Full topology, mounting dimensions and physical fit are not certified by this import check.
+
+## Current presentation — 2026-09-25
+
+- `SYS/ADHERENT_Design_Review.pptx` supersedes the earlier snapshot. Ten slides retain the established design and cover used system interfaces.
+- Removed camera/OCR, UPS, cellular and unapproved interior-lighting topic slides. Removed machine Wi-Fi/BLE/AP-mode options and payment-terminal interface alternatives from retained slide text, diagrams and notes.
+- Site-network iPad access remains. CAN row control, RS485 IOCTRL, gantry controls, direct sensors, wired Ethernet and required status indication remain in scope. The status-light model remains TBC.
+- NFC antenna is Molex 1462362151. Reader/front-end selection, host interface, RF matching and supply remain TBC; no specific host port is assigned.
+- Presentation architecture reflects one SYSCTRL onboard 24 V-to-12 V SMPS and integrated power connectors. W04/W06/W07 are internal SYSCTRL links. Removed stale external cable totals and old document filenames.
+- The overview image is a presentation-specific view of the current draw.io diagram with excluded blocks omitted. The source system diagram is unchanged.
+- Final PPTX passed package/layout validation, a normal Microsoft PowerPoint opening, and visual review of all slides. README links now point to the current presentation.

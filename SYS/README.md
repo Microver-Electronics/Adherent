@@ -2,7 +2,7 @@
 
 - [Electrical parts sheet](ADHERENT_Electrical_Tables.xlsx): one worksheet, 32 grouped entries. Diagram reference, component, part number, quantity, location, product/source link, STEP/drawing link and rough dimensions in mm.
 - [System wiring diagram](ADHERENT_System_Wiring_Diagram.drawio) and [PNG preview](ADHERENT_System_Wiring_Diagram.png): matching part references, no displayed revision tags.
-- [Design review snapshot](ADHERENT_Design_Review_Snapshot.pptx): earlier presentation, not the current topology reference.
+- [Design review](ADHERENT_Design_Review.pptx): 10 slides covering used system interfaces, current SYSCTRL power architecture and selected NFC antenna.
 - [Earlier engineering review](ADHERENT_Project_Review.md): historical validation and open engineering issues.
 - [Mechanical BOM](../MEC/ADHERENT_Mechanical_BOM.xlsx) and [board STEP models](../MEC/Board_STEP_Models/README.md).
 

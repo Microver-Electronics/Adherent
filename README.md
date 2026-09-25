@@ -5,7 +5,7 @@
 <p align="center">
   <a href="SYS/ADHERENT_Electrical_Tables.xlsx"><strong>Component spreadsheet</strong></a> &nbsp; · &nbsp;
   <a href="SYS/ADHERENT_System_Wiring_Diagram.png"><strong>System diagram</strong></a> &nbsp; · &nbsp;
-  <a href="SYS/ADHERENT_Design_Review_Snapshot.pptx"><strong>Design presentation</strong></a> &nbsp; · &nbsp;
+  <a href="SYS/ADHERENT_Design_Review.pptx"><strong>Design presentation</strong></a> &nbsp; · &nbsp;
   <a href="SYS/ADHERENT_Project_Review.md"><strong>Review findings</strong></a>
 </p>
 
@@ -22,7 +22,7 @@ Adherent360 APDU is an automated pharmaceutical dispensing system built around *
 
 - **[Components and part numbers](SYS/ADHERENT_Electrical_Tables.xlsx)** — One sheet with 32 grouped entries, matching diagram references, part numbers, clickable source and CAD links, locations and rough dimensions.
 - **[Mechanical BOM](MEC/ADHERENT_Mechanical_BOM.xlsx)** — gantry parts and mechanical procurement references.
-- **[Design review presentation](SYS/ADHERENT_Design_Review_Snapshot.pptx)** — architecture, confirmed decisions and questions to resolve.
+- **[Design review presentation](SYS/ADHERENT_Design_Review.pptx)** — architecture, confirmed decisions and questions to resolve.
 - **[Project decisions](brain.md)** — working assumptions, naming conventions and current scope.
 
 Included components and interface positions are identified separately from purchased assemblies. Do not sum every spreadsheet row as an independent purchase quantity.
@@ -47,7 +47,7 @@ Red, bold corner tags identify **CONN** connectors, **PCB** controller boards an
 
 **Molex 1462362151** is selected: 13.56 MHz, 15 x 15 mm, adhesive mount, 102 mm cable. The NFC reader/front-end, host interface and power budget remain open under O16; no payment terminal is selected. [Supplier listing](https://www.digikey.com/en/products/detail/molex/1462362151/15204370).
 
-The presentation is an earlier review snapshot. Use the current diagram and single-sheet parts workbook for the merged SYSCTRL topology, NFC selection and mounting references.
+The presentation covers the used system interfaces and current SYSCTRL/NFC architecture. Use the single-sheet parts workbook for part numbers, source links and mounting references.
 
 ## 🧩 Four controller roles
 
