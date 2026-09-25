@@ -1,0 +1,8 @@
+Change Component Footprint: Designator=P1 Old Footprint=SMTC-FTSH-105-01-L-DV-K_V New Footprint=SMTC-FTSH-105-01-L-DV-K_V
+Add Component: Footprint Not Found TDK_ACT45B-510-2P-TL003_0
+Add Pin To Net: Unknown Pin: Pin T1-1
+Add Pin To Net: Unknown Pin: Pin T1-2
+Add Pin To Net: Unknown Pin: Pin T1-3
+Add Pin To Net: Unknown Pin: Pin T1-4
+Add Class Member: Failed to add class member : Component T1 ACT45B-510-2P
+Added Class: Name=DIFF_USB

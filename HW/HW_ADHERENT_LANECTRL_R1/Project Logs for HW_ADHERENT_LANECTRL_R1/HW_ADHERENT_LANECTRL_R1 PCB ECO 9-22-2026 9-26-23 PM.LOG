@@ -1,0 +1,200 @@
+Removed Pin From Net: NetName=GND Pin=J8-3
+Removed Pin From Net: NetName=+24V_VIN Pin=J9-1
+Removed Pin From Net: NetName=+24V_VIN Pin=J9-2
+Removed Pin From Net: NetName=+24V_VIN Pin=J9-3
+Removed Pin From Net: NetName=GND Pin=J9-4
+Removed Pin From Net: NetName=GND Pin=J9-5
+Removed Pin From Net: NetName=GND Pin=J9-6
+Removed Pin From Net: NetName=NetR1_1 Pin=S1-1
+Removed Pin From Net: NetName=+3V3 Pin=S1-2
+Removed Pin From Net: NetName=NetR2_1 Pin=S2-1
+Removed Pin From Net: NetName=+3V3 Pin=S2-2
+Removed Pin From Net: NetName=NetR11_2 Pin=S3-1
+Removed Pin From Net: NetName=+3V3 Pin=S3-2
+Removed Pin From Net: NetName=NetR12_2 Pin=S4-1
+Removed Pin From Net: NetName=+3V3 Pin=S4-2
+Removed Pin From Net: NetName=NetR21_2 Pin=S5-1
+Removed Pin From Net: NetName=+3V3 Pin=S5-2
+Removed Pin From Net: NetName=NetR22_1 Pin=S6-1
+Removed Pin From Net: NetName=+3V3 Pin=S6-2
+Removed Pin From Net: NetName=NetR27_1 Pin=S7-1
+Removed Pin From Net: NetName=+3V3 Pin=S7-2
+Removed Pin From Net: NetName=GND Pin=U7-1
+Removed Pin From Net: NetName=LANE_IN1 Pin=U7-3
+Removed Pin From Net: NetName=LANE_IN2 Pin=U7-4
+Removed Pin From Net: NetName=LANE_IN3 Pin=U7-5
+Removed Pin From Net: NetName=LANE_IN4 Pin=U7-6
+Removed Pin From Net: NetName=NetR58_1 Pin=U7-7
+Removed Pin From Net: NetName=NetR59_1 Pin=U7-8
+Removed Pin From Net: NetName=DRIVER_CS1 Pin=U7-10
+Removed Pin From Net: NetName=NetR60_1 Pin=U7-11
+Removed Pin From Net: NetName=GND Pin=U7-12
+Removed Pin From Net: NetName=GND Pin=U7-13
+Removed Pin From Net: NetName=NetR61_1 Pin=U7-14
+Removed Pin From Net: NetName=LANE_OUT4 Pin=U7-15
+Removed Pin From Net: NetName=LANE_OUT4 Pin=U7-16
+Removed Pin From Net: NetName=LANE_OUT3 Pin=U7-17
+Removed Pin From Net: NetName=LANE_OUT3 Pin=U7-18
+Removed Pin From Net: NetName=VM Pin=U7-20
+Removed Pin From Net: NetName=VM Pin=U7-21
+Removed Pin From Net: NetName=VM Pin=U7-22
+Removed Pin From Net: NetName=VM Pin=U7-23
+Removed Pin From Net: NetName=LANE_OUT2 Pin=U7-25
+Removed Pin From Net: NetName=LANE_OUT2 Pin=U7-26
+Removed Pin From Net: NetName=LANE_OUT1 Pin=U7-27
+Removed Pin From Net: NetName=LANE_OUT1 Pin=U7-28
+Removed Pin From Net: NetName=GND Pin=U7-29
+Removed Pin From Net: NetName=GND Pin=U9-1
+Removed Pin From Net: NetName=LANE_IN5 Pin=U9-3
+Removed Pin From Net: NetName=LANE_IN6 Pin=U9-4
+Removed Pin From Net: NetName=LANE_IN7 Pin=U9-5
+Removed Pin From Net: NetName=GND Pin=U9-6
+Removed Pin From Net: NetName=NetR66_1 Pin=U9-7
+Removed Pin From Net: NetName=NetR67_1 Pin=U9-8
+Removed Pin From Net: NetName=DRIVER_CS2 Pin=U9-10
+Removed Pin From Net: NetName=NetR69_1 Pin=U9-11
+Removed Pin From Net: NetName=GND Pin=U9-12
+Removed Pin From Net: NetName=GND Pin=U9-13
+Removed Pin From Net: NetName=NetR72_1 Pin=U9-14
+Removed Pin From Net: NetName=LANE_OUT7 Pin=U9-17
+Removed Pin From Net: NetName=LANE_OUT7 Pin=U9-18
+Removed Pin From Net: NetName=VM Pin=U9-20
+Removed Pin From Net: NetName=VM Pin=U9-21
+Removed Pin From Net: NetName=VM Pin=U9-22
+Removed Pin From Net: NetName=VM Pin=U9-23
+Removed Pin From Net: NetName=LANE_OUT6 Pin=U9-25
+Removed Pin From Net: NetName=LANE_OUT6 Pin=U9-26
+Removed Pin From Net: NetName=LANE_OUT5 Pin=U9-27
+Removed Pin From Net: NetName=LANE_OUT5 Pin=U9-28
+Removed Pin From Net: NetName=GND Pin=U9-29
+Removed Member From Class: ClassName=04_POWER Member=J9
+Removed Member From Class: ClassName=03_CONNECTOR Member=S1
+Removed Member From Class: ClassName=03_CONNECTOR Member=S2
+Removed Member From Class: ClassName=03_CONNECTOR Member=S3
+Removed Member From Class: ClassName=03_CONNECTOR Member=S4
+Removed Member From Class: ClassName=03_CONNECTOR Member=S5
+Removed Member From Class: ClassName=03_CONNECTOR Member=S6
+Removed Member From Class: ClassName=03_CONNECTOR Member=S7
+Removed Member From Class: ClassName=08_PWM_DRIVER Member=U7
+Removed Member From Class: ClassName=08_PWM_DRIVER Member=U9
+Added Component: Designator=SW1(SW_300SP1J1BLKM2QE)
+Add component (AddParameter): Name = "Manufacturer"; Value = "E-Switch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MPN"; Value = "300SP1J1BLKM2RE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "Digi; EG4312-ND"; VariantName = "[No Variations]"
+Added Component: Designator=SW2(SW_300SP1J1BLKM2QE)
+Add component (AddParameter): Name = "Manufacturer"; Value = "E-Switch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MPN"; Value = "300SP1J1BLKM2RE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "Digi; EG4312-ND"; VariantName = "[No Variations]"
+Added Component: Designator=SW3(SW_300SP1J1BLKM2QE)
+Add component (AddParameter): Name = "Manufacturer"; Value = "E-Switch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MPN"; Value = "300SP1J1BLKM2RE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "Digi; EG4312-ND"; VariantName = "[No Variations]"
+Added Component: Designator=SW4(SW_300SP1J1BLKM2QE)
+Add component (AddParameter): Name = "Manufacturer"; Value = "E-Switch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MPN"; Value = "300SP1J1BLKM2RE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "Digi; EG4312-ND"; VariantName = "[No Variations]"
+Added Component: Designator=SW5(SW_300SP1J1BLKM2QE)
+Add component (AddParameter): Name = "Manufacturer"; Value = "E-Switch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MPN"; Value = "300SP1J1BLKM2RE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "Digi; EG4312-ND"; VariantName = "[No Variations]"
+Added Component: Designator=SW6(SW_300SP1J1BLKM2QE)
+Add component (AddParameter): Name = "Manufacturer"; Value = "E-Switch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MPN"; Value = "300SP1J1BLKM2RE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "Digi; EG4312-ND"; VariantName = "[No Variations]"
+Added Component: Designator=SW7(SW_300SP1J1BLKM2QE)
+Add component (AddParameter): Name = "Manufacturer"; Value = "E-Switch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MPN"; Value = "300SP1J1BLKM2RE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "Digi; EG4312-ND"; VariantName = "[No Variations]"
+Added Component: Designator=U?(SOP65P640X120-29N)
+Add component (AddParameter): Name = "MPN"; Value = "TPS4H160-Q1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "595-TPS4H160BQPWPRQ1"; VariantName = "[No Variations]"
+Added Component: Designator=U?(SOP65P640X120-29N)
+Add component (AddParameter): Name = "MPN"; Value = "TPS4H160-Q1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "595-TPS4H160BQPWPRQ1"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+24V_VIN Pin=J8-3
+Added Pin To Net: NetName=+3V3 Pin=SW1-2
+Added Pin To Net: NetName=NetR1_1 Pin=SW1-3
+Added Pin To Net: NetName=+3V3 Pin=SW2-2
+Added Pin To Net: NetName=NetR2_1 Pin=SW2-3
+Added Pin To Net: NetName=+3V3 Pin=SW3-2
+Added Pin To Net: NetName=NetR11_2 Pin=SW3-3
+Added Pin To Net: NetName=+3V3 Pin=SW4-2
+Added Pin To Net: NetName=NetR12_2 Pin=SW4-3
+Added Pin To Net: NetName=+3V3 Pin=SW5-2
+Added Pin To Net: NetName=NetR21_2 Pin=SW5-3
+Added Pin To Net: NetName=+3V3 Pin=SW6-2
+Added Pin To Net: NetName=NetR22_1 Pin=SW6-3
+Added Pin To Net: NetName=+3V3 Pin=SW7-2
+Added Pin To Net: NetName=NetR27_1 Pin=SW7-3
+Added Pin To Net: NetName=GND Pin=U?-1
+Added Pin To Net: NetName=GND Pin=U?-1
+Added Pin To Net: NetName=LANE_IN1 Pin=U?-3
+Added Pin To Net: NetName=LANE_IN5 Pin=U?-3
+Added Pin To Net: NetName=LANE_IN2 Pin=U?-4
+Added Pin To Net: NetName=LANE_IN6 Pin=U?-4
+Added Pin To Net: NetName=LANE_IN3 Pin=U?-5
+Added Pin To Net: NetName=LANE_IN7 Pin=U?-5
+Added Pin To Net: NetName=GND Pin=U?-6
+Added Pin To Net: NetName=LANE_IN4 Pin=U?-6
+Added Pin To Net: NetName=NetR58_1 Pin=U?-7
+Added Pin To Net: NetName=NetR66_1 Pin=U?-7
+Added Pin To Net: NetName=NetR59_1 Pin=U?-8
+Added Pin To Net: NetName=NetR67_1 Pin=U?-8
+Added Pin To Net: NetName=DRIVER_CS1 Pin=U?-10
+Added Pin To Net: NetName=DRIVER_CS2 Pin=U?-10
+Added Pin To Net: NetName=NetR60_1 Pin=U?-11
+Added Pin To Net: NetName=NetR69_1 Pin=U?-11
+Added Pin To Net: NetName=GND Pin=U?-12
+Added Pin To Net: NetName=GND Pin=U?-12
+Added Pin To Net: NetName=GND Pin=U?-13
+Added Pin To Net: NetName=GND Pin=U?-13
+Added Pin To Net: NetName=NetR61_1 Pin=U?-14
+Added Pin To Net: NetName=NetR72_1 Pin=U?-14
+Added Pin To Net: NetName=LANE_OUT4 Pin=U?-15
+Added Pin To Net: NetName=LANE_OUT4 Pin=U?-16
+Added Pin To Net: NetName=LANE_OUT3 Pin=U?-17
+Added Pin To Net: NetName=LANE_OUT7 Pin=U?-17
+Added Pin To Net: NetName=LANE_OUT3 Pin=U?-18
+Added Pin To Net: NetName=LANE_OUT7 Pin=U?-18
+Added Pin To Net: NetName=VM Pin=U?-20
+Added Pin To Net: NetName=VM Pin=U?-20
+Added Pin To Net: NetName=VM Pin=U?-21
+Added Pin To Net: NetName=VM Pin=U?-21
+Added Pin To Net: NetName=VM Pin=U?-22
+Added Pin To Net: NetName=VM Pin=U?-22
+Added Pin To Net: NetName=VM Pin=U?-23
+Added Pin To Net: NetName=VM Pin=U?-23
+Added Pin To Net: NetName=LANE_OUT2 Pin=U?-25
+Added Pin To Net: NetName=LANE_OUT6 Pin=U?-25
+Added Pin To Net: NetName=LANE_OUT2 Pin=U?-26
+Added Pin To Net: NetName=LANE_OUT6 Pin=U?-26
+Added Pin To Net: NetName=LANE_OUT1 Pin=U?-27
+Added Pin To Net: NetName=LANE_OUT5 Pin=U?-27
+Added Pin To Net: NetName=LANE_OUT1 Pin=U?-28
+Added Pin To Net: NetName=LANE_OUT5 Pin=U?-28
+Added Pin To Net: NetName=GND Pin=U?-29
+Added Pin To Net: NetName=GND Pin=U?-29
+Added Pin To Net: NetName=DRIVER_FAULT1 Pin=R57-2
+Added Pin To Net: NetName=DRIVER_FAULT1 Pin=U5-25
+Added Pin To Net: NetName=DRIVER_FAULT1 Pin=U?-9
+Added Net: Name=DRIVER_FAULT1
+Added Pin To Net: NetName=DRIVER_FAULT2 Pin=R64-2
+Added Pin To Net: NetName=DRIVER_FAULT2 Pin=U5-26
+Added Pin To Net: NetName=DRIVER_FAULT2 Pin=U?-9
+Added Net: Name=DRIVER_FAULT2
+Change Class Name : Old Net Name=08_PWM_DRIVER New Net Name=08_DRIVER
+Added Member To Class: ClassName=03_CONNECTOR Member=Component SW1 300SP1J1BLKM2RE
+Added Member To Class: ClassName=03_CONNECTOR Member=Component SW2 300SP1J1BLKM2RE
+Added Member To Class: ClassName=03_CONNECTOR Member=Component SW3 300SP1J1BLKM2RE
+Added Member To Class: ClassName=03_CONNECTOR Member=Component SW4 300SP1J1BLKM2RE
+Added Member To Class: ClassName=03_CONNECTOR Member=Component SW5 300SP1J1BLKM2RE
+Added Member To Class: ClassName=03_CONNECTOR Member=Component SW6 300SP1J1BLKM2RE
+Added Member To Class: ClassName=03_CONNECTOR Member=Component SW7 300SP1J1BLKM2RE
+Added Member To Class: ClassName=08_DRIVER Member=Component U? TPS4H160BQPWPRQ1
+Added Member To Class: ClassName=08_DRIVER Member=Component U? TPS4H160BQPWPRQ1
+Added Rule: Name=Schematic Supply Nets
+Added Rule: Name=Schematic Supply Nets_1
+Added Rule: Name=Schematic Supply Nets_2
+Added Rule: Name=Schematic Supply Nets_3
+Added Rule: Name=Schematic Supply Nets_4
+Added Rule: Name=Schematic Supply Nets_5

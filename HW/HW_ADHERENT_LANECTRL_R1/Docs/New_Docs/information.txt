@@ -1,0 +1,6 @@
+1- 24 volt  1.5 amper test altında, 190 ma.
+2-Manuel olarak zorluyorum 280mA.
+3-Baya baya zorluyorum 310mA, ikinci zorlamada 0.5Amper çekiyor. Elle durdurduk neredeyse 0.5 amper
+Plaka var sensorun diğer ucunda bu açılıp kapanınca 0 volt ve 24 volt alıyoruz.
+Plaka yalnızca pin 3'teki sinyali değiştirir; o sinyali okuyup motoru durdurmak bizim yapacağımız kartın işi.
+Signal 24V dry contact

@@ -1,0 +1,81 @@
+Removed Member From Class: ClassName=04_POWER Member=D3
+Removed Member From Class: ClassName=04_POWER Member=D4
+Removed Member From Class: ClassName=05_MCU Member=D6
+Removed Member From Class: ClassName=05_MCU Member=D10
+Removed Member From Class: ClassName=05_MCU Member=D12
+Removed Member From Class: ClassName=05_MCU Member=D16
+Removed Member From Class: ClassName=05_MCU Member=D18
+Removed Member From Class: ClassName=04_POWER Member=D21
+Removed Member From Class: ClassName=07_USB Member=D21
+Removed Member From Class: ClassName=03_CONNECTOR Member=D29
+Removed Member From Class: ClassName=03_CONNECTOR Member=D35
+Removed Member From Class: ClassName=03_CONNECTOR Member=D37
+Removed Member From Class: ClassName=04_POWER Member=D37
+Removed Member From Class: ClassName=04_POWER Member=D39
+Removed Member From Class: ClassName=05_MCU Member=J11
+Removed Member From Class: ClassName=05_MCU Member=R41
+Removed Member From Class: ClassName=05_MCU Member=R42
+Removed Member From Class: ClassName=08_PWM_DRIVER Member=R45
+Removed Member From Class: ClassName=05_MCU Member=R56
+Removed Member From Class: ClassName=04_POWER Member=TP7
+Added Component: Designator=MTG1(M3 Mounting Hole)
+Added Member To Class: ClassName=05_MCU Member=Component C39 CAP CER 1UF 16V X7R 0603
+Added Member To Class: ClassName=08_PWM_DRIVER Member=Component C42 EEH-ZA1H220P
+Added Member To Class: ClassName=08_PWM_DRIVER Member=Component C45 0.1uF 10V
+Added Member To Class: ClassName=08_PWM_DRIVER Member=Component C48 EEH-ZA1H220P
+Added Member To Class: ClassName=08_PWM_DRIVER Member=Component C49 100nF
+Added Member To Class: ClassName=03_CONNECTOR Member=Component D2 SMF33A
+Added Member To Class: ClassName=03_CONNECTOR Member=Component D4 SMF33A
+Added Member To Class: ClassName=03_CONNECTOR Member=Component D5 SMF33A
+Added Member To Class: ClassName=03_CONNECTOR Member=Component D7 BAT54WS-7-F
+Added Member To Class: ClassName=03_CONNECTOR Member=Component D8 BAT54WS-7-F
+Added Member To Class: ClassName=03_CONNECTOR Member=Component D13 BAT54WS-7-F
+Added Member To Class: ClassName=03_CONNECTOR Member=Component D14 BAT54WS-7-F
+Added Member To Class: ClassName=03_CONNECTOR Member=Component D19 BAT54WS-7-F
+Added Member To Class: ClassName=03_CONNECTOR Member=Component D20 SMF33A
+Added Member To Class: ClassName=04_POWER Member=Component D22 SMDJ24CA
+Added Member To Class: ClassName=04_POWER Member=Component D23 SM6S30A
+Added Member To Class: ClassName=04_POWER Member=Component D24 MBR0520LT1G
+Added Member To Class: ClassName=04_POWER Member=Component D25 MBR0520LT1G
+Added Member To Class: ClassName=04_POWER Member=Component D26 LTST-C191KRKT
+Added Member To Class: ClassName=05_MCU Member=Component D28 LED GREEN
+Added Member To Class: ClassName=05_MCU Member=Component D30 TLHG4400
+Added Member To Class: ClassName=05_MCU Member=Component D32 TLHG4400
+Added Member To Class: ClassName=05_MCU Member=Component D34 TLHG4400
+Added Member To Class: ClassName=05_MCU Member=Component D36 TLHG4400
+Added Member To Class: ClassName=07_USB Member=Component D38 TVS DIODE 7VWM 10VC 0402
+Added Member To Class: ClassName=05_MCU Member=Component J10 FTSH-103-01-F-DV-TR
+Added Member To Class: ClassName=05_MCU Member=Component MTG1 Mounting Hole, 3 MM
+Add Class Member: Failed to add class member : Component MTG2 Mounting Hole, 3 MM
+Add Class Member: Failed to add class member : Component MTG3 Mounting Hole, 3 MM
+Add Class Member: Failed to add class member : Component MTG4 Mounting Hole, 3 MM
+Add Class Member: Failed to add class member : Component MTG5 Mounting Hole, 3 MM
+Add Class Member: Failed to add class member : Component MTG6 Mounting Hole, 3 MM
+Add Class Member: Failed to add class member : Component MTG7 Mounting Hole, 3 MM
+Add Class Member: Failed to add class member : Component MTG8 Mounting Hole, 3 MM
+Added Member To Class: ClassName=05_MCU Member=Component R43 RES 10K OHM 1% 1/10W 0603
+Added Member To Class: ClassName=05_MCU Member=Component R44 RES 10K OHM 1% 1/10W 0603
+Added Member To Class: ClassName=05_MCU Member=Component R45 RES 10K OHM 1% 1/10W 0603
+Added Member To Class: ClassName=05_MCU Member=Component R46 1K
+Added Member To Class: ClassName=05_MCU Member=Component R48 330 Ohms
+Added Member To Class: ClassName=05_MCU Member=Component R49 330 Ohms
+Added Member To Class: ClassName=05_MCU Member=Component R50 330 Ohms
+Added Member To Class: ClassName=05_MCU Member=Component R51 330 Ohms
+Added Member To Class: ClassName=05_MCU Member=Component R52 330 Ohms
+Added Member To Class: ClassName=05_MCU Member=Component R54 330 Ohms
+Added Member To Class: ClassName=07_USB Member=Component R55 RES SMD 5.1K OHM 1% 1/16W 0402
+Added Member To Class: ClassName=08_PWM_DRIVER Member=Component R57 RES 10K OHM 1% 1/8W 0603
+Added Member To Class: ClassName=08_PWM_DRIVER Member=Component R61 4K7
+Added Member To Class: ClassName=08_PWM_DRIVER Member=Component R62 4K7
+Added Member To Class: ClassName=08_PWM_DRIVER Member=Component R65 RES 10K OHM 1% 1/8W 0603
+Added Member To Class: ClassName=08_PWM_DRIVER Member=Component R70 4K7
+Added Member To Class: ClassName=08_PWM_DRIVER Member=Component R71 RES 10K OHM 1% 1/8W 0603
+Added Member To Class: ClassName=08_PWM_DRIVER Member=Component R72 4K7
+Added Member To Class: ClassName=08_PWM_DRIVER Member=Component R74 RES 10K OHM 1% 1/8W 0603
+Added Member To Class: ClassName=08_PWM_DRIVER Member=Component R75 RES 10K OHM 1% 1/8W 0603
+Added Member To Class: ClassName=08_PWM_DRIVER Member=Component R77 RES 10K OHM 1% 1/8W 0603
+Added Member To Class: ClassName=05_MCU Member=Component SW1 418121270804
+Added Member To Class: ClassName=04_POWER Member=Component TP3 Testpoint
+Added Member To Class: ClassName=04_POWER Member=Component TP4 Testpoint
+Added Member To Class: ClassName=04_POWER Member=Component TP5 Testpoint
+Added Member To Class: ClassName=06_CANBUS Member=Component TP6 Testpoint

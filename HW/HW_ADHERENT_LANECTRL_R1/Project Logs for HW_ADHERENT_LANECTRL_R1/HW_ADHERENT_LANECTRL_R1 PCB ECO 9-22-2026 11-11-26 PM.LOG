@@ -1,0 +1,5 @@
+Added Component: Designator=SW?(SW_300SP1J1BLKM2QE)
+Add component (AddParameter): Name = "Manufacturer"; Value = "E-Switch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MPN"; Value = "300SP1J1BLKM2RE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "Digi; EG4312-ND"; VariantName = "[No Variations]"
+Added Member To Class: ClassName=03_CONNECTOR Member=Component SW? 300SP1J1BLKM2RE

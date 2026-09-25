@@ -1,0 +1,7 @@
+Layout burada paylaşılan dwg üzerinde olacak.
+7 tane lane motor var, datasheeti yüklendi.
+Pcb nin bottom tarafinda rocker switch ve led olacak, bottom tarafi işlemci, pwm surucu, programmer, usb, canbus, microfit connector içerecek.
+Yani 7 tane lane motor u canbus uzerinden kontrol eden kart yapacağız.
+Motor Ümit beyin elinde , kritik ve önemli sorular sorulacak.
+Altium ile ilerliyoruz.
+Bir medical firma.

@@ -1,0 +1,114 @@
+Removed Pin From Net: NetName=VM Pin=C15-1
+Removed Pin From Net: NetName=VM Pin=C16-1
+Removed Pin From Net: NetName=VM Pin=C18-2
+Removed Pin From Net: NetName=VM Pin=C19-2
+Removed Pin From Net: NetName=VM Pin=M1-D
+Removed Pin From Net: NetName=VM Pin=M1-D
+Removed Pin From Net: NetName=VM Pin=M1-D
+Removed Pin From Net: NetName=VM Pin=M1-D
+Removed Pin From Net: NetName=VM Pin=M1-D
+Removed Pin From Net: NetName=VM Pin=R36-2
+Removed Pin From Net: NetName=VM Pin=TP2-1
+Removed Pin From Net: NetName=VM Pin=U1-4
+Removed Member From Class: ClassName=04_POWER Member=C28
+Removed Member From Class: ClassName=06_CANBUS Member=C32
+Removed Member From Class: ClassName=05_MCU Member=C42
+Removed Member From Class: ClassName=07_USB Member=C47
+Removed Member From Class: ClassName=05_MCU Member=D24
+Removed Member From Class: ClassName=06_CANBUS Member=D24
+Removed Member From Class: ClassName=07_USB Member=D35
+Removed Member From Class: ClassName=08_DRIVER Member=D37
+Removed Member From Class: ClassName=07_USB Member=J9
+Removed Member From Class: ClassName=04_POWER Member=R43
+Removed Member From Class: ClassName=04_POWER Member=R46
+Removed Member From Class: ClassName=06_CANBUS Member=R46
+Removed Member From Class: ClassName=06_CANBUS Member=R47
+Removed Member From Class: ClassName=05_MCU Member=R61
+Removed Member From Class: ClassName=07_USB Member=R61
+Removed Member From Class: ClassName=04_POWER Member=TP8
+Added Pin To Net: NetName=+24V_PR Pin=C15-1
+Added Pin To Net: NetName=+24V_PR Pin=C16-1
+Added Pin To Net: NetName=+24V_PR Pin=C18-2
+Added Pin To Net: NetName=+24V_PR Pin=C19-2
+Added Pin To Net: NetName=+24V_PR Pin=M1-D
+Added Pin To Net: NetName=+24V_PR Pin=M1-D
+Added Pin To Net: NetName=+24V_PR Pin=M1-D
+Added Pin To Net: NetName=+24V_PR Pin=M1-D
+Added Pin To Net: NetName=+24V_PR Pin=M1-D
+Added Pin To Net: NetName=+24V_PR Pin=R36-2
+Added Pin To Net: NetName=+24V_PR Pin=TP2-1
+Added Pin To Net: NetName=+24V_PR Pin=U1-4
+Added Net: Name=+24V_PR
+Added Member To Class: ClassName=04_POWER Member=Component C24 22uF 35V
+Added Member To Class: ClassName=04_POWER Member=Component C25 10uF
+Added Member To Class: ClassName=04_POWER Member=Component C27 100nF 25V
+Added Member To Class: ClassName=06_CANBUS Member=Component C28 CAP CER 10UF 10V X5R 0603
+Added Member To Class: ClassName=06_CANBUS Member=Component C29 100nF
+Added Member To Class: ClassName=06_CANBUS Member=Component C31 CAP CER 100PF 50V C0G/NP0 0603
+Added Member To Class: ClassName=05_MCU Member=Component C32 4.7uF
+Added Member To Class: ClassName=05_MCU Member=Component C33 CAP CER 1UF 16V X7R 0603
+Added Member To Class: ClassName=05_MCU Member=Component C35 CAP CER 1UF 16V X7R 0603
+Added Member To Class: ClassName=05_MCU Member=Component C37 8.2pF 25V
+Added Member To Class: ClassName=05_MCU Member=Component C38 8.2pF 25V
+Added Member To Class: ClassName=05_MCU Member=Component C40 CAP CER 1UF 16V X7R 0603
+Added Member To Class: ClassName=07_USB Member=Component C42 CAP CER 0.1UF 50V X7R 0402
+Added Member To Class: ClassName=08_DRIVER Member=Component C43 EEH-ZA1H220P
+Added Member To Class: ClassName=08_DRIVER Member=Component C44 100nF
+Added Member To Class: ClassName=08_DRIVER Member=Component C45 100nF
+Added Member To Class: ClassName=08_DRIVER Member=Component C46 0.1uF 10V
+Added Member To Class: ClassName=08_DRIVER Member=Component C49 EEH-ZA1H220P
+Added Member To Class: ClassName=08_DRIVER Member=Component C50 100nF
+Added Member To Class: ClassName=04_POWER Member=Component D23 MBR0520LT1G
+Added Member To Class: ClassName=04_POWER Member=Component D25 LTST-C191KRKT
+Added Member To Class: ClassName=06_CANBUS Member=Component D26 CAN
+Added Member To Class: ClassName=05_MCU Member=Component D28 LED YELLOW CLEAR SMD
+Added Member To Class: ClassName=05_MCU Member=Component D30 TLHG4400
+Added Member To Class: ClassName=05_MCU Member=Component D32 TLHG4400
+Added Member To Class: ClassName=05_MCU Member=Component D34 TLHG4400
+Added Member To Class: ClassName=05_MCU Member=Component D35 TLHG4400
+Added Member To Class: ClassName=07_USB Member=Component D36 SMAJ5.0A
+Added Member To Class: ClassName=07_USB Member=Component D38 TVS DIODE 7VWM 10VC 0402
+Added Member To Class: ClassName=08_DRIVER Member=Component D39 BAT54WS-7-F
+Added Member To Class: ClassName=08_DRIVER Member=Component D40 BAT54WS-7-F
+Added Member To Class: ClassName=07_USB Member=Component J10 USB C REC 16P 3U" MID MNT 1.6MM
+Added Member To Class: ClassName=03_CONNECTOR Member=Component R19 10k
+Added Member To Class: ClassName=03_CONNECTOR Member=Component R20 15k
+Added Member To Class: ClassName=04_POWER Member=Component R38 88.7k
+Added Member To Class: ClassName=04_POWER Member=Component R40 RES 22K OHM 1% 1/10W 0603
+Added Member To Class: ClassName=04_POWER Member=Component R41 RES 33K OHM 1% 1/10W 0603
+Added Member To Class: ClassName=04_POWER Member=Component R42 330 Ohms
+Added Member To Class: ClassName=06_CANBUS Member=Component R43 120 Ohms
+Added Member To Class: ClassName=06_CANBUS Member=Component R44 RES 10K OHM 1% 1/8W 0603
+Added Member To Class: ClassName=05_MCU Member=Component R45 RES 10K OHM 1% 1/10W 0603
+Added Member To Class: ClassName=05_MCU Member=Component R46 RES 10K OHM 1% 1/10W 0603
+Added Member To Class: ClassName=05_MCU Member=Component R48 1K
+Added Member To Class: ClassName=05_MCU Member=Component R49 1K
+Added Member To Class: ClassName=05_MCU Member=Component R50 RES 150 OHM 1% 1/10W 0603
+Added Member To Class: ClassName=05_MCU Member=Component R51 RES 150 OHM 1% 1/10W 0603
+Added Member To Class: ClassName=05_MCU Member=Component R52 RES 150 OHM 1% 1/10W 0603
+Added Member To Class: ClassName=05_MCU Member=Component R53 RES 150 OHM 1% 1/10W 0603
+Added Member To Class: ClassName=05_MCU Member=Component R54 RES 150 OHM 1% 1/10W 0603
+Added Member To Class: ClassName=05_MCU Member=Component R55 RES 150 OHM 1% 1/10W 0603
+Added Member To Class: ClassName=05_MCU Member=Component R56 RES 150 OHM 1% 1/10W 0603
+Added Member To Class: ClassName=07_USB Member=Component R57 RES SMD 5.1K OHM 1% 1/16W 0402
+Added Member To Class: ClassName=07_USB Member=Component R58 RES SMD 5.1K OHM 1% 1/16W 0402
+Added Member To Class: ClassName=08_DRIVER Member=Component R59 RES 10K OHM 1% 1/8W 0603
+Added Member To Class: ClassName=08_DRIVER Member=Component R60 4K7
+Added Member To Class: ClassName=08_DRIVER Member=Component R62 1.2kO
+Added Member To Class: ClassName=08_DRIVER Member=Component R63 4K7
+Added Member To Class: ClassName=08_DRIVER Member=Component R64 4K7
+Added Member To Class: ClassName=08_DRIVER Member=Component R65 604O
+Added Member To Class: ClassName=08_DRIVER Member=Component R66 RES 10K OHM 1% 1/8W 0603
+Added Member To Class: ClassName=08_DRIVER Member=Component R67 RES 10K OHM 1% 1/8W 0603
+Added Member To Class: ClassName=08_DRIVER Member=Component R69 4K7
+Added Member To Class: ClassName=08_DRIVER Member=Component R70 RES 10K OHM 1% 1/8W 0603
+Added Member To Class: ClassName=08_DRIVER Member=Component R71 1.2kO
+Added Member To Class: ClassName=08_DRIVER Member=Component R72 4K7
+Added Member To Class: ClassName=08_DRIVER Member=Component R73 RES 10K OHM 1% 1/8W 0603
+Added Member To Class: ClassName=08_DRIVER Member=Component R74 4K7
+Added Member To Class: ClassName=08_DRIVER Member=Component R75 604O
+Added Member To Class: ClassName=08_DRIVER Member=Component R76 RES 10K OHM 1% 1/8W 0603
+Added Member To Class: ClassName=08_DRIVER Member=Component R77 RES 10K OHM 1% 1/8W 0603
+Added Member To Class: ClassName=04_POWER Member=Component TP5 Testpoint
+Added Member To Class: ClassName=06_CANBUS Member=Component TP7 Testpoint
+Added Rule: Name=Schematic Supply Nets_6

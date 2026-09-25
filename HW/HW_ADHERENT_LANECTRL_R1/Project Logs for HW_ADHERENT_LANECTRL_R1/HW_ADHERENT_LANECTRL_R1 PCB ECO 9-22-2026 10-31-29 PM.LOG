@@ -1,0 +1,20 @@
+Removed Pin From Net: NetName=CAN_P Pin=J8-1
+Removed Pin From Net: NetName=CAN_N Pin=J8-2
+Removed Pin From Net: NetName=+24V_VIN Pin=J8-3
+Removed Pin From Net: NetName=GND Pin=J8-4
+Removed Pin From Net: NetName=CAN_N Pin=R42-1
+Removed Pin From Net: NetName=CAN_P Pin=R42-2
+Added Component: Designator=P1(THD 1x2p. male straight)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Molex"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "0022032021"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number"; Value = "WM4000-ND"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+24V_VIN Pin=J8-1
+Added Pin To Net: NetName=GND Pin=J8-2
+Added Pin To Net: NetName=CAN_P Pin=J8-3
+Added Pin To Net: NetName=CAN_N Pin=J8-4
+Added Pin To Net: NetName=CAN_N Pin=P1-2
+Added Pin To Net: NetName=CAN_P Pin=R42-1
+Added Pin To Net: NetName=NetP1_1 Pin=P1-1
+Added Pin To Net: NetName=NetP1_1 Pin=R42-2
+Added Net: Name=NetP1_1
+Added Member To Class: ClassName=06_CANBUS Member=Component P1 0022032021

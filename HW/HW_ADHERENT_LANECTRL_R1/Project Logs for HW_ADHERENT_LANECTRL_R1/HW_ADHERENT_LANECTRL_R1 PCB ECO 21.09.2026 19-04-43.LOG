@@ -1,0 +1,327 @@
+Removed Pin From Net: NetName=+3V3 Pin=P1-1
+Removed Pin From Net: NetName=SWDIO Pin=P1-2
+Removed Pin From Net: NetName=GND Pin=P1-3
+Removed Pin From Net: NetName=SWCLK/BOOT Pin=P1-4
+Removed Pin From Net: NetName=GND Pin=P1-5
+Removed Pin From Net: NetName=GND Pin=P1-9
+Removed Pin From Net: NetName=NRST Pin=P1-10
+Removed Pin From Net: NetName=+3V3 Pin=SW1-2
+Removed Pin From Net: NetName=NetR1_1 Pin=SW1-3
+Removed Pin From Net: NetName=+3V3 Pin=SW2-2
+Removed Pin From Net: NetName=NetR2_1 Pin=SW2-3
+Removed Pin From Net: NetName=+3V3 Pin=SW3-2
+Removed Pin From Net: NetName=NetR11_2 Pin=SW3-3
+Removed Pin From Net: NetName=+3V3 Pin=SW4-2
+Removed Pin From Net: NetName=NetR12_2 Pin=SW4-3
+Removed Pin From Net: NetName=+3V3 Pin=SW5-2
+Removed Pin From Net: NetName=NetR21_2 Pin=SW5-3
+Removed Pin From Net: NetName=+3V3 Pin=SW6-2
+Removed Pin From Net: NetName=NetR22_1 Pin=SW6-3
+Removed Pin From Net: NetName=+3V3 Pin=SW7-2
+Removed Pin From Net: NetName=NetR27_1 Pin=SW7-3
+Removed Member From Class: ClassName=08_PWM_DRIVER Member=C48
+Removed Member From Class: ClassName=03_CONNECTOR Member=D25
+Removed Member From Class: ClassName=03_CONNECTOR Member=D26
+Removed Member From Class: ClassName=03_CONNECTOR Member=D27
+Removed Member From Class: ClassName=03_CONNECTOR Member=D28
+Removed Member From Class: ClassName=05_MCU Member=P1
+Removed Member From Class: ClassName=08_PWM_DRIVER Member=R70
+Removed Member From Class: ClassName=05_MCU Member=R71
+Removed Member From Class: ClassName=03_CONNECTOR Member=SW1
+Removed Member From Class: ClassName=03_CONNECTOR Member=SW2
+Removed Member From Class: ClassName=03_CONNECTOR Member=SW3
+Removed Member From Class: ClassName=03_CONNECTOR Member=SW4
+Removed Member From Class: ClassName=03_CONNECTOR Member=SW5
+Removed Member From Class: ClassName=03_CONNECTOR Member=SW6
+Removed Member From Class: ClassName=03_CONNECTOR Member=SW7
+Removed Member From Class: ClassName=04_POWER Member=TP7
+Change Component Footprint: Designator=J1 Old Footprint=B3P-VH-FB-B New Footprint=CONN3X1_B3P-VH_JST
+Change Component Footprint: Designator=J2 Old Footprint=B3P-VH-FB-B New Footprint=CONN3X1_B3P-VH_JST
+Change Component Footprint: Designator=J3 Old Footprint=B3P-VH-FB-B New Footprint=CONN3X1_B3P-VH_JST
+Change Component Footprint: Designator=J4 Old Footprint=B3P-VH-FB-B New Footprint=CONN3X1_B3P-VH_JST
+Change Component Footprint: Designator=J5 Old Footprint=B3P-VH-FB-B New Footprint=CONN3X1_B3P-VH_JST
+Change Component Footprint: Designator=J6 Old Footprint=B3P-VH-FB-B New Footprint=CONN3X1_B3P-VH_JST
+Change Component Footprint: Designator=J7 Old Footprint=B3P-VH-FB-B New Footprint=CONN3X1_B3P-VH_JST
+Change Component Comment : Designator=J1 Old Comment=B3P-VH-FB-B New Comment=B3P-VH
+Change Component Comment : Designator=J2 Old Comment=B3P-VH-FB-B New Comment=B3P-VH
+Change Component Comment : Designator=J3 Old Comment=B3P-VH-FB-B New Comment=B3P-VH
+Change Component Comment : Designator=J4 Old Comment=B3P-VH-FB-B New Comment=B3P-VH
+Change Component Comment : Designator=J5 Old Comment=B3P-VH-FB-B New Comment=B3P-VH
+Change Component Comment : Designator=J6 Old Comment=B3P-VH-FB-B New Comment=B3P-VH
+Change Component Comment : Designator=J7 Old Comment=B3P-VH-FB-B New Comment=B3P-VH
+Change Comment: Unknown Component : MTG1
+Change Comment: Unknown Component : MTG2
+Change Comment: Unknown Component : MTG3
+Change Comment: Unknown Component : MTG4
+Change Component Designator: OldDesignator=C27 NewDesignator=C38
+Change Component Designator: OldDesignator=C28 NewDesignator=C42
+Change Component Designator: OldDesignator=C29 NewDesignator=C27
+Change Component Designator: OldDesignator=C30 NewDesignator=C28
+Change Component Designator: OldDesignator=C31 NewDesignator=C29
+Change Component Designator: OldDesignator=C32 NewDesignator=C30
+Change Component Designator: OldDesignator=C33 NewDesignator=C31
+Change Component Designator: OldDesignator=C34 NewDesignator=C32
+Change Component Designator: OldDesignator=C35 NewDesignator=C33
+Change Component Designator: OldDesignator=C36 NewDesignator=C34
+Change Component Designator: OldDesignator=C37 NewDesignator=C35
+Change Component Designator: OldDesignator=C38 NewDesignator=C36
+Change Component Designator: OldDesignator=C39 NewDesignator=C37
+Change Component Designator: OldDesignator=C40 NewDesignator=C39
+Change Component Designator: OldDesignator=C41 NewDesignator=C40
+Change Component Designator: OldDesignator=C42 NewDesignator=C48
+Change Component Designator: OldDesignator=C43 NewDesignator=C41
+Change Component Designator: OldDesignator=C44 NewDesignator=C45
+Change Component Designator: OldDesignator=C45 NewDesignator=C43
+Change Component Designator: OldDesignator=C46 NewDesignator=C44
+Change Component Designator: OldDesignator=C47 NewDesignator=C49
+Change Component Designator: OldDesignator=C48 NewDesignator=C46
+Change Component Designator: OldDesignator=C49 NewDesignator=C47
+Change Component Designator: OldDesignator=C53 NewDesignator=C51
+Change Component Designator: OldDesignator=D2 NewDesignator=D3
+Change Component Designator: OldDesignator=D3 NewDesignator=D7
+Change Component Designator: OldDesignator=D4 NewDesignator=D8
+Change Component Designator: OldDesignator=D5 NewDesignator=D13
+Change Component Designator: OldDesignator=D6 NewDesignator=D14
+Change Component Designator: OldDesignator=D7 NewDesignator=D19
+Change Component Designator: OldDesignator=D8 NewDesignator=D22
+Change Component Designator: OldDesignator=D9 NewDesignator=D23
+Change Component Designator: OldDesignator=D10 NewDesignator=D24
+Change Component Designator: OldDesignator=D11 NewDesignator=D25
+Change Component Designator: OldDesignator=D12 NewDesignator=D27
+Change Component Designator: OldDesignator=D13 NewDesignator=D28
+Change Component Designator: OldDesignator=D14 NewDesignator=D29
+Change Component Designator: OldDesignator=D15 NewDesignator=D30
+Change Component Designator: OldDesignator=D16 NewDesignator=D31
+Change Component Designator: OldDesignator=D17 NewDesignator=D32
+Change Component Designator: OldDesignator=D18 NewDesignator=D33
+Change Component Designator: OldDesignator=D19 NewDesignator=D34
+Change Component Designator: OldDesignator=D20 NewDesignator=D35
+Change Component Designator: OldDesignator=D21 NewDesignator=D36
+Change Component Designator: OldDesignator=D22 NewDesignator=D37
+Change Component Designator: OldDesignator=D23 NewDesignator=D38
+Change Component Designator: OldDesignator=D24 NewDesignator=D39
+Change Component Designator: OldDesignator=D25 NewDesignator=D2
+Change Component Designator: OldDesignator=D26 NewDesignator=D4
+Change Component Designator: OldDesignator=D27 NewDesignator=D5
+Change Component Designator: OldDesignator=D28 NewDesignator=D6
+Change Component Designator: OldDesignator=D29 NewDesignator=D9
+Change Component Designator: OldDesignator=D30 NewDesignator=D10
+Change Component Designator: OldDesignator=D31 NewDesignator=D11
+Change Component Designator: OldDesignator=D32 NewDesignator=D12
+Change Component Designator: OldDesignator=D33 NewDesignator=D15
+Change Component Designator: OldDesignator=D34 NewDesignator=D16
+Change Component Designator: OldDesignator=D35 NewDesignator=D17
+Change Component Designator: OldDesignator=D36 NewDesignator=D18
+Change Component Designator: OldDesignator=D37 NewDesignator=D20
+Change Component Designator: OldDesignator=D38 NewDesignator=D21
+Change Component Designator: OldDesignator=D39 NewDesignator=D26
+Change Component Designator: OldDesignator=J10 NewDesignator=J11
+Change Component Designator: OldDesignator=R41 NewDesignator=R43
+Change Component Designator: OldDesignator=R42 NewDesignator=R44
+Change Component Designator: OldDesignator=R43 NewDesignator=R41
+Change Component Designator: OldDesignator=R44 NewDesignator=R42
+Change Component Designator: OldDesignator=R45 NewDesignator=R46
+Change Component Designator: OldDesignator=R46 NewDesignator=R47
+Change Component Designator: OldDesignator=R47 NewDesignator=R48
+Change Component Designator: OldDesignator=R48 NewDesignator=R49
+Change Component Designator: OldDesignator=R49 NewDesignator=R50
+Change Component Designator: OldDesignator=R50 NewDesignator=R51
+Change Component Designator: OldDesignator=R51 NewDesignator=R52
+Change Component Designator: OldDesignator=R52 NewDesignator=R53
+Change Component Designator: OldDesignator=R53 NewDesignator=R54
+Change Component Designator: OldDesignator=R54 NewDesignator=R55
+Change Component Designator: OldDesignator=R55 NewDesignator=R56
+Change Component Designator: OldDesignator=R56 NewDesignator=R57
+Change Component Designator: OldDesignator=R57 NewDesignator=R62
+Change Component Designator: OldDesignator=R60 NewDesignator=R65
+Change Component Designator: OldDesignator=R61 NewDesignator=R64
+Change Component Designator: OldDesignator=R62 NewDesignator=R68
+Change Component Designator: OldDesignator=R63 NewDesignator=R71
+Change Component Designator: OldDesignator=R64 NewDesignator=R74
+Change Component Designator: OldDesignator=R65 NewDesignator=R75
+Change Component Designator: OldDesignator=R66 NewDesignator=R76
+Change Component Designator: OldDesignator=R67 NewDesignator=R77
+Change Component Designator: OldDesignator=R68 NewDesignator=R70
+Change Component Designator: OldDesignator=R69 NewDesignator=R60
+Change Component Designator: OldDesignator=R70 NewDesignator=R61
+Change Component Designator: OldDesignator=R71 NewDesignator=R45
+Change Component Designator: OldDesignator=R72 NewDesignator=R63
+Change Component Designator: OldDesignator=R73 NewDesignator=R66
+Change Component Designator: OldDesignator=R74 NewDesignator=R67
+Change Component Designator: OldDesignator=R75 NewDesignator=R69
+Change Component Designator: OldDesignator=R76 NewDesignator=R72
+Change Component Designator: OldDesignator=R77 NewDesignator=R73
+Change Component Designator: OldDesignator=SW9 NewDesignator=SW1
+Change Component Designator: OldDesignator=TP3 NewDesignator=TP4
+Change Component Designator: OldDesignator=TP4 NewDesignator=TP5
+Change Component Designator: OldDesignator=TP5 NewDesignator=TP6
+Change Component Designator: OldDesignator=TP6 NewDesignator=TP7
+Change Component Designator: OldDesignator=TP7 NewDesignator=TP3
+Change component parameters: Designator = "J1" ("J1"); Footprint = "B3P-VH-FB-B"; UniqueID = "\HWKQUFQS" ("\HWKQUFQS")
+Change component parameters (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2025 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Name"; Value = "JST"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Part_Number"; Value = "B3P-VH"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Type"; Value = "Headers, Male Pins"; VariantName = "[No Variations]"
+Change component parameters: Designator = "J2" ("J2"); Footprint = "B3P-VH-FB-B"; UniqueID = "\ISFEFFSI" ("\ISFEFFSI")
+Change component parameters (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2025 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Name"; Value = "JST"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Part_Number"; Value = "B3P-VH"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Type"; Value = "Headers, Male Pins"; VariantName = "[No Variations]"
+Change component parameters: Designator = "J3" ("J3"); Footprint = "B3P-VH-FB-B"; UniqueID = "\XINTRIBW" ("\XINTRIBW")
+Change component parameters (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2025 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Name"; Value = "JST"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Part_Number"; Value = "B3P-VH"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Type"; Value = "Headers, Male Pins"; VariantName = "[No Variations]"
+Change component parameters: Designator = "J4" ("J4"); Footprint = "B3P-VH-FB-B"; UniqueID = "\FBDEGDYZ" ("\FBDEGDYZ")
+Change component parameters (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2025 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Name"; Value = "JST"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Part_Number"; Value = "B3P-VH"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Type"; Value = "Headers, Male Pins"; VariantName = "[No Variations]"
+Change component parameters: Designator = "J5" ("J5"); Footprint = "B3P-VH-FB-B"; UniqueID = "\BSOKDWMJ" ("\BSOKDWMJ")
+Change component parameters (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2025 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Name"; Value = "JST"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Part_Number"; Value = "B3P-VH"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Type"; Value = "Headers, Male Pins"; VariantName = "[No Variations]"
+Change component parameters: Designator = "J6" ("J6"); Footprint = "B3P-VH-FB-B"; UniqueID = "\FHLPUNPQ" ("\FHLPUNPQ")
+Change component parameters (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2025 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Name"; Value = "JST"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Part_Number"; Value = "B3P-VH"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Type"; Value = "Headers, Male Pins"; VariantName = "[No Variations]"
+Change component parameters: Designator = "J7" ("J7"); Footprint = "B3P-VH-FB-B"; UniqueID = "\PDOSUFLR" ("\PDOSUFLR")
+Change component parameters (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2025 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Name"; Value = "JST"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Part_Number"; Value = "B3P-VH"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Type"; Value = "Headers, Male Pins"; VariantName = "[No Variations]"
+Added Component: Designator=J10(SAMTEC_FTSH-103-01-F-DV-TR)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Samtec Inc."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "SAM13919DKR-ND"; VariantName = "[No Variations]"
+Added Component: Designator=S1(SW_RB141C1100)
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/RB141C1100/E-Switch/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "e-switch inc"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "RB141C1100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/RB141C1100/E-Switch/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=S2(SW_RB141C1100)
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/RB141C1100/E-Switch/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "e-switch inc"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "RB141C1100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/RB141C1100/E-Switch/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=S3(SW_RB141C1100)
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/RB141C1100/E-Switch/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "e-switch inc"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "RB141C1100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/RB141C1100/E-Switch/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=S4(SW_RB141C1100)
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/RB141C1100/E-Switch/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "e-switch inc"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "RB141C1100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/RB141C1100/E-Switch/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=S5(SW_RB141C1100)
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/RB141C1100/E-Switch/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "e-switch inc"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "RB141C1100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/RB141C1100/E-Switch/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=S6(SW_RB141C1100)
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/RB141C1100/E-Switch/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "e-switch inc"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "RB141C1100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/RB141C1100/E-Switch/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=S7(SW_RB141C1100)
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/RB141C1100/E-Switch/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "e-switch inc"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "RB141C1100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/RB141C1100/E-Switch/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+3V3 Pin=J10-01
+Added Pin To Net: NetName=SWDIO Pin=J10-02
+Added Pin To Net: NetName=GND Pin=J10-03
+Added Pin To Net: NetName=SWCLK/BOOT Pin=J10-04
+Added Pin To Net: NetName=GND Pin=J10-05
+Added Pin To Net: NetName=NRST Pin=J10-06
+Added Pin To Net: NetName=NetR1_1 Pin=S1-1
+Added Pin To Net: NetName=+3V3 Pin=S1-2
+Added Pin To Net: NetName=NetR2_1 Pin=S2-1
+Added Pin To Net: NetName=+3V3 Pin=S2-2
+Added Pin To Net: NetName=NetR11_2 Pin=S3-1
+Added Pin To Net: NetName=+3V3 Pin=S3-2
+Added Pin To Net: NetName=NetR12_2 Pin=S4-1
+Added Pin To Net: NetName=+3V3 Pin=S4-2
+Added Pin To Net: NetName=NetR21_2 Pin=S5-1
+Added Pin To Net: NetName=+3V3 Pin=S5-2
+Added Pin To Net: NetName=NetR22_1 Pin=S6-1
+Added Pin To Net: NetName=+3V3 Pin=S6-2
+Added Pin To Net: NetName=NetR27_1 Pin=S7-1
+Added Pin To Net: NetName=+3V3 Pin=S7-2
+Change Net Name : Old Net Name=DRIVER_FAULT1 New Net Name=DRV_FAULT1
+Change Net Name : Old Net Name=DRIVER_FAULT2 New Net Name=DRV_FAULT2
+Change Net Name : Old Net Name=NetC29_2 New Net Name=NetC27_2
+Change Net Name : Old Net Name=NetD13_2 New Net Name=NetD28_2
+Change Net Name : Old Net Name=NetD14_2 New Net Name=NetD29_2
+Change Net Name : Old Net Name=NetD15_2 New Net Name=NetD30_2
+Change Net Name : Old Net Name=NetD16_2 New Net Name=NetD31_2
+Change Net Name : Old Net Name=NetD17_2 New Net Name=NetD32_2
+Change Net Name : Old Net Name=NetD18_2 New Net Name=NetD33_2
+Change Net Name : Old Net Name=NetD19_2 New Net Name=NetD34_2
+Change Net Name : Old Net Name=NetD20_2 New Net Name=NetD35_2
+Change Net Name : Old Net Name=NetD21_2 New Net Name=NetD36_2
+Change Net Name : Old Net Name=NetD27_1 New Net Name=NetD5_1
+Change Net Name : Old Net Name=NetD28_1 New Net Name=NetD6_1
+Change Net Name : Old Net Name=NetD31_1 New Net Name=NetD11_1
+Change Net Name : Old Net Name=NetD32_1 New Net Name=NetD12_1
+Change Net Name : Old Net Name=NetD35_1 New Net Name=NetD17_1
+Change Net Name : Old Net Name=NetD36_1 New Net Name=NetD18_1
+Change Net Name : Old Net Name=NetD38_1 New Net Name=NetD21_1
+Change Net Name : Old Net Name=NetD39_1 New Net Name=NetD26_1
+Change Net Name : Old Net Name=NetJ10_A5 New Net Name=NetJ11_A5
+Change Net Name : Old Net Name=NetJ10_A6 New Net Name=NetJ11_A6
+Change Net Name : Old Net Name=NetJ10_A7 New Net Name=NetJ11_A7
+Change Net Name : Old Net Name=NetJ10_B5 New Net Name=NetJ11_B5
+Change Net Name : Old Net Name=NetR69_1 New Net Name=NetR60_1
+Change Net Name : Old Net Name=NetR70_1 New Net Name=NetR61_1
+Change Net Name : Old Net Name=NetR73_1 New Net Name=NetR66_1
+Change Net Name : Old Net Name=NetR74_1 New Net Name=NetR67_1
+Change Net Name : Old Net Name=NetR75_1 New Net Name=NetR69_1
+Change Net Name : Old Net Name=NetR76_1 New Net Name=NetR72_1
+Change Net Name : Old Net Name=NetSW9_5 New Net Name=NetSW1_5
+Change Net Name : Old Net Name=NetSW9_6 New Net Name=NetSW1_6
+Change Net Name : Old Net Name=NetSW9_7 New Net Name=NetSW1_7
+Change Net Name : Old Net Name=NetSW9_8 New Net Name=NetSW1_8
+Added Member To Class: ClassName=08_PWM_DRIVER Member=Component C45 0.1uF 10V
+Added Member To Class: ClassName=03_CONNECTOR Member=Component D8 BAT54WS-7-F
+Added Member To Class: ClassName=03_CONNECTOR Member=Component D13 BAT54WS-7-F
+Added Member To Class: ClassName=03_CONNECTOR Member=Component D14 BAT54WS-7-F
+Added Member To Class: ClassName=03_CONNECTOR Member=Component D19 BAT54WS-7-F
+Added Member To Class: ClassName=05_MCU Member=Component J10 FTSH-103-01-F-DV-TR
+Add Class Member: Failed to add class member : Component MTG5 Mounting Hole, 3 MM
+Add Class Member: Failed to add class member : Component MTG6 Mounting Hole, 3 MM
+Add Class Member: Failed to add class member : Component MTG7 Mounting Hole, 3 MM
+Add Class Member: Failed to add class member : Component MTG8 Mounting Hole, 3 MM
+Added Member To Class: ClassName=05_MCU Member=Component R54 330 Ohms
+Added Member To Class: ClassName=08_PWM_DRIVER Member=Component R71 RES 10K OHM 1% 1/8W 0603
+Added Member To Class: ClassName=03_CONNECTOR Member=Component S1 RB141C1100
+Added Member To Class: ClassName=03_CONNECTOR Member=Component S2 RB141C1100
+Added Member To Class: ClassName=03_CONNECTOR Member=Component S3 RB141C1100
+Added Member To Class: ClassName=03_CONNECTOR Member=Component S4 RB141C1100
+Added Member To Class: ClassName=03_CONNECTOR Member=Component S5 RB141C1100
+Added Member To Class: ClassName=03_CONNECTOR Member=Component S6 RB141C1100
+Added Member To Class: ClassName=03_CONNECTOR Member=Component S7 RB141C1100
+Added Member To Class: ClassName=04_POWER Member=Component TP5 Testpoint

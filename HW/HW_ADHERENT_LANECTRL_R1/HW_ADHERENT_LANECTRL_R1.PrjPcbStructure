@@ -1,0 +1,8 @@
+Record=TopLevelDocument|FileName=01_REVISION_HISTORY.SchDoc|SheetNumber=1
+Record=NoMainPathDocument|SourceDocument=01_REVISION_HISTORY.SchDoc|FileName=02_BLOCK_DIAGRAM.SchDoc|SheetNumber=2
+Record=NoMainPathDocument|SourceDocument=01_REVISION_HISTORY.SchDoc|FileName=03_CONNECTOR.SchDoc|SheetNumber=3
+Record=NoMainPathDocument|SourceDocument=01_REVISION_HISTORY.SchDoc|FileName=04_POWER.SchDoc|SheetNumber=4
+Record=NoMainPathDocument|SourceDocument=01_REVISION_HISTORY.SchDoc|FileName=05_MCU.SchDoc|SheetNumber=5
+Record=NoMainPathDocument|SourceDocument=01_REVISION_HISTORY.SchDoc|FileName=06_CANBUS.SchDoc|SheetNumber=6
+Record=NoMainPathDocument|SourceDocument=01_REVISION_HISTORY.SchDoc|FileName=07_USB.SchDoc|SheetNumber=7
+Record=NoMainPathDocument|SourceDocument=01_REVISION_HISTORY.SchDoc|FileName=08_DRIVER.SchDoc|SheetNumber=8

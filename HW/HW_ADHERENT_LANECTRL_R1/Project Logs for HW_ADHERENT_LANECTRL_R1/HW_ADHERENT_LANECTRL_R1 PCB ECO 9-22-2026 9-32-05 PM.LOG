@@ -1,0 +1,72 @@
+Change Component Designator: OldDesignator=SW1 NewDesignator=S1
+Change Component Description : Designator=S1 Old Description=Dip Switch, 0.025A, 24Vdc, 4 Pos, Smd Rohs Compliant: Yes New Description=Dip Switch, 0.025A, 24Vdc, 4 Pos, Smd Rohs Compliant: Yes |Wurth Elektronik 418121270804
+Added Component: Designator=U7(SOP65P640X120-29N)
+Add component (AddParameter): Name = "MPN"; Value = "TPS4H160-Q1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "595-TPS4H160BQPWPRQ1"; VariantName = "[No Variations]"
+Added Component: Designator=U9(SOP65P640X120-29N)
+Add component (AddParameter): Name = "MPN"; Value = "TPS4H160-Q1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "595-TPS4H160BQPWPRQ1"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=U7-1
+Added Pin To Net: NetName=LANE_IN1 Pin=U7-3
+Added Pin To Net: NetName=LANE_IN2 Pin=U7-4
+Added Pin To Net: NetName=LANE_IN3 Pin=U7-5
+Added Pin To Net: NetName=LANE_IN4 Pin=U7-6
+Added Pin To Net: NetName=NetR58_1 Pin=U7-7
+Added Pin To Net: NetName=NetR59_1 Pin=U7-8
+Added Pin To Net: NetName=DRIVER_FAULT1 Pin=U7-9
+Added Pin To Net: NetName=DRIVER_CS1 Pin=U7-10
+Added Pin To Net: NetName=NetR60_1 Pin=U7-11
+Added Pin To Net: NetName=GND Pin=U7-12
+Added Pin To Net: NetName=GND Pin=U7-13
+Added Pin To Net: NetName=NetR61_1 Pin=U7-14
+Added Pin To Net: NetName=LANE_OUT4 Pin=U7-15
+Added Pin To Net: NetName=LANE_OUT4 Pin=U7-16
+Added Pin To Net: NetName=LANE_OUT3 Pin=U7-17
+Added Pin To Net: NetName=LANE_OUT3 Pin=U7-18
+Added Pin To Net: NetName=VM Pin=U7-20
+Added Pin To Net: NetName=VM Pin=U7-21
+Added Pin To Net: NetName=VM Pin=U7-22
+Added Pin To Net: NetName=VM Pin=U7-23
+Added Pin To Net: NetName=LANE_OUT2 Pin=U7-25
+Added Pin To Net: NetName=LANE_OUT2 Pin=U7-26
+Added Pin To Net: NetName=LANE_OUT1 Pin=U7-27
+Added Pin To Net: NetName=LANE_OUT1 Pin=U7-28
+Added Pin To Net: NetName=GND Pin=U7-29
+Added Pin To Net: NetName=GND Pin=U9-1
+Added Pin To Net: NetName=LANE_IN5 Pin=U9-3
+Added Pin To Net: NetName=LANE_IN6 Pin=U9-4
+Added Pin To Net: NetName=LANE_IN7 Pin=U9-5
+Added Pin To Net: NetName=GND Pin=U9-6
+Added Pin To Net: NetName=NetR66_1 Pin=U9-7
+Added Pin To Net: NetName=NetR67_1 Pin=U9-8
+Added Pin To Net: NetName=DRIVER_FAULT2 Pin=U9-9
+Added Pin To Net: NetName=DRIVER_CS2 Pin=U9-10
+Added Pin To Net: NetName=NetR69_1 Pin=U9-11
+Added Pin To Net: NetName=GND Pin=U9-12
+Added Pin To Net: NetName=GND Pin=U9-13
+Added Pin To Net: NetName=NetR72_1 Pin=U9-14
+Added Pin To Net: NetName=LANE_OUT7 Pin=U9-17
+Added Pin To Net: NetName=LANE_OUT7 Pin=U9-18
+Added Pin To Net: NetName=VM Pin=U9-20
+Added Pin To Net: NetName=VM Pin=U9-21
+Added Pin To Net: NetName=VM Pin=U9-22
+Added Pin To Net: NetName=VM Pin=U9-23
+Added Pin To Net: NetName=LANE_OUT6 Pin=U9-25
+Added Pin To Net: NetName=LANE_OUT6 Pin=U9-26
+Added Pin To Net: NetName=LANE_OUT5 Pin=U9-27
+Added Pin To Net: NetName=LANE_OUT5 Pin=U9-28
+Added Pin To Net: NetName=GND Pin=U9-29
+Change Net Name : Old Net Name=NetSW1_5 New Net Name=NetS1_5
+Change Net Name : Old Net Name=NetSW1_6 New Net Name=NetS1_6
+Change Net Name : Old Net Name=NetSW1_7 New Net Name=NetS1_7
+Change Net Name : Old Net Name=NetSW1_8 New Net Name=NetS1_8
+Added Member To Class: ClassName=05_MCU Member=Component S1 418121270804
+Added Member To Class: ClassName=03_CONNECTOR Member=Component SW1 300SP1J1BLKM2RE
+Added Member To Class: ClassName=03_CONNECTOR Member=Component SW2 300SP1J1BLKM2RE
+Added Member To Class: ClassName=03_CONNECTOR Member=Component SW3 300SP1J1BLKM2RE
+Added Member To Class: ClassName=03_CONNECTOR Member=Component SW4 300SP1J1BLKM2RE
+Added Member To Class: ClassName=03_CONNECTOR Member=Component SW5 300SP1J1BLKM2RE
+Added Member To Class: ClassName=03_CONNECTOR Member=Component SW6 300SP1J1BLKM2RE
+Added Member To Class: ClassName=03_CONNECTOR Member=Component SW7 300SP1J1BLKM2RE
+Added Member To Class: ClassName=08_DRIVER Member=Component U7 TPS4H160BQPWPRQ1
+Added Member To Class: ClassName=08_DRIVER Member=Component U9 TPS4H160BQPWPRQ1

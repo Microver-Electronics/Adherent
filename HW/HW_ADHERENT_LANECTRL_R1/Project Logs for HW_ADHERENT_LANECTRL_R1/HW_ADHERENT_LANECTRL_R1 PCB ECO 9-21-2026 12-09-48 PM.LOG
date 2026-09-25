@@ -1,0 +1,70 @@
+Removed Pin From Net: NetName=NetD27_1 Pin=R5-1
+Removed Pin From Net: NetName=LANE1_SIG Pin=R5-2
+Removed Pin From Net: NetName=NetD28_1 Pin=R6-1
+Removed Pin From Net: NetName=LANE2_SIG Pin=R6-2
+Removed Pin From Net: NetName=NetD31_1 Pin=R15-1
+Removed Pin From Net: NetName=LANE3_SIG Pin=R15-2
+Removed Pin From Net: NetName=NetD32_1 Pin=R16-1
+Removed Pin From Net: NetName=LANE4_SIG Pin=R16-2
+Removed Pin From Net: NetName=NetD35_1 Pin=R25-1
+Removed Pin From Net: NetName=LANE5_SIG Pin=R25-2
+Removed Pin From Net: NetName=NetD36_1 Pin=R26-1
+Removed Pin From Net: NetName=LANE6_SIG Pin=R26-2
+Removed Pin From Net: NetName=NetD38_1 Pin=R33-1
+Removed Pin From Net: NetName=LANE7_SIG Pin=R33-2
+Change Component Footprint: Designator=R5 Old Footprint=SMR0603 New Footprint=RESIS_0603
+Change Component Footprint: Designator=R6 Old Footprint=SMR0603 New Footprint=RESIS_0603
+Change Component Footprint: Designator=R15 Old Footprint=SMR0603 New Footprint=RESIS_0603
+Change Component Footprint: Designator=R16 Old Footprint=SMR0603 New Footprint=RESIS_0603
+Change Component Footprint: Designator=R25 Old Footprint=SMR0603 New Footprint=RESIS_0603
+Change Component Footprint: Designator=R26 Old Footprint=SMR0603 New Footprint=RESIS_0603
+Change Component Footprint: Designator=R33 Old Footprint=SMR0603 New Footprint=RESIS_0603
+Change Component Comment : Designator=R5 Old Comment=RES 100K OHM 1% 1/10W 0603 New Comment=100k %1
+Change Component Comment : Designator=R6 Old Comment=RES 100K OHM 1% 1/10W 0603 New Comment=100k %1
+Change Component Comment : Designator=R15 Old Comment=RES 100K OHM 1% 1/10W 0603 New Comment=100k %1
+Change Component Comment : Designator=R16 Old Comment=RES 100K OHM 1% 1/10W 0603 New Comment=100k %1
+Change Component Comment : Designator=R25 Old Comment=RES 100K OHM 1% 1/10W 0603 New Comment=100k %1
+Change Component Comment : Designator=R26 Old Comment=RES 100K OHM 1% 1/10W 0603 New Comment=100k %1
+Change Component Comment : Designator=R33 Old Comment=RES 100K OHM 1% 1/10W 0603 New Comment=100k %1
+Change component parameters: Designator = "R5" ("R5"); Footprint = "SMR0603"; UniqueID = "\SHZEYJXL" ("\SHZEYJXL")
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "UNI-ROYAL(Uniroyal Elec)"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier_JLCPCB"; Value = "C25803"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier_MOUSER"; Value = "303-0603WAF1003T5E"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R6" ("R6"); Footprint = "SMR0603"; UniqueID = "\NULUOIBJ" ("\NULUOIBJ")
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "UNI-ROYAL(Uniroyal Elec)"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier_JLCPCB"; Value = "C25803"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier_MOUSER"; Value = "303-0603WAF1003T5E"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R15" ("R15"); Footprint = "SMR0603"; UniqueID = "\KVSNLEZT" ("\KVSNLEZT")
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "UNI-ROYAL(Uniroyal Elec)"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier_JLCPCB"; Value = "C25803"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier_MOUSER"; Value = "303-0603WAF1003T5E"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R16" ("R16"); Footprint = "SMR0603"; UniqueID = "\IVSUUIDB" ("\IVSUUIDB")
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "UNI-ROYAL(Uniroyal Elec)"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier_JLCPCB"; Value = "C25803"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier_MOUSER"; Value = "303-0603WAF1003T5E"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R25" ("R25"); Footprint = "SMR0603"; UniqueID = "\NREMYXTZ" ("\NREMYXTZ")
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "UNI-ROYAL(Uniroyal Elec)"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier_JLCPCB"; Value = "C25803"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier_MOUSER"; Value = "303-0603WAF1003T5E"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R26" ("R26"); Footprint = "SMR0603"; UniqueID = "\WCKSKKOD" ("\WCKSKKOD")
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "UNI-ROYAL(Uniroyal Elec)"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier_JLCPCB"; Value = "C25803"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier_MOUSER"; Value = "303-0603WAF1003T5E"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R33" ("R33"); Footprint = "SMR0603"; UniqueID = "\TYSILDWH" ("\TYSILDWH")
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "UNI-ROYAL(Uniroyal Elec)"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier_JLCPCB"; Value = "C25803"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier_MOUSER"; Value = "303-0603WAF1003T5E"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=LANE1_SIG Pin=R5-1
+Added Pin To Net: NetName=NetD27_1 Pin=R5-2
+Added Pin To Net: NetName=LANE2_SIG Pin=R6-1
+Added Pin To Net: NetName=NetD28_1 Pin=R6-2
+Added Pin To Net: NetName=LANE3_SIG Pin=R15-1
+Added Pin To Net: NetName=NetD31_1 Pin=R15-2
+Added Pin To Net: NetName=LANE4_SIG Pin=R16-1
+Added Pin To Net: NetName=NetD32_1 Pin=R16-2
+Added Pin To Net: NetName=LANE5_SIG Pin=R25-1
+Added Pin To Net: NetName=NetD35_1 Pin=R25-2
+Added Pin To Net: NetName=LANE6_SIG Pin=R26-1
+Added Pin To Net: NetName=NetD36_1 Pin=R26-2
+Added Pin To Net: NetName=LANE7_SIG Pin=R33-1
+Added Pin To Net: NetName=NetD38_1 Pin=R33-2

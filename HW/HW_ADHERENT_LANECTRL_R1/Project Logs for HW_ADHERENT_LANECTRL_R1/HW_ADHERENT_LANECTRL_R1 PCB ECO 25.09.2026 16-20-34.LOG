@@ -1,0 +1,86 @@
+Removed Pin From Net: NetName=GND Pin=D29-1
+Removed Pin From Net: NetName=GND Pin=D30-1
+Removed Pin From Net: NetName=GND Pin=D31-1
+Removed Pin From Net: NetName=GND Pin=D32-1
+Removed Pin From Net: NetName=GND Pin=D33-1
+Removed Pin From Net: NetName=GND Pin=D34-1
+Removed Pin From Net: NetName=GND Pin=D35-1
+Added Component: Designator=LEDS1(THD 1x2p. male straight)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Molex"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "0022032021"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number"; Value = "WM4000-ND"; VariantName = "[No Variations]"
+Added Component: Designator=LEDS2(THD 1x2p. male straight)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Molex"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "0022032021"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number"; Value = "WM4000-ND"; VariantName = "[No Variations]"
+Added Component: Designator=LEDS3(THD 1x2p. male straight)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Molex"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "0022032021"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number"; Value = "WM4000-ND"; VariantName = "[No Variations]"
+Added Component: Designator=LEDS4(THD 1x2p. male straight)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Molex"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "0022032021"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number"; Value = "WM4000-ND"; VariantName = "[No Variations]"
+Added Component: Designator=LEDS5(THD 1x2p. male straight)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Molex"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "0022032021"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number"; Value = "WM4000-ND"; VariantName = "[No Variations]"
+Added Component: Designator=LEDS6(THD 1x2p. male straight)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Molex"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "0022032021"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number"; Value = "WM4000-ND"; VariantName = "[No Variations]"
+Added Component: Designator=LEDS7(THD 1x2p. male straight)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Molex"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "0022032021"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number"; Value = "WM4000-ND"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=LEDS1-2
+Added Pin To Net: NetName=GND Pin=LEDS2-2
+Added Pin To Net: NetName=GND Pin=LEDS3-2
+Added Pin To Net: NetName=GND Pin=LEDS4-2
+Added Pin To Net: NetName=GND Pin=LEDS5-2
+Added Pin To Net: NetName=GND Pin=LEDS6-2
+Added Pin To Net: NetName=GND Pin=LEDS7-2
+Change Net Name : Old Net Name=DRIVER_FAULT1 New Net Name=DRV_FAULT1
+Change Net Name : Old Net Name=DRIVER_FAULT2 New Net Name=DRV_FAULT2
+Added Pin To Net: NetName=NetLEDS1_1 Pin=LEDS1-1
+Added Pin To Net: NetName=NetLEDS1_1 Pin=R50-2
+Added Net: Name=NetLEDS1_1
+Added Pin To Net: NetName=NetLEDS2_1 Pin=LEDS2-1
+Added Pin To Net: NetName=NetLEDS2_1 Pin=R51-2
+Added Net: Name=NetLEDS2_1
+Added Pin To Net: NetName=NetLEDS3_1 Pin=LEDS3-1
+Added Pin To Net: NetName=NetLEDS3_1 Pin=R52-2
+Added Net: Name=NetLEDS3_1
+Added Pin To Net: NetName=NetLEDS4_1 Pin=LEDS4-1
+Added Pin To Net: NetName=NetLEDS4_1 Pin=R53-2
+Added Net: Name=NetLEDS4_1
+Added Pin To Net: NetName=NetLEDS5_1 Pin=LEDS5-1
+Added Pin To Net: NetName=NetLEDS5_1 Pin=R54-2
+Added Net: Name=NetLEDS5_1
+Added Pin To Net: NetName=NetLEDS6_1 Pin=LEDS6-1
+Added Pin To Net: NetName=NetLEDS6_1 Pin=R55-2
+Added Net: Name=NetLEDS6_1
+Added Pin To Net: NetName=NetLEDS7_1 Pin=LEDS7-1
+Added Pin To Net: NetName=NetLEDS7_1 Pin=R56-2
+Added Net: Name=NetLEDS7_1
+Added Member To Class: ClassName=03_CONNECTOR Member=Component J1 436500300
+Added Member To Class: ClassName=03_CONNECTOR Member=Component J2 436500300
+Added Member To Class: ClassName=03_CONNECTOR Member=Component J3 436500300
+Added Member To Class: ClassName=03_CONNECTOR Member=Component J4 436500300
+Added Member To Class: ClassName=03_CONNECTOR Member=Component J5 436500300
+Added Member To Class: ClassName=03_CONNECTOR Member=Component J6 436500300
+Added Member To Class: ClassName=03_CONNECTOR Member=Component J7 436500300
+Added Member To Class: ClassName=05_MCU Member=Component LEDS1 0022032021
+Added Member To Class: ClassName=05_MCU Member=Component LEDS2 0022032021
+Added Member To Class: ClassName=05_MCU Member=Component LEDS3 0022032021
+Added Member To Class: ClassName=05_MCU Member=Component LEDS4 0022032021
+Added Member To Class: ClassName=05_MCU Member=Component LEDS5 0022032021
+Added Member To Class: ClassName=05_MCU Member=Component LEDS6 0022032021
+Added Member To Class: ClassName=05_MCU Member=Component LEDS7 0022032021
+Added Member To Class: ClassName=05_MCU Member=Component R50 RES 100 OHM 1% 1/10W 0603
+Added Member To Class: ClassName=05_MCU Member=Component R51 RES 100 OHM 1% 1/10W 0603
+Added Member To Class: ClassName=05_MCU Member=Component R52 RES 100 OHM 1% 1/10W 0603
+Added Member To Class: ClassName=05_MCU Member=Component R53 RES 100 OHM 1% 1/10W 0603
+Added Member To Class: ClassName=05_MCU Member=Component R54 RES 100 OHM 1% 1/10W 0603
+Added Member To Class: ClassName=05_MCU Member=Component R55 RES 100 OHM 1% 1/10W 0603
+Added Member To Class: ClassName=05_MCU Member=Component R56 RES 100 OHM 1% 1/10W 0603

@@ -1,0 +1,14 @@
+Added Component: Designator=MTG2(M3 Mounting Hole)
+Added Component: Designator=MTG3(M3 Mounting Hole)
+Added Component: Designator=MTG4(M3 Mounting Hole)
+Added Component: Designator=MTG5(M3 Mounting Hole)
+Added Component: Designator=MTG6(M3 Mounting Hole)
+Added Component: Designator=MTG7(M3 Mounting Hole)
+Added Component: Designator=MTG8(M3 Mounting Hole)
+Added Member To Class: ClassName=05_MCU Member=Component MTG2 Mounting Hole, 3 MM
+Added Member To Class: ClassName=05_MCU Member=Component MTG3 Mounting Hole, 3 MM
+Added Member To Class: ClassName=05_MCU Member=Component MTG4 Mounting Hole, 3 MM
+Added Member To Class: ClassName=05_MCU Member=Component MTG5 Mounting Hole, 3 MM
+Added Member To Class: ClassName=05_MCU Member=Component MTG6 Mounting Hole, 3 MM
+Added Member To Class: ClassName=05_MCU Member=Component MTG7 Mounting Hole, 3 MM
+Added Member To Class: ClassName=05_MCU Member=Component MTG8 Mounting Hole, 3 MM
