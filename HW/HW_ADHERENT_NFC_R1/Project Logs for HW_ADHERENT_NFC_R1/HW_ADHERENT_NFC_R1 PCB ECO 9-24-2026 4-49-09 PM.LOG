@@ -1,0 +1,5 @@
+Change Component Footprint: Designator=TP1 Old Footprint=SMD_Ø1.5mm New Footprint=SMD_1P5mm
+Change Component Kind : Designator=TP1 Old Kind=Standard New Kind=Standard (No BOM)
+Change component parameters: Designator = "TP1" ("TP1"); Footprint = "SMD_Ø1.5mm"; UniqueID = "\HSMEAMWC" ("\HSMEAMWC")
+Change component parameters (AddParameter): Name = "DNP"; Value = "DNP"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "Testpoint"; VariantName = "[No Variations]"

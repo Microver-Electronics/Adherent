@@ -1,0 +1,552 @@
+Wire List
+
+<<< Component List >>>
+220uF 50V                       C1             CAP_EEEFT1H221AV
+220uF 50V                       C2             CAP_EEEFT1H221AV
+CAP CER 0.22UF 50V X7R 0603     C3             SMC0603
+CAP CER 10UF 50V X5R 1206       C4             SMC1206
+CAP CER 0.1UF 50V X7R 0603      C5             SMC0603
+100nF 25V                       C6             CAP0603
+0.1uF 16V                       C7             CAP0603
+1uF                             C8             CAP0603
+0.1uF 100V                      C9             CAP0603
+22uF 35V                        C10            CAP1206
+1 µF                            C11            CAP 0603_1608
+10 µF                           C12            CAP 0805_2012
+GCM188R71H104KA57J              C13            CAP 0603_1608
+4.7 µF                          C14            CAP 0805_2012
+GCM188R71H104KA57J              C15            CAP 0603_1608
+GCM188R71H104KA57J              C16            CAP 0603_1608
+GCM188R71H104KA57J              C17            CAP 0603_1608
+GCM188R71H104KA57J              C18            CAP 0603_1608
+GCM188R71H104KA57J              C19            CAP 0603_1608
+8.2 pF                          C20            CAP 0402_1005
+8.2 pF                          C21            CAP 0402_1005
+1 µF                            C22            CAP 0603_1608
+10000 pF                        C23            CAP 0603_1608
+47pF                            C24            CAPC1608X100N
+10uF                            C25            0603_C
+100nF                           C26            CAP0603
+47pF                            C27            CAPC1608X100N
+10uF                            C28            CAPC1608X100N
+10uF                            C29            CAPC1608X100N
+1uF 16V                         C30            CAPC1608X100N
+10000pF                         C31            CAPC1608X100N
+10pF 50V                        C32            CAPC1608X100N
+10pF 50V                        C33            CAPC1608X100N
+100uF 25V                       C34            CAP_25SVPF100M
+10000pF                         C35            CAPC1608X100N
+1uF 16V                         C36            CAPC1608X100N
+10000pF                         C37            CAPC1608X100N
+2.2uF                           C38            CAPC1608X100N
+10000pF                         C39            CAPC1608X100N
+2.2uF                           C40            CAPC1608X100N
+10000pF                         C41            CAPC1608X100N
+2.2uF                           C42            CAPC1608X100N
+0.1uF 16V                       C43            CAPC1608X100N
+2.2uF                           C44            CAPC1608X100N
+10000pF                         C45            CAPC1608X100N
+1uF 16V                         C46            CAPC1608X100N
+150pF 50V                       C47            CAPC1005X04L
+10pF 50V                        C48            CAPC1005X04L
+33pF 50V                        C49            CAPC1005X04L
+180pF 50V                       C50            CAPC1005X04L
+10pF 50V                        C51            CAPC1005X04L
+360pF 50V                       C52            CAPC1005X04L
+10pF 50V                        C53            CAPC1005X04L
+360pF 50V                       C54            CAPC1005X04L
+33pF 50V                        C55            CAPC1005X04L
+180pF 50V                       C56            CAPC1005X04L
+10pF 50V                        C57            CAPC1005X04L
+150pF 50V                       C58            CAPC1005X04L
+SMDJ24CA                        D1             DIONM9059X262N
+LTST-C191KRKT                   D2             LED0603
+LED RED CLEAR SMD               D3             Lite-On_RED_0603
+LED RED CLEAR SMD               D4             Lite-On_RED_0603
+0452005.MRL                     F1             FUSC6127X294N
+BLM21PG121SN1D                  FB1            INDC2012X11L
+BLM21PG121SN1D                  FB2            INDC2012X11L
+ACT45B-510-2P-TL003             FL1            FIL_ACT45B-510-2P-TL003
+BLM18PG221SN1D                  FL2            BEADC1608X95N
+0430450400                      J1             CONN_SD-43045-001_04_MOL
+SWR201-NRTN-S03-SA-WH           J2             SHDR3W50P0X200_1X3_790X460X63
+CONN HEADER SMD 10POS 1.27MM    J3             Samtec_0_MFG
+61300211821                     J4             61300211821
+18uH                            L1             WE-LQS_6045
+LQW18CNR47J0HD                  L2             IND_LQW18CN_0H_MUR
+LQW18CNR47J0HD                  L3             IND_LQW18CN_0H_MUR
+BSC028N06NS                     M1             BSC028N06NS
+Mounting Hole, 2MM              MTG1           MTG-PTH-2MM
+Mounting Hole, 2MM              MTG2           MTG-PTH-2MM
+Mounting Hole, 2MM              MTG3           MTG-PTH-2MM
+Mounting Hole, 2MM              MTG4           MTG-PTH-2MM
+RC0603FR-07100KL                R1             FP-RC0603-0_55-MFG
+RES 10K OHM 1% 1/8W 0603        R2             RES0603
+88.7k                           R3             RES0603
+22.1k                           R4             RES0603
+330 Ohms                        R5             RES 0603_1608
+10 kOhms                        R6             RES 0402_1005
+10 kOhms                        R7             RES 0402_1005
+10 kOhms                        R8             RES 0402_1005
+10 kOhms                        R9             RES 0402_1005
+0 Ohms                          R10            RES 0402_1005
+1 kOhms                         R11            RES 0402_1005
+1 kOhms                         R12            RES 0402_1005
+56 Ohms                         R13            RES_0402
+56 Ohms                         R14            RES_0402
+330 Ohms                        R15            RES_0402
+10 kOhms                        R16            RES 0603_1608
+10 kOhms                        R17            RES 0603_1608
+560mOhms                        R18            RES_0402
+560mOhms                        R19            RES_0402
+SMD                             T1             TEST_POINT
+SMD                             T2             TEST_POINT
+SMD                             T3             TEST_POINT
+SMD                             T4             TEST_POINT
+SMD                             T5             TEST_POINT
+SMD                             T6             TEST_POINT
+Testpoint                       TP1            SMD_1P5mm
+Testpoint                       TP2            SMD_1P5mm
+Testpoint                       TP3            SMD_1P5mm
+Testpoint                       TP4            SMD_1P5mm
+Testpoint                       TP5            SMD_1P5mm
+LM74700QDBVRQ1                  U1             SOT95P280X145-6N/LM74700QDBVR
+LMR50410XDBVR                   U2             SOT95P280X145-6N/
+AP2112K-3.3TRG1                 U3             SOT95P285X140-5N
+STM32F103C8T6                   U4             LQFP48_STM
+SN65HVD232DR                    U5             SOIC8
+CPC1014NTR                      U6             4-SOP
+ST25R200-BMET                   U7             UFQFPN24_STM
+CS11337-27.12M                  U8             NX2016SA2712MHZEXS00ACS11337
+ECS-80-8-30Q-VS-TR              Y1             XTAL_ECS-80-8-30Q-VS-TR
+
+<<< Wire List >>>
+
+  NODE  REFERENCE  PIN #   PIN NAME       PIN TYPE    PART VALUE
+
+[00093] VDDA
+        C22        1       1              PASSIVE     1 µF
+        C23        1       1              PASSIVE     10000 pF
+        FB1        2       2              PASSIVE     BLM21PG121SN1D
+        U4         9       VDDA           POWER       STM32F103C8T6
+
+[00092] USART1_TX
+        J2         2       2              PASSIVE     SWR201-NRTN-S03-SA-WH
+        U4         30      PA9            I/O         STM32F103C8T6
+
+[00091] USART1_RX
+        J2         3       3              PASSIVE     SWR201-NRTN-S03-SA-WH
+        U4         31      PA10           I/O         STM32F103C8T6
+
+[00090] SWDIO
+        J3         2       SWIO           PASSIVE     CONN HEADER SMD 10POS 1.27MM
+        U4         34      PA13           I/O         STM32F103C8T6
+
+[00089] SWCLK
+        J3         4       SWCLK          PASSIVE     CONN HEADER SMD 10POS 1.27MM
+        U4         37      PA14           I/O         STM32F103C8T6
+
+[00088] SPI2_SCLK
+        U4         26      PB13           I/O         STM32F103C8T6
+        U7         24      SCLK           INPUT       ST25R200-BMET
+
+[00087] SPI2_MOSI
+        U4         28      PB15           I/O         STM32F103C8T6
+        U7         23      MOSI           INPUT       ST25R200-BMET
+
+[00086] SPI2_MISO
+        U4         27      PB14           I/O         STM32F103C8T6
+        U7         2       MISO           OUTPUT      ST25R200-BMET
+
+[00085] SPI2_CS_NFC
+        R16        1       1              PASSIVE     10 kOhms
+        U4         25      PB12           I/O         STM32F103C8T6
+        U7         22      BSS            INPUT       ST25R200-BMET
+
+[00084] RFO2_ANT
+        C49        2       2              PASSIVE     33pF 50V
+        C50        2       2              PASSIVE     180pF 50V
+        L2         2       2              PASSIVE     LQW18CNR47J0HD
+
+[00083] RFO2
+        L2         1       1              PASSIVE     LQW18CNR47J0HD
+        T3         1       TP             PASSIVE     SMD
+        U7         10      RFO2           OUTPUT      ST25R200-BMET
+
+[00082] RFO1_ANT
+        C55        2       2              PASSIVE     33pF 50V
+        C56        2       2              PASSIVE     180pF 50V
+        L3         2       2              PASSIVE     LQW18CNR47J0HD
+
+[00081] RFO1
+        L3         1       1              PASSIVE     LQW18CNR47J0HD
+        T5         1       TP             PASSIVE     SMD
+        U7         9       RFO1           OUTPUT      ST25R200-BMET
+
+[00080] RFI2_ANT
+        C47        1       1              PASSIVE     150pF 50V
+        C48        2       2              PASSIVE     10pF 50V
+        U7         17      RFI2           INPUT       ST25R200-BMET
+
+[00079] RFI1_ANT
+        C57        1       1              PASSIVE     10pF 50V
+        C58        2       2              PASSIVE     150pF 50V
+        U7         16      RFI1           INPUT       ST25R200-BMET
+
+[00078] OSC_OUT_Y
+        C20        2       2              PASSIVE     8.2 pF
+        R10        2       2              PASSIVE     0 Ohms
+        Y1         1       IN/OUT         PASSIVE     ECS-80-8-30Q-VS-TR
+
+[00077] OSC_OUT
+        R10        1       1              PASSIVE     0 Ohms
+        U4         6       PD1-OSC_OUT    I/O         STM32F103C8T6
+
+[00076] OSC_IN
+        C21        2       2              PASSIVE     8.2 pF
+        U4         5       PD0-OSC_IN     I/O         STM32F103C8T6
+        Y1         2       OUT/IN         PASSIVE     ECS-80-8-30Q-VS-TR
+
+[00075] NRST
+        C19        1       1              PASSIVE     GCM188R71H104KA57J
+        J3         10      /RESET         PASSIVE     CONN HEADER SMD 10POS 1.27MM
+        R7         2       2              PASSIVE     10 kOhms
+        U4         7       NRST           I/O         STM32F103C8T6
+
+[00074] NFC_RESET
+        R17        2       2              PASSIVE     10 kOhms
+        U4         21      PB10           I/O         STM32F103C8T6
+        U7         21      RESET          INPUT       ST25R200-BMET
+
+[00073] NFC_IRQ
+        U4         22      PB11           I/O         STM32F103C8T6
+        U7         1       IRQ            OUTPUT      ST25R200-BMET
+
+[00051] NetT2_1
+        T2         1       TP             PASSIVE     SMD
+        U7         13      TAD1           OUTPUT      ST25R200-BMET
+
+[00050] NetT1_1
+        T1         1       TP             PASSIVE     SMD
+        U7         12      TAD2           I/O         ST25R200-BMET
+
+[00049] NetR15_2
+        R15        2       2              PASSIVE     330 Ohms
+        U4         14      PA4            I/O         STM32F103C8T6
+
+[00048] NetR15_1
+        R15        1       1              PASSIVE     330 Ohms
+        U6         1       ANODE          PASSIVE     CPC1014NTR
+
+[00047] NetR14_2
+        R14        2       2              PASSIVE     56 Ohms
+        U6         4       4              PASSIVE     CPC1014NTR
+
+[00046] NetR13_2
+        R13        2       2              PASSIVE     56 Ohms
+        U6         3       3              PASSIVE     CPC1014NTR
+
+[00045] NetR3_1
+        R3         1       1              PASSIVE     88.7k
+        R4         2       2              PASSIVE     22.1k
+        U2         3       FB             PASSIVE     LMR50410XDBVR
+
+[00040] NetM1_G
+        M1         G       G              PASSIVE     BSC028N06NS
+        U1         5       GATE           OUTPUT      LM74700QDBVRQ1
+
+[00039] NetJ4_2
+        J4         2       2              PASSIVE     61300211821
+        R19        2       2              PASSIVE     560mOhms
+        T6         1       TP             PASSIVE     SMD
+
+[00038] NetJ4_1
+        J4         1       1              PASSIVE     61300211821
+        R18        2       2              PASSIVE     560mOhms
+        T4         1       TP             PASSIVE     SMD
+
+[00034] NetD4_1
+        D4         1       C              PASSIVE     LED RED CLEAR SMD
+        R12        1       1              PASSIVE     1 kOhms
+
+[00033] NetD3_1
+        D3         1       C              PASSIVE     LED RED CLEAR SMD
+        R11        1       1              PASSIVE     1 kOhms
+
+[00032] NetD2_1
+        D2         1       A              PASSIVE     LTST-C191KRKT
+        R5         2       2              PASSIVE     330 Ohms
+
+[00031] NetC53_1
+        C53        1       1              PASSIVE     10pF 50V
+        C54        1       1              PASSIVE     360pF 50V
+        C55        1       1              PASSIVE     33pF 50V
+        C57        2       2              PASSIVE     10pF 50V
+        R19        1       1              PASSIVE     560mOhms
+
+[00030] NetC48_1
+        C48        1       1              PASSIVE     10pF 50V
+        C49        1       1              PASSIVE     33pF 50V
+        C51        2       2              PASSIVE     10pF 50V
+        C52        2       2              PASSIVE     360pF 50V
+        R18        1       1              PASSIVE     560mOhms
+
+[00029] NetC45_2
+        C45        2       2              PASSIVE     10000pF
+        C46        2       2              PASSIVE     1uF 16V
+        U7         15      AGD            I/O         ST25R200-BMET
+
+[00028] NetC43_2
+        C43        2       2              PASSIVE     0.1uF 16V
+        C44        2       2              PASSIVE     2.2uF
+        U7         14      VDD_A          POWER       ST25R200-BMET
+
+[00027] NetC41_2
+        C41        2       2              PASSIVE     10000pF
+        C42        2       2              PASSIVE     2.2uF
+        U7         8       VDD_DR         POWER       ST25R200-BMET
+
+[00026] NetC39_2
+        C39        2       2              PASSIVE     10000pF
+        C40        2       2              PASSIVE     2.2uF
+        U7         6       VDD_AM         POWER       ST25R200-BMET
+
+[00025] NetC37_2
+        C37        2       2              PASSIVE     10000pF
+        C38        2       2              PASSIVE     2.2uF
+        U7         5       VDD_D          POWER       ST25R200-BMET
+
+[00024] NetC33_2
+        C33        2       2              PASSIVE     10pF 50V
+        U7         20      XTO            OUTPUT      ST25R200-BMET
+        U8         3       CRYSTAL_2      PASSIVE     CS11337-27.12M
+
+[00023] NetC32_2
+        C32        2       2              PASSIVE     10pF 50V
+        U7         19      XTI            INPUT       ST25R200-BMET
+        U8         1       CRYSTAL_1      PASSIVE     CS11337-27.12M
+
+[00022] NetC7_2
+        C7         2       2              PASSIVE     0.1uF 16V
+        L1         1       1              PASSIVE     18uH
+        U2         6       SW             PASSIVE     LMR50410XDBVR
+
+[00021] NetC7_1
+        C7         1       1              PASSIVE     0.1uF 16V
+        U2         1       CB             PASSIVE     LMR50410XDBVR
+
+[00020] NetC6_2
+        C6         2       2              PASSIVE     100nF 25V
+        R1         1       1              PASSIVE     RC0603FR-07100KL
+        R2         2       2              PASSIVE     RES 10K OHM 1% 1/8W 0603
+
+[00019] NetC3_2
+        C3         2       2              PASSIVE     CAP CER 0.22UF 50V X7R 0603
+        D1         1       1              PASSIVE     SMDJ24CA
+        F1         2       2              PASSIVE     0452005.MRL
+        M1         S       S              PASSIVE     BSC028N06NS
+        U1         3       EN             INPUT       LM74700QDBVRQ1
+        U1         6       ANODE          INPUT       LM74700QDBVRQ1
+
+[00018] NetC3_1
+        C3         1       1              PASSIVE     CAP CER 0.22UF 50V X7R 0603
+        U1         1       VCAP           OUTPUT      LM74700QDBVRQ1
+
+[00017] LED_USER
+        D4         2       A              PASSIVE     LED RED CLEAR SMD
+        U4         17      PA7            I/O         STM32F103C8T6
+
+[00016] LED_STAT
+        D3         2       A              PASSIVE     LED RED CLEAR SMD
+        U4         16      PA6            I/O         STM32F103C8T6
+
+[00015] GND
+        C1         2       2              PASSIVE     220uF 50V
+        C2         2       2              PASSIVE     220uF 50V
+        C4         1       1              PASSIVE     CAP CER 10UF 50V X5R 1206
+        C5         1       1              PASSIVE     CAP CER 0.1UF 50V X7R 0603
+        C6         1       1              PASSIVE     100nF 25V
+        C8         1       1              PASSIVE     1uF
+        C9         1       1              PASSIVE     0.1uF 100V
+        C10        1       1              PASSIVE     22uF 35V
+        C11        1       1              PASSIVE     1 µF
+        C12        1       1              PASSIVE     10 µF
+        C13        1       1              PASSIVE     GCM188R71H104KA57J
+        C14        1       1              PASSIVE     4.7 µF
+        C15        2       2              PASSIVE     GCM188R71H104KA57J
+        C16        2       2              PASSIVE     GCM188R71H104KA57J
+        C17        2       2              PASSIVE     GCM188R71H104KA57J
+        C18        2       2              PASSIVE     GCM188R71H104KA57J
+        C19        2       2              PASSIVE     GCM188R71H104KA57J
+        C20        1       1              PASSIVE     8.2 pF
+        C21        1       1              PASSIVE     8.2 pF
+        C22        2       2              PASSIVE     1 µF
+        C23        2       2              PASSIVE     10000 pF
+        C24        2       2              PASSIVE     47pF
+        C25        1       1              PASSIVE     10uF
+        C26        2       2              PASSIVE     100nF
+        C27        1       1              PASSIVE     47pF
+        C28        1                      PASSIVE     10uF
+        C29        1                      PASSIVE     10uF
+        C30        1       1              PASSIVE     1uF 16V
+        C31        1       1              PASSIVE     10000pF
+        C32        1       1              PASSIVE     10pF 50V
+        C33        1       1              PASSIVE     10pF 50V
+        C34        2       2              PASSIVE     100uF 25V
+        C35        1       1              PASSIVE     10000pF
+        C36        1       1              PASSIVE     1uF 16V
+        C37        1       1              PASSIVE     10000pF
+        C38        1       1              PASSIVE     2.2uF
+        C39        1       1              PASSIVE     10000pF
+        C40        1       1              PASSIVE     2.2uF
+        C41        1       1              PASSIVE     10000pF
+        C42        1       1              PASSIVE     2.2uF
+        C43        1       1              PASSIVE     0.1uF 16V
+        C44        1       1              PASSIVE     2.2uF
+        C45        1       1              PASSIVE     10000pF
+        C46        1       1              PASSIVE     1uF 16V
+        C47        2       2              PASSIVE     150pF 50V
+        C50        1       1              PASSIVE     180pF 50V
+        C51        1       1              PASSIVE     10pF 50V
+        C52        1       1              PASSIVE     360pF 50V
+        C53        2       2              PASSIVE     10pF 50V
+        C54        2       2              PASSIVE     360pF 50V
+        C56        1       1              PASSIVE     180pF 50V
+        C58        1       1              PASSIVE     150pF 50V
+        D1         2       2              PASSIVE     SMDJ24CA
+        D2         2       K              PASSIVE     LTST-C191KRKT
+        J1         2       2              PASSIVE     0430450400
+        J2         1       1              PASSIVE     SWR201-NRTN-S03-SA-WH
+        J3         3       GND            PASSIVE     CONN HEADER SMD 10POS 1.27MM
+        J3         5       GND            PASSIVE     CONN HEADER SMD 10POS 1.27MM
+        J3         9       GND            PASSIVE     CONN HEADER SMD 10POS 1.27MM
+        R2         1       1              PASSIVE     RES 10K OHM 1% 1/8W 0603
+        R4         1       1              PASSIVE     22.1k
+        R8         2       2              PASSIVE     10 kOhms
+        R9         1       1              PASSIVE     10 kOhms
+        R11        2       2              PASSIVE     1 kOhms
+        R12        2       2              PASSIVE     1 kOhms
+        R17        1       1              PASSIVE     10 kOhms
+        TP3        1       TP             PASSIVE     Testpoint
+        U1         2       GND            POWER       LM74700QDBVRQ1
+        U2         2       GND            PASSIVE     LMR50410XDBVR
+        U3         2       GND            POWER       AP2112K-3.3TRG1
+        U4         8       VSSA           PASSIVE     STM32F103C8T6
+        U4         23      VSS_1          PASSIVE     STM32F103C8T6
+        U4         35      VSS_2          PASSIVE     STM32F103C8T6
+        U4         47      VSS_3          PASSIVE     STM32F103C8T6
+        U5         2       GND            POWER       SN65HVD232DR
+        U6         2       CATHODE1       PASSIVE     CPC1014NTR
+        U7         4       GND_D          POWER       ST25R200-BMET
+        U7         11      GND_DR         POWER       ST25R200-BMET
+        U7         18      GND_A          POWER       ST25R200-BMET
+        U7         25      VSS            POWER       ST25R200-BMET
+        U8         2       GND_1          PASSIVE     CS11337-27.12M
+        U8         4       GND_2          PASSIVE     CS11337-27.12M
+
+[00014] CAN_TX
+        U4         33      PA12           I/O         STM32F103C8T6
+        U5         1       D              INPUT       SN65HVD232DR
+
+[00013] CAN_RX
+        U4         32      PA11           I/O         STM32F103C8T6
+        U5         4       R              OUTPUT      SN65HVD232DR
+
+[00012] CAN_F_P
+        FL1        1       1              PASSIVE     ACT45B-510-2P-TL003
+        U5         7       CANH           I/O         SN65HVD232DR
+
+[00011] CAN_F_N
+        FL1        2       2              PASSIVE     ACT45B-510-2P-TL003
+        U5         6       CANL           I/O         SN65HVD232DR
+
+[00010] CAN1_P
+        C24        1       1              PASSIVE     47pF
+        FL1        4       4              PASSIVE     ACT45B-510-2P-TL003
+        J1         3       3              PASSIVE     0430450400
+        R13        1       1              PASSIVE     56 Ohms
+
+[00009] CAN1_N
+        C27        2       2              PASSIVE     47pF
+        FL1        3       3              PASSIVE     ACT45B-510-2P-TL003
+        J1         4       4              PASSIVE     0430450400
+        R14        1       1              PASSIVE     56 Ohms
+
+[00008] BOOT1
+        R9         2       2              PASSIVE     10 kOhms
+        U4         20      PB2            I/O         STM32F103C8T6
+
+[00007] BOOT0
+        R6         2       2              PASSIVE     10 kOhms
+        R8         1       1              PASSIVE     10 kOhms
+        U4         44      BOOT0          INPUT       STM32F103C8T6
+
+[00006] +24V_VIN
+        F1         1       1              PASSIVE     0452005.MRL
+        J1         1       1              PASSIVE     0430450400
+        TP1        1       TP             PASSIVE     Testpoint
+
+[00005] +24V_PR
+        C1         1       1              PASSIVE     220uF 50V
+        C2         1       1              PASSIVE     220uF 50V
+        C4         2       2              PASSIVE     CAP CER 10UF 50V X5R 1206
+        C5         2       2              PASSIVE     CAP CER 0.1UF 50V X7R 0603
+        C8         2       2              PASSIVE     1uF
+        C9         2       2              PASSIVE     0.1uF 100V
+        M1         D       D              PASSIVE     BSC028N06NS
+        R1         2       2              PASSIVE     RC0603FR-07100KL
+        TP2        1       TP             PASSIVE     Testpoint
+        U1         4       CATHODE        INPUT       LM74700QDBVRQ1
+        U2         4       EN             PASSIVE     LMR50410XDBVR
+        U2         5       VIN            POWER       LMR50410XDBVR
+
+[00004] +5V_NFC
+        C28        2       2              PASSIVE     10uF
+        C29        2       2              PASSIVE     10uF
+        C31        2       2              PASSIVE     10000pF
+        FL2        2       2              PASSIVE     BLM18PG221SN1D
+        U7         7       VDD            POWER       ST25R200-BMET
+
+[00003] +5V_MAIN
+        C10        2       2              PASSIVE     22uF 35V
+        C11        2       2              PASSIVE     1 µF
+        C30        2       2              PASSIVE     1uF 16V
+        FL2        1       1              PASSIVE     BLM18PG221SN1D
+        L1         2       2              PASSIVE     18uH
+        R3         2       2              PASSIVE     88.7k
+        TP4        1       TP             PASSIVE     Testpoint
+        U3         1       VIN            POWER       AP2112K-3.3TRG1
+        U3         3       EN             INPUT       AP2112K-3.3TRG1
+
+[00002] +3V3_CAN
+        C25        2       2              PASSIVE     10uF
+        C26        1       1              PASSIVE     100nF
+        FB2        2       2              PASSIVE     BLM21PG121SN1D
+        U5         3       VCC            POWER       SN65HVD232DR
+
+[00001] +3V3
+        C12        2       2              PASSIVE     10 µF
+        C13        2       2              PASSIVE     GCM188R71H104KA57J
+        C14        2       2              PASSIVE     4.7 µF
+        C15        1       1              PASSIVE     GCM188R71H104KA57J
+        C16        1       1              PASSIVE     GCM188R71H104KA57J
+        C17        1       1              PASSIVE     GCM188R71H104KA57J
+        C18        1       1              PASSIVE     GCM188R71H104KA57J
+        C34        1       1              PASSIVE     100uF 25V
+        C35        2       2              PASSIVE     10000pF
+        C36        2       2              PASSIVE     1uF 16V
+        FB1        1       1              PASSIVE     BLM21PG121SN1D
+        FB2        1       1              PASSIVE     BLM21PG121SN1D
+        J3         1       VCC            PASSIVE     CONN HEADER SMD 10POS 1.27MM
+        R5         1       1              PASSIVE     330 Ohms
+        R6         1       1              PASSIVE     10 kOhms
+        R7         1       1              PASSIVE     10 kOhms
+        R16        2       2              PASSIVE     10 kOhms
+        TP5        1       TP             PASSIVE     Testpoint
+        U3         5       VOUT           POWER       AP2112K-3.3TRG1
+        U4         1       VBAT           POWER       STM32F103C8T6
+        U4         24      VDD_1          POWER       STM32F103C8T6
+        U4         36      VDD_2          POWER       STM32F103C8T6
+        U4         48      VDD_3          POWER       STM32F103C8T6
+        U7         3       VDD_IO         POWER       ST25R200-BMET
+

@@ -1,0 +1,14 @@
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 17:40:02 On 25.09.2026
+
+Output: Export STEP
+Type  : ExportSTEP
+From  : PCB Document [HW_ADHERENT_NFC_R1.PcbDoc]
+   Generated File[HW_ADHERENT_NFC_R1.step]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 17:40:14 On 25.09.2026

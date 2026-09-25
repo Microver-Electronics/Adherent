@@ -1,0 +1,49 @@
+Removed Pin From Net: NetName=CAN1_N Pin=-2
+Removed Member From Class: ClassName=04_CAN Member=
+Change Component Designator: OldDesignator=F? NewDesignator=F1
+Added Component: Designator=C16(0603_C)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Murata Electronics North America"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "GRM188R61E106MA73D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Revision"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number"; Value = "490-7202-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10uF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage"; Value = "25V"; VariantName = "[No Variations]"
+Added Component: Designator=D1(Lite-On_RED_0603)
+Add component (AddParameter): Name = "Color"; Value = "Red Clear"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Lite-On Inc."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "LTST-C191KRKT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Order Code"; Value = "DIGI: 160-1447-2-ND"; VariantName = "[No Variations]"
+Added Component: Designator=D2(Lite-On_RED_0603)
+Add component (AddParameter): Name = "Color"; Value = "Red Clear"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Lite-On Inc."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "LTST-C191KRKT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Order Code"; Value = "DIGI: 160-1447-2-ND"; VariantName = "[No Variations]"
+Added Component: Designator=FL2(BEADC1608X95N)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Murata"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "BLM18PG221SN1D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "1608 Murata"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/BLM18PG221SN1D/Murata/view-part/236838/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=P1(THD 1x2p. male straight)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Molex"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "0022032021"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number"; Value = "WM4000-ND"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=C16-1
+Added Pin To Net: NetName=+3V3_CAN Pin=C16-2
+Added Pin To Net: NetName=NetD1_1 Pin=D1-1
+Added Pin To Net: NetName=LED_STAT Pin=D1-2
+Added Pin To Net: NetName=NetD2_1 Pin=D2-1
+Added Pin To Net: NetName=LED_USER Pin=D2-2
+Added Pin To Net: NetName=+5V_MAIN Pin=FL2-1
+Added Pin To Net: NetName=+5V_NFC Pin=FL2-2
+Added Pin To Net: NetName=CAN1_N Pin=P1-2
+Added Pin To Net: NetName=NetP1_1 Pin=P1-1
+Added Pin To Net: NetName=NetP1_1 Pin=R10-2
+Added Net: Name=NetP1_1
+Added Member To Class: ClassName=04_CAN Member=Component C16 10uF
+Added Member To Class: ClassName=05_MCU Member=Component D1 LED RED CLEAR SMD
+Added Member To Class: ClassName=05_MCU Member=Component D2 LED RED CLEAR SMD
+Added Member To Class: ClassName=06_NFC Member=Component FL2 BLM18PG221SN1D
+Added Member To Class: ClassName=04_CAN Member=Component P1 0022032021

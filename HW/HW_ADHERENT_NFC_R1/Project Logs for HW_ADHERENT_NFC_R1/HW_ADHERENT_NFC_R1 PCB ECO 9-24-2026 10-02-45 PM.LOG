@@ -1,0 +1,146 @@
+Removed Pin From Net: NetName=GND Pin=C26-1
+Removed Pin From Net: NetName=CAN1_N Pin=C26-2
+Removed Pin From Net: NetName=CAN1_P Pin=C27-2
+Removed Pin From Net: NetName=CAN1_P Pin=D5-1
+Removed Pin From Net: NetName=CAN1_N Pin=D5-2
+Removed Pin From Net: NetName=GND Pin=D5-3
+Removed Pin From Net: NetName=CAN1_N Pin=P1-2
+Removed Member From Class: ClassName=06_NFC Member=C3
+Removed Member From Class: ClassName=06_NFC Member=C4
+Removed Member From Class: ClassName=05_MCU Member=C5
+Removed Member From Class: ClassName=06_NFC Member=C5
+Removed Member From Class: ClassName=06_NFC Member=C8
+Removed Member From Class: ClassName=06_NFC Member=C9
+Removed Member From Class: ClassName=06_NFC Member=C11
+Removed Member From Class: ClassName=03_POWER Member=C20
+Removed Member From Class: ClassName=06_NFC Member=C20
+Removed Member From Class: ClassName=05_MCU Member=C25
+Removed Member From Class: ClassName=03_POWER Member=C27
+Removed Member From Class: ClassName=05_MCU Member=C27
+Removed Member From Class: ClassName=05_MCU Member=C28
+Removed Member From Class: ClassName=04_CAN Member=C34
+Removed Member From Class: ClassName=05_MCU Member=C34
+Removed Member From Class: ClassName=04_CAN Member=C38
+Removed Member From Class: ClassName=03_POWER Member=C43
+Removed Member From Class: ClassName=05_MCU Member=C43
+Removed Member From Class: ClassName=03_POWER Member=C54
+Removed Member From Class: ClassName=05_MCU Member=C54
+Removed Member From Class: ClassName=05_MCU Member=D1
+Removed Member From Class: ClassName=04_CAN Member=D2
+Removed Member From Class: ClassName=04_CAN Member=P1
+Removed Member From Class: ClassName=05_MCU Member=R1
+Removed Member From Class: ClassName=05_MCU Member=R2
+Removed Member From Class: ClassName=06_NFC Member=R4
+Removed Member From Class: ClassName=05_MCU Member=R5
+Removed Member From Class: ClassName=06_NFC Member=R5
+Removed Member From Class: ClassName=05_MCU Member=R15
+Removed Member From Class: ClassName=05_MCU Member=U1
+Removed Member From Class: ClassName=06_NFC Member=U2
+Removed Member From Class: ClassName=03_POWER Member=U6
+Change Component Footprint: Designator=R13 Old Footprint=RES 1206_3216 New Footprint=RES_0402
+Change Component Footprint: Designator=C27 Old Footprint=SMC0603 New Footprint=CAPC1608X100N
+Change Component Comment : Designator=R13 Old Comment=120 Ohms New Comment=56 Ohms
+Change Component Comment : Designator=C27 Old Comment=CAP CER 100PF 50V C0G/NP0 0603 New Comment=47pF
+Change Component Designator: OldDesignator=C24 NewDesignator=C25
+Change Component Designator: OldDesignator=C25 NewDesignator=C26
+Change Component Designator: OldDesignator=R14 NewDesignator=R16
+Change Component Designator: OldDesignator=R15 NewDesignator=R17
+Change Component Designator: OldDesignator=R16 NewDesignator=R18
+Change Component Designator: OldDesignator=R17 NewDesignator=R19
+Change Component Designator: OldDesignator=U6 NewDesignator=U7
+Change Component Designator: OldDesignator=U7 NewDesignator=U8
+Change component parameters: Designator = "C27" ("C27"); Footprint = "SMC0603"; UniqueID = "\WNSQAYHT" ("\WNSQAYHT")
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Cal-Chip Electronics, Inc."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MPN"; Value = "GMC10CG470F200NT"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier"; Value = "4713-GMC10CG470F200NTDKR-ND"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R13" ("R13"); Footprint = "RES 1206_3216"; UniqueID = "\DXJAZNIA" ("\DXJAZNIA")
+Change component parameters (AddParameter): Name = "ManIfacturer"; Value = "Stackpole Electronics Inc"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier"; Value = "Digi; RMCF0402FT56R0DKR-ND"; VariantName = "[No Variations]"
+Added Component: Designator=C24(CAPC1608X100N)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Cal-Chip Electronics, Inc."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MPN"; Value = "GMC10CG470F200NT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "4713-GMC10CG470F200NTDKR-ND"; VariantName = "[No Variations]"
+Added Component: Designator=R14(RES_0402)
+Add component (AddParameter): Name = "ManIfacturer"; Value = "Stackpole Electronics Inc"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "Digi; RMCF0402FT56R0DKR-ND"; VariantName = "[No Variations]"
+Added Component: Designator=R15(RES_0402)
+Add component (AddParameter): Name = "Manifacturer"; Value = "Stackpole Electronics Inc"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "Digi; RMCF0402FT330RDKR-ND"; VariantName = "[No Variations]"
+Added Component: Designator=U6(4-SOP)
+Add component (AddParameter): Name = "Manufacturer"; Value = "IXYS Integrated Circuits Division"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "CPC1014NTR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number"; Value = "CLA314CT-ND"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=CAN1_P Pin=C24-1
+Added Pin To Net: NetName=GND Pin=C24-2
+Added Pin To Net: NetName=CAN1_N Pin=C27-2
+Added Pin To Net: NetName=CAN1_N Pin=R14-1
+Added Pin To Net: NetName=GND Pin=U6-2
+Added Pin To Net: NetName=NetR13_2 Pin=R13-2
+Added Pin To Net: NetName=NetR13_2 Pin=U6-3
+Added Net: Name=NetR13_2
+Added Pin To Net: NetName=NetR14_2 Pin=R14-2
+Added Pin To Net: NetName=NetR14_2 Pin=U6-4
+Added Net: Name=NetR14_2
+Added Pin To Net: NetName=NetR15_1 Pin=R15-1
+Added Pin To Net: NetName=NetR15_1 Pin=U6-1
+Added Net: Name=NetR15_1
+Added Pin To Net: NetName=NetR15_2 Pin=R15-2
+Added Pin To Net: NetName=NetR15_2 Pin=U4-14
+Added Net: Name=NetR15_2
+Added Member To Class: ClassName=03_POWER Member=Component C1 220uF 50V
+Added Member To Class: ClassName=03_POWER Member=Component C2 220uF 50V
+Added Member To Class: ClassName=03_POWER Member=Component C3 CAP CER 0.22UF 50V X7R 0603
+Added Member To Class: ClassName=03_POWER Member=Component C7 0.1uF 16V
+Added Member To Class: ClassName=03_POWER Member=Component C10 22uF 35V
+Added Member To Class: ClassName=03_POWER Member=Component C13 GCM188R71H104KA57J
+Added Member To Class: ClassName=05_MCU Member=Component C15 GCM188R71H104KA57J
+Added Member To Class: ClassName=05_MCU Member=Component C16 GCM188R71H104KA57J
+Added Member To Class: ClassName=05_MCU Member=Component C17 GCM188R71H104KA57J
+Added Member To Class: ClassName=05_MCU Member=Component C19 GCM188R71H104KA57J
+Added Member To Class: ClassName=05_MCU Member=Component C21 8.2 pF
+Added Member To Class: ClassName=05_MCU Member=Component C22 1 µF
+Added Member To Class: ClassName=05_MCU Member=Component C23 10000 pF
+Added Member To Class: ClassName=04_CAN Member=Component C24 47pF
+Added Member To Class: ClassName=04_CAN Member=Component C26 100nF
+Added Member To Class: ClassName=06_NFC Member=Component C29 10uF
+Added Member To Class: ClassName=06_NFC Member=Component C30 1uF 16V
+Added Member To Class: ClassName=06_NFC Member=Component C31 10000pF
+Added Member To Class: ClassName=06_NFC Member=Component C35 10000pF
+Added Member To Class: ClassName=06_NFC Member=Component C36 1uF 16V
+Added Member To Class: ClassName=06_NFC Member=Component C37 10000pF
+Added Member To Class: ClassName=06_NFC Member=Component C39 10000pF
+Added Member To Class: ClassName=06_NFC Member=Component C40 2.2uF
+Added Member To Class: ClassName=06_NFC Member=Component C41 10000pF
+Added Member To Class: ClassName=06_NFC Member=Component C42 2.2uF
+Added Member To Class: ClassName=06_NFC Member=Component C44 2.2uF
+Added Member To Class: ClassName=06_NFC Member=Component C45 10000pF
+Added Member To Class: ClassName=06_NFC Member=Component C46 1uF 16V
+Added Member To Class: ClassName=06_NFC Member=Component C47 150pF 50V
+Added Member To Class: ClassName=06_NFC Member=Component C48 10pF 50V
+Added Member To Class: ClassName=06_NFC Member=Component C49 33pF 50V
+Added Member To Class: ClassName=06_NFC Member=Component C51 10pF 50V
+Added Member To Class: ClassName=06_NFC Member=Component C52 360pF 50V
+Added Member To Class: ClassName=06_NFC Member=Component C53 10pF 50V
+Added Member To Class: ClassName=06_NFC Member=Component C56 180pF 50V
+Added Member To Class: ClassName=06_NFC Member=Component C57 10pF 50V
+Added Member To Class: ClassName=06_NFC Member=Component C58 150pF 50V
+Added Member To Class: ClassName=05_MCU Member=Component D4 LED RED CLEAR SMD
+Added Member To Class: ClassName=06_NFC Member=Component L2 LQW18CNR47J0HD
+Added Member To Class: ClassName=05_MCU Member=Component R6 10 kOhms
+Added Member To Class: ClassName=05_MCU Member=Component R7 10 kOhms
+Added Member To Class: ClassName=05_MCU Member=Component R8 10 kOhms
+Added Member To Class: ClassName=05_MCU Member=Component R9 10 kOhms
+Added Member To Class: ClassName=05_MCU Member=Component R10 0 Ohms
+Added Member To Class: ClassName=05_MCU Member=Component R12 1 kOhms
+Added Member To Class: ClassName=04_CAN Member=Component R13 56 Ohms
+Added Member To Class: ClassName=04_CAN Member=Component R14 56 Ohms
+Added Member To Class: ClassName=06_NFC Member=Component R16 10 kOhms
+Added Member To Class: ClassName=06_NFC Member=Component R18 560mOhms
+Added Member To Class: ClassName=06_NFC Member=Component R19 560mOhms
+Added Member To Class: ClassName=03_POWER Member=Component TP1 Testpoint
+Added Member To Class: ClassName=03_POWER Member=Component TP4 Testpoint
+Added Member To Class: ClassName=03_POWER Member=Component U1 LM74700QDBVRQ1
+Added Member To Class: ClassName=03_POWER Member=Component U3 AP2112K-3.3TRG1
+Added Member To Class: ClassName=05_MCU Member=Component U4 STM32F103C8T6
+Added Member To Class: ClassName=04_CAN Member=Component U5 SN65HVD232DR
+Added Member To Class: ClassName=06_NFC Member=Component U8 CS11337-27.12M

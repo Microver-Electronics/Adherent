@@ -1,0 +1,38 @@
+Removed Member From Class: ClassName=05_MCU Member=C6
+Removed Member From Class: ClassName=04_CAN Member=C15
+Removed Member From Class: ClassName=04_CAN Member=C17
+Removed Member From Class: ClassName=06_NFC Member=C22
+Removed Member From Class: ClassName=06_NFC Member=C23
+Change Component Footprint: Designator=J4 Old Footprint=61300211821 New Footprint=CONN_505567_02_MOL
+Change Component Comment : Designator=J4 Old Comment=61300211821 New Comment=5055670271
+Change component parameters: Designator = "J4" ("J4"); Footprint = "61300211821"; UniqueID = "\YKLRSYDQ" ("\YKLRSYDQ")
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Molex"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier"; Value = "Digi; WM17038DKR-ND"; VariantName = "[No Variations]"
+Added Member To Class: ClassName=03_POWER Member=Component C2 CAP CER 0.22UF 50V X7R 0603
+Added Member To Class: ClassName=03_POWER Member=Component C3 100nF 25V
+Added Member To Class: ClassName=03_POWER Member=Component C4 0.1uF 16V
+Added Member To Class: ClassName=03_POWER Member=Component C5 1uF
+Added Member To Class: ClassName=03_POWER Member=Component C7 22uF 35V
+Added Member To Class: ClassName=03_POWER Member=Component C8 1 µF
+Added Member To Class: ClassName=03_POWER Member=Component C9 10 µF
+Added Member To Class: ClassName=03_POWER Member=Component C10 GCM188R71H104KA57J
+Added Member To Class: ClassName=05_MCU Member=Component C12 GCM188R71H104KA57J
+Added Member To Class: ClassName=05_MCU Member=Component C14 GCM188R71H104KA57J
+Added Member To Class: ClassName=05_MCU Member=Component C16 GCM188R71H104KA57J
+Added Member To Class: ClassName=05_MCU Member=Component C18 8.2 pF
+Added Member To Class: ClassName=05_MCU Member=Component C20 10000 pF
+Added Member To Class: ClassName=04_CAN Member=Component C23 100nF
+Added Member To Class: ClassName=04_CAN Member=Component C24 47pF
+Added Member To Class: ClassName=06_NFC Member=Component C25 10uF
+Added Member To Class: ClassName=06_NFC Member=Component C26 10uF
+Added Member To Class: ClassName=06_NFC Member=Component C30 10pF 50V
+Added Member To Class: ClassName=06_NFC Member=Component C34 10000pF
+Added Member To Class: ClassName=06_NFC Member=Component C38 10000pF
+Added Member To Class: ClassName=06_NFC Member=Component C40 0.1uF 16V
+Added Member To Class: ClassName=06_NFC Member=Component C42 10000pF
+Added Member To Class: ClassName=06_NFC Member=Component C44 150pF 50V
+Added Member To Class: ClassName=06_NFC Member=Component C46 33pF 50V
+Added Member To Class: ClassName=06_NFC Member=Component C48 10pF 50V
+Added Member To Class: ClassName=06_NFC Member=Component C50 10pF 50V
+Added Member To Class: ClassName=06_NFC Member=Component C52 33pF 50V
+Added Member To Class: ClassName=06_NFC Member=Component C54 10pF 50V
