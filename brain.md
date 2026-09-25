@@ -19,7 +19,7 @@ This file records project decisions and working assumptions. A diagram label or 
 - [Review findings](SYS/ADHERENT_Project_Review.md).
 - Superseded SYS revisions and the older unversioned presentation were removed from the working folder; recover them from Git history when needed.
 - Mechanical model handoff folder: [Board STEP Models](MEC/Board_STEP_Models/README.md).
-- LANECTRL front metal bracket reference: [LANE DRAWING SPACE FOR UMIT.DWG](MEC/01_CAD_MODELS/LANE%20DRAWING%20SPACE%20FOR%20UMIT.DWG). User confirms the bracket is being made to this drawing; PCB fit and clearances have not yet been checked.
+- LANECTRL front metal bracket reference: [LANE DRAWING SPACE FOR UMIT.DWG](MEC/01_CAD_MODELS/Draw%C4%B1ng/LANE%20DRAWING%20SPACE%20FOR%20UMIT.DWG). User confirms the bracket is being made to this drawing; PCB fit and clearances have not yet been checked.
 - Hardware folders: `HW/HW_ADHERENT_SYSCTRL_R1`, `HW/HW_ADHERENT_MAINCTRL_R1`, `HW/HW_ADHERENT_LANECTRL_R1`, `HW/HW_ADHERENT_IOCTRL_R1`.
 - Rear-panel Ethernet connector J2: **McMaster-Carr 1422N13**, quantity 1 per system, replaces the previous Neutrik candidate. Shielded Cat5e RJ45 female/female, screw-on mounting, black plastic housing; 0.95 in (24.13 mm) panel cutout and 0.14 in mounting holes, mounting fasteners included. [Product](https://www.mcmaster.com/product/1422N13), [supplier specifications](https://www.mcmaster.com/products/data-transmission-couplers/).
 
@@ -83,20 +83,49 @@ This file records project decisions and working assumptions. A diagram label or 
 - `HW_ADHERENT_SYSCTRL_R1` / `FW_ADHERENT_SYSCTRL_R1`.
 - STM32 machine controller; combines the former motion-control and auxiliary-I/O functions. The current IOCTRL name refers to the separate Waveshare relay/input module.
 - Gantry drive control interfaces, brake control, basket servo control, optical sensors, labeling stepper drivers and auxiliary outputs.
-- **Onboard 24→12 V buck supplies the existing 12 V loads**, including local circuitry, MAINCTRL, LANECTRL logic and latch contacts.
+- **Onboard 24→12 V buck supplies the existing 12 V loads**, including local circuitry, MAINCTRL and latch contacts. LANECTRL R1 does not use 12 V: it takes only 24 V and generates its own 5 V / 3.3 V.
 - Buck topology, MPN, current capacity, protection, thermal design and sequencing are not selected/validated.
 - Local servo voltage conversion remains necessary; DS3218 is not a direct 12 V or 24 V load.
 - TMC5160 and TMC2209 are proposed labeling stepper drivers, not finalized selections.
 
 ### LANECTRL — custom PCB, quantity 10
 
-- `HW_ADHERENT_LANECTRL_R1` / `FW_ADHERENT_LANECTRL_R1`.
-- One board per row: seven motor H-bridges, seven feedback inputs, seven buttons and seven LEDs.
-- Includes the former LANEPANEL functions. Two custom PCB designs total: SYSCTRL and LANECTRL; 11 custom assemblies total.
-- R27 retains 24 V for conveyor motors and SYSCTRL-derived 12 V for lane logic through the CAN harness.
-- Current button candidate: Omron B3F-4055, momentary. Current LED candidate: Kingbright WP7113ID.
-- Driver/TVS choices, connector current capacity, button placement and bezel alignment still need detailed design verification.
-- Diagram assumes front-of-row mounting; confirm mechanically.
+- `HW_ADHERENT_LANECTRL_R1` / `FW_ADHERENT_LANECTRL_R1`. Altium project in `HW/HW_ADHERENT_LANECTRL_R1`, designer Umit KAYACIK (Microver title block). Schematic R1 "Initial Release" 2026-09-23; PCB placed and routed; STEP re-exported 2026-09-25.
+- One board per row: seven conveyor channels, seven feedback inputs, seven rocker switches and seven lane-LED outputs. Includes the former LANEPANEL functions.
+- Facts below come from the current SchDoc/PcbDoc files (checked 2026-09-25). The Protel netlist, BOMs and schematic PDF in the folder are older than the latest schematic/PCB edits; regenerate them before any release.
+
+**Architecture (as designed, supersedes the R27 "H-bridge / 12 V lane logic" description)**
+
+- Motor drive: **2 × TI TPS4H160BQPWPRQ1** 4-channel high-side smart switches (U7: lanes 1–4, U9: lanes 5–7, U9 channel 4 unused). On/off only: no H-bridge, no PWM speed control, no reversal. Current limit R_CL = 1.2 kΩ (R62/R71), current-sense R_CS = 604 Ω (R65/R75) to MCU ADC; FAULT, SEH/SEL and DIAG_EN to MCU. R62/R65/R71/R75 values are marked "?" in the schematic and still need confirmation.
+- Hardware interlock: each lane input = rocker switch **AND** MCU enable (2 × SN74HCS08, EN_LANEx with 10 k pull-downs). A lane cannot run with its switch off, and cannot run without MCU enable.
+- MCU: **STM32G0B1RET6** (LQFP64), 8 MHz crystal ECS-80-8-30Q-VS with 8.2 pF load caps. SWD on Samtec FTSH-103 (J9). USB-C (J10, USB 2.0 device, 5.1 k CC pull-downs, CMC + ESD) for service/programming.
+- CAN: **SN65HVD231** (3.3 V) + ACT45B common-mode choke. CAN_RS driven by MCU (R44 pull-up keeps the node in standby at reset). **120 Ω termination selected with 2-pin jumper P1** (Molex 22-03-2021 + R43). Node ID from **4-position DIP switch S1** (Würth 418121270804, NODE_ID0–3).
+- Power: single **24 V input**. Chain: F1 0452005 (5 A) → SMDJ24CA TVS → LM74700-Q1 + BSC028N06NS ideal-diode reverse protection → bulk 2 × 220 µF → motor rail; LMR50410 buck 24 V → 5 V (88.7 k / 22.1 k, VREF 1.0 V → 5.0 V) → AMS1117-3.3, with USB VBUS OR-ed in through MBR0520 diodes. VM_SENSE divider 100 k / 10 k to ADC. **The board has no 12 V input; lane logic is powered from its own 24 V input.**
+- Lane connector: **7 × Molex Micro-Fit 3.0 43650-0300** (3-pin, right angle), pin 1 = switched 24 V (LANE_OUTx), pin 2 = GND, pin 3 = SIGNAL. SMF33A TVS on outputs and signal lines (the default BOM variant leaves D10 not fitted).
+- SIGNAL input: 24 V dry contact → 10 k pull-down at connector, 100 k / 15 k divider (24 V → 3.13 V), BAT54WS clamp to 3.3 V, RC filter, to MCU GPIO.
+- Bus connector: **one Molex Micro-Fit 3.0 43045-0400 (2 × 2, 4-pin): 1 = +24 V, 2 = GND, 3 = CANH, 4 = CANL.** There is no second (bus-out) connector on the board; daisy-chaining the CAN bus between rows therefore needs a harness-level solution (T-splice / Y-cable) or a board change. **Open decision.**
+- User interface: 7 × C&K **300SP1J1BLKM2RE** PCB-mount rocker switches (SPDT ON–ON, 3.3 V logic level). Lane LEDs are **off-board**: 7 × 2-pin 2.54 mm headers LEDS1–LEDS7 on the switch side, driven from MCU GPIO through 100 Ω (R50–R56). The LED part and its mounting in the bracket are TBC. The earlier on-board LED footprints D29–D35 (Würth 150080VS75000) were removed from the PCB but still appear in the exported BOM/netlist. Board status LEDs D25 (power), D27 and D28 (LED_STAT, LED_CAN) are SMD parts on the bottom side.
+- PCB: **504.0 × 60.0 mm**, 4 layers (Top / Int1 GND / Int2 PWR / Bottom), about 1.6 mm total thickness. Top side carries only the THT rocker switches, LED headers and mounting holes; **all SMD parts are on the bottom side**. Lanes run in order along the board: J7…J1 from left to right at **72.0 mm pitch**, J8 at the right end next to lane 1, USB-C at the bottom edge centre (x ≈ 272 mm). **8 × M3 mounting holes** at x = 6 / 167 / 343 / 498 mm and y = 6 / 54 mm from the lower-left corner (MTG2 at y = 55 mm, 1 mm off the others; confirm this is intentional).
+- Previously listed candidates **Omron B3F-4055, Kingbright WP7113ID and DRV8876 are superseded** by the design above.
+
+**Critical schematic error (found 2026-09-25, must fix before fabrication)**
+
+- In `04_POWER.SchDoc` the protected rail after M1 carries power port **+24V_PR**, while the TPS4H160 VS pins (`08_DRIVER`) and the LMR50410 VIN/EN use power port **VM**. Nothing joins +24V_PR and VM, and the PcbDoc also holds them as two separate nets. As drawn, neither the motor switches nor the 5 V/3.3 V logic would receive power. Rename one port (or add the connection), recompile, update the PCB from the schematic and re-run DRC.
+
+**Other open LANECTRL items**
+
+- Recompile and regenerate the netlist, BOMs (both variants) and schematic PDF. The current PDF shows an empty block-diagram page, but `02_BLOCK_DIAGRAM.SchDoc` now embeds the A3 block-diagram image. The PcbDoc still uses NetS1_x names where the schematic now has NODE_ID0–3 (ECO pending).
+- Only B1 (ferrite bead) lacks an MPN in the BOM. The variant name is still the default "Variant of HW_ADHERENT_LANECTRL_R1".
+- LM74700 symbol pin naming, BAT54WS footprint polarity and TPS4H160 R_CL/R_CS values need final review.
+- Bracket fit: check the 504 × 60 mm outline, hole pattern, switch positions and LED header positions against `LANE DRAWING SPACE FOR UMIT.DWG`.
+- The current board model is `MEC/HW_ADHERENT_LANECTRL_R1/HW_ADHERENT_LANECTRL_R1(Variant of HW_ADHERENT_LANECTRL_R1).step` (identical export in the Altium Project Outputs). Older copies are in `MEC/01_CAD_MODELS/` and `MEC/Board_STEP_Models/LANECTRL_Custom/`.
+- `HW/HW_ADHERENT_LANECTRL_R1/HW_ADHERENT_LABELCTRL_R1/` is a separate KiCad project nested inside the LANECTRL folder. It is not part of LANECTRL; move it to its own HW folder once its scope is defined.
+
+**Conveyor interface facts used by LANECTRL**
+
+- Customer bench measurement at 24 V (`Docs/New_Docs/information.txt`): 190 mA running, 280–310 mA with manual braking, about 0.5 A when stalled by hand. The SIGNAL line switches between 0 V and 24 V when the feedback plate moves (24 V dry contact); the board must read it and stop the motor.
+- Supplier internal schematic (`Docs/Müşteriden gelen dosyalar/`): the motor is fed through series diode D3 and has freewheel diode D1 and capacitor C1. The plate switch S1 connects the supply to the signal pin through D2. The SIGNAL level is therefore only valid while that lane is energised. The drawing's pin numbering is the reverse of the datasheet (pin 1 = +24 V, pin 3 = SIGNAL). LANECTRL follows the datasheet; confirm on a real conveyor with a meter. Reversed polarity is blocked by D3 rather than shorted.
+- Firmware still needs a stall/timeout strategy using current sense, because the conveyor has no limit switch.
 
 ## Latest SYSCTRL representation correction
 
@@ -113,8 +142,8 @@ This file records project decisions and working assumptions. A diagram label or 
 - W07 internalized: F12 is the onboard SMPS input branch; no separate external input cable.
 - W04 internalized: onboard SMPS output feeds internal SYSCTRL 12 V routing; no separate distribution rail assembly.
 - W05 / F13: derived 12 V to MAINCTRL.
-- F14: lane-logic protection on SYSCTRL; 12 V passes into the CAN/lane harness.
-- W24 / F1–F10: 24 V row-motor feeders.
+- F14: lane-logic protection on SYSCTRL; 12 V passes into the CAN/lane harness. **Superseded by LANECTRL R1:** the board has no 12 V input, so the 12 V conductor in W25 and branch F14 are no longer needed for the lane rows. Remove them at the next diagram/workbook revision, or record a new use.
+- W24 / F1–F10: 24 V row feeders. With LANECTRL R1 each row's 24 V (motors and logic) and CAN share one 4-pin Micro-Fit (43045-0400: +24 V / GND / CANH / CANL). How W24 and the W25 CAN backbone merge into a harness is **TBC**, because the board has only one bus connector.
 - W29 / F15 and W30 / F16: proposed 24 V gantry drive feeds, pending supplier confirmation.
 - W34 / F17: 24 V IOCTRL module power. With two IOCTRL modules, per-module feeds or a shared branch are TBC; cable quantity and fuse rating need updating.
 - W35 / F18: derived 12 V feed to IOCTRL relay contacts. Second-module relay-contact feed TBC; 12 V converter load depends on the latches actually switched.
@@ -128,6 +157,7 @@ This file records project decisions and working assumptions. A diagram label or 
 
 - Proposed CAN backbone: MAINCTRL → SYSCTRL → LANECTRL-10 through LANECTRL-01.
 - Diagram baseline: CAN 2.0B, 500 kbit/s, termination at MAINCTRL and LANECTRL-01. Validate implementation and cable routing.
+- LANECTRL R1 implementation: termination is fitted with jumper P1 (only on the end-of-bus board). The CAN node ID is set with the 4-bit DIP switch S1 (16 addresses, 10 used). The single 4-pin bus connector means the backbone needs T-splices or Y-cables at each row unless a second connector is added.
 - Separate RS485 link: MAINCTRL ↔ IOCTRL-01 and IOCTRL-02 (proposed shared multi-drop bus; TBC).
 - Site Ethernet connection serves the external iPad/app and server communication. Optional Wi-Fi/BLE arrangements remain distinct from rejected cellular connectivity.
 
@@ -135,7 +165,7 @@ This file records project decisions and working assumptions. A diagram label or 
 
 Current inventory is **75 motors across five model/part-reference groups**, excluding undefined door actuators:
 
-- Conveyor motors: 70 brushed DC geared motors, one per lane. **CB002-24V-573mm is the conveyor assembly model**, not a confirmed standalone motor MPN. External H-bridges on LANECTRL.
+- Conveyor motors: 70 brushed DC geared motors, one per lane. **CB002-24V-573mm is the conveyor assembly model**, not a confirmed standalone motor MPN. Driven on/off by TPS4H160 high-side switches on LANECTRL (no reversal, no PWM). Measured: 190 mA running, about 0.5 A when stalled by hand.
 - Gantry X/Z: 2 × **Emtech 57BYG250-76**, NEMA23 closed-loop steppers. Mechanical BOM states brake and driver included. **Whether drivers are integrated into the motors or separate modules is unconfirmed.** X includes a 3:1 gearbox.
 - Basket tilt: 1 × **Miuzei DS3218** servo; drive electronics are internal. Exact variant and supply range need confirmation before final regulator selection.
 - Chuck rotation: 1 × NEMA23 stepper; **6627T113** is the recorded CAD/catalog reference. Manufacturer MPN needs confirmation. External SYSCTRL driver proposed.
@@ -166,7 +196,7 @@ The four electromagnetic latches are not counted as motors. Door actuator models
   - Simplified top- and bottom-side components are included.
 - Both models passed solid validity and STEP reimport checks. **Geometry validity does not validate dimensional accuracy.** Read each folder's `MODEL_NOTES_R1.md`; use for preliminary placement only, not fabrication.
 - No manufacturer IOCTRL STEP download was found in the checked official resources. Manufacturer request draft is saved locally and has not been sent.
-- Custom board STEP models await actual PCB layouts.
+- LANECTRL: the STEP model is exported from the routed R1 PCB (`MEC/HW_ADHERENT_LANECTRL_R1/`, 2026-09-25). SYSCTRL still needs a STEP from its PCB layout.
 
 ## Documentation and harness conventions
 
@@ -204,11 +234,11 @@ The four electromagnetic latches are not counted as motors. Door actuator models
 ## R27 planning checks
 
 - Known PSU peak subtotal: 268.96 W, excluding four unresolved load-current entries (including NFC reader) and marker power. Not a complete capacity approval.
-- Seven-conveyor row case: 14.05 A versus candidate 5 A protection; concurrency must be constrained and tested.
+- Seven-conveyor row case: 14.05 A versus candidate 5 A protection; concurrency must be constrained and tested. **Update:** that figure assumed 2 A per conveyor. The measured stall is about 0.5 A, so a row with all seven lanes stalled draws about 3.5 A plus logic, below the 5 A fuse (F1 0452005) on LANECTRL. The TPS4H160 current limit (R_CL 1.2 kΩ) caps each channel. Recalculate the PSU budget with measured values.
 - 39 cable IDs, 28 required external types, five missing route lengths; 109.5 m is only the known routing subtotal.
 - 18 branch-protection references; physical placement and holder quantities need reconciliation with the merged SYSCTRL connector architecture.
 - FW/SW folders contain scope descriptions only, no implemented firmware/application builds.
-- HW contains four reserved board folders; no production PCB designs have been added. README must distinguish planned functions from implemented or validated capabilities.
+- HW contains four reserved board folders; no production PCB designs have been added. README must distinguish planned functions from implemented or validated capabilities. **Update 2026-09-25:** LANECTRL R1 is placed and routed (not released; see the critical +24V_PR/VM error above). SYSCTRL R1 and NFC R1 Altium projects have also been started; they are not described here yet.
 
 ## Local build references
 
@@ -269,3 +299,19 @@ The four electromagnetic latches are not counted as motors. Door actuator models
 - Aligned to IOCTRL ×2 on 2026-09-25: `README.md`, `SYS/README.md`, `SYS/ADHERENT_Electrical_Tables.xlsx` (row IOCTRL-01, -02, qty 2), `SYS/ADHERENT_System_Wiring_Diagram.drawio` + PNG, `SYS/ADHERENT_Design_Review.pptx` (slides 3, 7, 10 and notes), `MEC/Board_STEP_Models/README.md` and `FW/README.md`.
 - Diagram shows IOCTRL-01/-02 as one stacked block ("COTS ×2") because the I/O split is undefined; draw two separate blocks once the allocation is decided. The PNG was rendered with the draw.io viewer, not the desktop CLI; re-export from draw.io desktop if exact font rendering matters.
 - The small overview image on presentation slide 3 is an earlier presentation-specific render and still shows one IOCTRL; its text is not legible at slide size. Regenerate it with the next diagram change.
+
+## LANECTRL R1 documentation alignment — 2026-09-25
+
+- The LANECTRL section above was rewritten from the current `HW_ADHERENT_LANECTRL_R1` SchDoc/PcbDoc files: TPS4H160 high-side drive, 24 V-only supply, single 4-pin Micro-Fit bus connector, 7 × 3-pin Micro-Fit lane connectors, C&K rocker switches, off-board lane LEDs, and a 504 × 60 mm 4-layer PCB. Superseded: H-bridge, 12 V lane logic, B3F-4055, WP7113ID and DRV8876.
+- Recorded the critical +24V_PR / VM disconnection in `04_POWER` (fix before fabrication), the stale netlist/BOM/PDF outputs and the single-bus-connector harness decision.
+- Aligned `README.md`, `FW/README.md`, `MEC/Board_STEP_Models/README.md`, the LANECTRL/CONVEYOR rows of `SYS/ADHERENT_Electrical_Tables.xlsx`, row 18 of `MEC/ADHERENT_Mechanical_BOM.xlsx`, the LANECTRL blocks in `SYS/ADHERENT_System_Wiring_Diagram.drawio` and the connector HOLD line of `SYS/ADHERENT_Design_Review.pptx`.
+- Fixed the bracket DWG links; the file is in `MEC/01_CAD_MODELS/Drawıng/`.
+
+## System diagram layout rebuild — 2026-09-25
+
+- `SYS/ADHERENT_System_Wiring_Diagram.drawio` is now generated by `.work/gen_diagram.py` (fixed coordinates, orthogonal corridors). Edit the script and re-render, or edit the `.drawio` directly and keep the PNG in step.
+- Layout: column 1 = network / AC + PSU1 / NFC; column 2 = control cabinet (MAINCTRL, SYSCTRL with BUCK12 and SYSCTRL-PWR, IOCTRL ×2, status light); column 3 = gantry / labeling / doors; column 4 = ten lane rows. IOCTRL is drawn inside the control cabinet, matching the parts sheet location.
+- Content is unchanged: all W / F / J / K / RO / DI references, part numbers and TBC flags were carried over and checked by script. Wording was shortened; details that the connecting line already shows (for example W13, W15, W20 / W21, W23) moved from box text to the line labels.
+- Added the missing custom PCB **NFC · HW_ADHERENT_NFC_R1** (STM32F103C8 + ST25R200 reader, CAN node, 24 V + CAN on a 4-pin Micro-Fit) in place of the "NFC reader / front end TBC" block. Its system wiring (CAN position / node ID, 24 V branch and fuse, mounting) has no W / F reference yet, so no harness is drawn. The parts sheet NFC row was updated to match.
+- `HW_ADHERENT_LABELCTRL_R1` is an empty KiCad skeleton with no defined function, so it is not shown.
+- PNG rendered with draw.io desktop 24.7.17 (CLI, scale 1.75).

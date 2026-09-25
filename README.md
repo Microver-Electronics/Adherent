@@ -63,8 +63,11 @@ Gantry and labeling interfaces, sensors, servo and auxiliary outputs, plus onboa
 
 ### 🟩 LANECTRL — conveyor rows
 
-**Custom PCB · 10 assemblies**  
-Seven conveyor channels, seven buttons and seven LEDs per row. Ten rows provide **70 channels**; buttons and LEDs are integrated into LANECTRL. [Hardware folder →](HW/HW_ADHERENT_LANECTRL_R1)
+**Custom STM32G0B1 PCB · 10 assemblies · R1 placed and routed, not released**  
+Seven conveyor channels per row, switched on/off by two TPS4H160 high-side switches with current sensing and fault reporting. Each lane has a PCB-mounted rocker switch that is hardware-ANDed with the MCU enable, a 24 V dry-contact feedback input and an off-board lane LED. Each board takes 24 V and CAN on one 4-pin Micro-Fit (+24 V / GND / CANH / CANL). Lane connectors are 3-pin Micro-Fit (24 V / GND / SIGNAL). The CAN node ID is set with a DIP switch and termination with a jumper. The PCB is 504 × 60 mm with 4 layers. Ten rows provide **70 channels**. [Hardware folder →](HW/HW_ADHERENT_LANECTRL_R1)
+
+> [!WARNING]
+> LANECTRL R1 schematic: the protected 24 V rail (`+24V_PR`) is not connected to the driver/buck rail (`VM`). Fix this and regenerate the netlist, BOM and PDF before fabrication. See [brain.md](brain.md#lanectrl--custom-pcb-quantity-10).
 
 ### 🟧 IOCTRL — door inputs and latch outputs
 
@@ -76,11 +79,11 @@ Eight relays and eight isolated digital inputs per module, 16 of each in total. 
 ## ⚙️ Mechanical integration
 
 - [Machine assembly STEP](MEC/AVM-FRAME-MAINASSEMBLY_V4.STEP)
-- [LANECTRL front-bracket DWG](MEC/01_CAD_MODELS/LANE%20DRAWING%20SPACE%20FOR%20UMIT.DWG)
+- [LANECTRL front-bracket DWG](MEC/01_CAD_MODELS/Draw%C4%B1ng/LANE%20DRAWING%20SPACE%20FOR%20UMIT.DWG)
 - [Board STEP models and qualification notes](MEC/Board_STEP_Models/README.md)
 - [Conveyor supplier reference](SYS/Conveyor%20belt%28CB002-24V-573mm%29.pdf)
 
-The front bracket follows the supplied DWG. PCB mounting, button/LED alignment and cable clearance still need a fit check. Provisional reconstructed STEP models support placement studies and are not verified fabrication geometry.
+The front bracket follows the supplied DWG. LANECTRL R1 is 504 × 60 mm with 8 × M3 holes and switches at a 72 mm lane pitch; its fit against the DWG, switch/LED alignment and cable clearance still need checking. Provisional reconstructed STEP models support placement studies and are not verified fabrication geometry.
 
 ## 📁 Repository map
 
@@ -95,13 +98,14 @@ Adherent/
 └── brain.md   Project decisions and working assumptions
 ```
 
-The HW folders use the four board identifiers. LANECTRL now contains Altium schematics, PCB layout, libraries, BOMs and STEP/PDF exports; the other board folders remain reserved. See [firmware scope](FW/README.md) and [software scope](SW/README.txt) for implementation status. Large CAD files use **Git LFS**; install Git LFS and run `git lfs pull` after cloning to obtain available tracked CAD content.
+The HW folders use the four board identifiers. LANECTRL contains the Altium schematics, routed PCB, libraries, BOMs and STEP/PDF exports (the netlist, BOM and PDF exports predate the latest schematic/PCB edits). Altium work on SYSCTRL has started; MAINCTRL and IOCTRL are purchased boards. See [firmware scope](FW/README.md) and [software scope](SW/README.txt) for implementation status. Large CAD files use **Git LFS**; install Git LFS and run `git lfs pull` after cloning to obtain available tracked CAD content.
 
 ## 🛠️ Next engineering milestones
 
 - Confirm the gantry driver/brake interfaces and performance at 24 V.
 - Select and validate the SYSCTRL 12 V converter and complete the power budget.
-- Verify conveyor loaded/stall current, feedback reference and allowed concurrency.
+- Fix the LANECTRL R1 `+24V_PR`/`VM` rail error, decide the single-connector CAN harness (T-splice or second connector) and check the board against the bracket DWG.
+- Conveyor current measured on the bench (190 mA running, ≈0.5 A stalled). Confirm the feedback reference on a real harness and finish the firmware stall/timeout logic.
 - Coordinate motor drivers, transient protection, fuses, wiring and connectors.
 - Finalize marker, latch and sensor selections; confirm direct harness lengths and bracket fit.
 - Implement and test firmware, startup/fault behavior and system integration.
