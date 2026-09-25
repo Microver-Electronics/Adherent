@@ -40,7 +40,7 @@ writer=STEPControl_Writer()
 for name,shape,color in parts:
  assert BRepCheck_Analyzer(shape).IsValid(),name
  assert writer.Transfer(shape,STEPControl_AsIs)==IFSelect_RetDone
-step=OUT/'DOORIO_Provisional_Placement_R1.step'
+step=OUT/'IOCTRL_Provisional_Placement_R1.step'
 assert writer.Write(str(step))==IFSelect_RetDone
 reader=STEPControl_Reader();assert reader.ReadFile(str(step))==IFSelect_RetDone
 reader.TransferRoots();shape=reader.OneShape();assert BRepCheck_Analyzer(shape).IsValid()
@@ -60,13 +60,13 @@ for name,solid,color in parts:
     triangles.append((sum(p[2] for p in pts)/3,color,pts))
   exp.Next()
 svg=['<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="650"><rect width="1100" height="650" fill="white"/>',
- '<text x="36" y="44" font-family="Arial" font-size="24" fill="#203141">DOORIO — Provisional placement model R1</text>',
+ '<text x="36" y="44" font-family="Arial" font-size="24" fill="#203141">IOCTRL — Provisional placement model R1</text>',
  '<text x="36" y="75" font-family="Arial" font-size="16" fill="#52616d">175 × 90 × 40 mm · Based on supplied PoE enclosure image</text>']
 for depth,color,pts in sorted(triangles,key=lambda t:t[0]):
  svg.append('<polygon points="'+' '.join(f'{x:.2f},{y:.2f}' for x,y,z in pts)+f'" fill="{color}" stroke="{color}" stroke-width="0.3"/>')
 svg+=['<text x="36" y="592" font-family="Arial" font-size="16" fill="#a44621">Estimated mounting slots and connectors. DIN clip and antenna omitted.</text>',
  '<text x="36" y="622" font-family="Arial" font-size="16" fill="#52616d">Placement reference only. Non-PoE compatibility requires verification. Not for fabrication.</text></svg>']
-(OUT/'DOORIO_Provisional_Placement_R1.svg').write_text('\n'.join(svg),encoding='utf-8')
+(OUT/'IOCTRL_Provisional_Placement_R1.svg').write_text('\n'.join(svg),encoding='utf-8')
 import numpy as np
 from PIL import Image,ImageDraw,ImageFont
 pixels=np.full((650,1100,3),255,dtype=np.uint8);depthbuf=np.full((650,1100),-np.inf)
@@ -85,10 +85,10 @@ for _,color,pts in triangles:
  pixels[ly:ry+1,lx:rx+1][mask]=[int(color[i:i+2],16) for i in (1,3,5)]
 im=Image.fromarray(pixels);d=ImageDraw.Draw(im)
 font=lambda sz:ImageFont.truetype('C:/Windows/Fonts/arial.ttf',sz)
-d.text((36,24),'DOORIO - Provisional placement model R1',font=font(24),fill='#203141')
+d.text((36,24),'IOCTRL - Provisional placement model R1',font=font(24),fill='#203141')
 d.text((36,60),'175 x 90 x 40 mm | Based on supplied PoE enclosure image',font=font(16),fill='#52616d')
 d.text((36,575),'Estimated mounting slots and connectors. DIN clip and antenna omitted.',font=font(16),fill='#a44621')
 d.text((36,605),'Placement reference only. Verify non-PoE compatibility. Not for fabrication.',font=font(16),fill='#52616d')
-im.save(OUT/'DOORIO_Provisional_Placement_R1.png')
+im.save(OUT/'IOCTRL_Provisional_Placement_R1.png')
 (OUT/'validation_R1.json').write_text(json.dumps({'units':'mm','reimport_valid':True,'bounding_box_mm':dims,'exported_parts':len(parts),'status':'Provisional; see MODEL_NOTES_R1.md'},indent=2))
 print(json.dumps({'file':str(step),'dimensions_mm':dims,'valid':True}))

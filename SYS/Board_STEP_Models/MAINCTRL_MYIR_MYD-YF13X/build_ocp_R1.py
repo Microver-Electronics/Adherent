@@ -93,7 +93,7 @@ for name,solid,color in parts:
     triangles.append((sum(p[2] for p in pts)/3,color,pts))
   exp.Next()
 svg=['<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="650"><rect width="1100" height="650" fill="white"/>',
- '<text x="36" y="44" font-family="Arial" font-size="24" fill="#203141">DOORIO â€” Provisional placement model R1</text>',
+ '<text x="36" y="44" font-family="Arial" font-size="24" fill="#203141">MYIR MYD-YF13X â€” Provisional placement model R1</text>',
  '<text x="36" y="75" font-family="Arial" font-size="16" fill="#52616d">175 Ã— 90 Ã— 40 mm Â· Based on supplied PoE enclosure image</text>']
 for depth,color,pts in sorted(triangles,key=lambda t:t[0]):
  svg.append('<polygon points="'+' '.join(f'{x:.2f},{y:.2f}' for x,y,z in pts)+f'" fill="{color}" stroke="{color}" stroke-width="0.3"/>')

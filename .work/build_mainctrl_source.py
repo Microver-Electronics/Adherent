@@ -1,6 +1,6 @@
 from pathlib import Path
 root=Path('C:/Projects/Github/Adherent/SYS/Board_STEP_Models')
-old=(root/'DOORIO_Waveshare_ESP32-S3-ETH-8DI-8RO/build_ocp_R1.py').read_text()
+old=(root/'IOCTRL_Waveshare_ESP32-S3-ETH-8DI-8RO/build_ocp_R1.py').read_text()
 imports=old[:old.index('base=box(')]
 body='''W,H,T=137.29,105.0,1.6
 pcb=box(2,0,0,W-4,H,T)
@@ -61,8 +61,8 @@ assert abs(b[3]-b[0]-W)<1e-6 and abs(b[4]-b[1]-H)<1e-6
 '''
 render=old[old.index('def project(p):'):]
 render=render.replace('p.X()-87.5,p.Y()-45','p.X()-68.645,p.Y()-52.5').replace('*3.3','*4.0')
-render=render.replace('DOORIO_Provisional_Placement_R1','MAINCTRL_MYD-YF13X_Provisional_Placement_R1')
-render=render.replace('DOORIO — Provisional placement model R1','MYIR MYD-YF13X — Provisional placement model R1').replace('DOORIO - Provisional placement model R1','MYIR MYD-YF13X - Provisional placement model R1')
+render=render.replace('IOCTRL_Provisional_Placement_R1','MAINCTRL_MYD-YF13X_Provisional_Placement_R1')
+render=render.replace('IOCTRL — Provisional placement model R1','MYIR MYD-YF13X — Provisional placement model R1').replace('IOCTRL - Provisional placement model R1','MYIR MYD-YF13X - Provisional placement model R1')
 render=render.replace('175 × 90 × 40 mm · Based on supplied PoE enclosure image','PCB outline 137.29 x 105 mm | Approximate component geometry')
 render=render.replace('175 x 90 x 40 mm | Based on supplied PoE enclosure image','PCB outline 137.29 x 105 mm | Approximate component geometry')
 render=render.replace('Estimated mounting slots and connectors. DIN clip and antenna omitted.','PCB thickness, holes and connector heights are estimates. Both sides modelled.')

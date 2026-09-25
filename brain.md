@@ -16,6 +16,9 @@ This file records project decisions and working assumptions. A diagram label or 
 - Latest versioned presentation: [Design Review Questions R24](SYS/APDU_Design_Review_Questions_R24.pptx). Records cellular and UPS rejection in red; **not aligned with R25/R26 power changes**.
 - Superseded SYS revisions and the older unversioned presentation were removed from the working folder; recover them from Git history when needed.
 - Mechanical model handoff folder: [Board STEP Models](SYS/Board_STEP_Models/README.md).
+- LANECTRL front metal bracket reference: [LANE DRAWING SPACE FOR UMIT.DWG](MEC/01_CAD_MODELS/LANE%20DRAWING%20SPACE%20FOR%20UMIT.DWG). User confirms the bracket is being made to this drawing; PCB fit and clearances have not yet been checked.
+- Hardware folders: `HW/HW_ADHERENT_SYSCTRL_R1`, `HW/HW_ADHERENT_MAINCTRL_R1`, `HW/HW_ADHERENT_LANECTRL_R1`, `HW/HW_ADHERENT_IOCTRL_R1`.
+- Rear-panel Ethernet connector J2: **McMaster-Carr 1422N13**, quantity 1 per system, replaces the previous Neutrik candidate. Shielded Cat5e RJ45 female/female, screw-on mounting, black plastic housing; 0.95 in (24.13 mm) panel cutout and 0.14 in mounting holes, mounting fasteners included. [Product](https://www.mcmaster.com/product/1422N13), [supplier specifications](https://www.mcmaster.com/products/data-transmission-couplers/).
 
 ## Confirmed decisions
 
@@ -25,7 +28,7 @@ This file records project decisions and working assumptions. A diagram label or 
 - The separate 12 V and 48 V PSUs were removed.
 - **24 V to 12 V conversion is on the custom SYSCTRL PCB.** There is no separate cabinet DC/DC module.
 - The customer requires CAN for the custom-board network.
-- DOORIO is an explicit exception: **RS485 to MAINCTRL**. Its Ethernet and wireless functions are unused.
+- IOCTRL is an explicit exception: **RS485 to MAINCTRL**. Its Ethernet and wireless functions are unused.
 - No Ethernet switch in the system. Provide a hardwired Ethernet connection to the site network.
 - The iPad is external and uses the customer's app or a browser; it is not integrated into the cabinet.
 - LANEPANEL was merged into LANECTRL. There is no separate LANEPANEL PCB.
@@ -45,7 +48,7 @@ This file records project decisions and working assumptions. A diagram label or 
 - Official product page: https://www.myirtech.com/list.asp?id=727
 - Product document: https://www.myirtech.com/download/STM32/MYD-YF13X.pdf
 
-### DOORIO — off the shelf, quantity 1
+### IOCTRL — off the shelf, quantity 1
 
 - **Waveshare ESP32-S3-ETH-8DI-8RO**, RS485 version with standard Ethernet port. Do not substitute the CAN `-C` or PoE version without a decision.
 - Eight relay outputs and eight isolated digital inputs.
@@ -60,7 +63,7 @@ This file records project decisions and working assumptions. A diagram label or 
 ### SYSCTRL — custom PCB, quantity 1
 
 - `HW_ADHERENT_SYSCTRL_R1` / `FW_ADHERENT_SYSCTRL_R1`.
-- STM32 machine controller; combines the former MOTIONCTRL and IOCTRL functions.
+- STM32 machine controller; combines the former motion-control and auxiliary-I/O functions. The current IOCTRL name refers to the separate Waveshare relay/input module.
 - Gantry drive control interfaces, brake control, basket servo control, optical sensors, labeling stepper drivers and auxiliary outputs.
 - **Onboard 24→12 V buck supplies the existing 12 V loads**, including local circuitry, MAINCTRL, LANECTRL logic and latch contacts.
 - Buck topology, MPN, current capacity, protection, thermal design and sequencing are not selected/validated.
@@ -87,9 +90,9 @@ This file records project decisions and working assumptions. A diagram label or 
 - F14: lane-logic protection on SYSCTRL; 12 V passes into the CAN/lane harness.
 - W24 / F1–F10: 24 V row-motor feeders.
 - W29 / F15 and W30 / F16: proposed 24 V gantry drive feeds, pending supplier confirmation.
-- W34 / F17: 24 V DOORIO module power.
-- W35 / F18: derived 12 V feed to DOORIO relay contacts; provisional new references.
-- W33: MAINCTRL–DOORIO RS485.
+- W34 / F17: 24 V IOCTRL module power.
+- W35 / F18: derived 12 V feed to IOCTRL relay contacts; provisional new references.
+- W33: MAINCTRL–IOCTRL RS485.
 - W02, W31 and W32 retired with the removed PSUs.
 - Fuse ratings, wire sizes, connector loading, DC/DC losses and simultaneous motor loads need recalculation. Older spreadsheet currents are estimates, not verified sizing.
 
@@ -97,7 +100,7 @@ This file records project decisions and working assumptions. A diagram label or 
 
 - Proposed CAN backbone: MAINCTRL → SYSCTRL → LANECTRL-10 through LANECTRL-01.
 - Diagram baseline: CAN 2.0B, 500 kbit/s, termination at MAINCTRL and LANECTRL-01. Validate implementation and cable routing.
-- Separate RS485 link: MAINCTRL ↔ DOORIO.
+- Separate RS485 link: MAINCTRL ↔ IOCTRL.
 - Site Ethernet connection serves the external iPad/app and server communication. Optional Wi-Fi/BLE arrangements remain distinct from rejected cellular connectivity.
 
 ## Motors and mechanisms
@@ -124,7 +127,7 @@ The four electromagnetic latches are not counted as motors. Door actuator models
 
 ### Provisional reconstructed board models
 
-- DOORIO: `SYS/Board_STEP_Models/DOORIO_Waveshare_ESP32-S3-ETH-8DI-8RO/DOORIO_Provisional_Placement_R1.step`.
+- IOCTRL: `SYS/Board_STEP_Models/IOCTRL_Waveshare_ESP32-S3-ETH-8DI-8RO/IOCTRL_Provisional_Placement_R1.step`.
   - Nominal 175 × 90 × 40 mm envelope from the user image.
   - Reference image is the **PoE variant**; compatibility with the selected non-PoE product is unverified.
   - Slots and connector geometry are estimated; DIN clip and antenna are omitted.
@@ -133,7 +136,7 @@ The four electromagnetic latches are not counted as motors. Door actuator models
   - PCB thickness, hole positions/diameters, connector heights and component envelopes are estimates.
   - Simplified top- and bottom-side components are included.
 - Both models passed solid validity and STEP reimport checks. **Geometry validity does not validate dimensional accuracy.** Read each folder's `MODEL_NOTES_R1.md`; use for preliminary placement only, not fabrication.
-- No manufacturer DOORIO STEP download was found in the checked official resources. Manufacturer request draft is saved locally and has not been sent.
+- No manufacturer IOCTRL STEP download was found in the checked official resources. Manufacturer request draft is saved locally and has not been sent.
 - Custom board STEP models await actual PCB layouts.
 
 ## Documentation and harness conventions

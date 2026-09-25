@@ -1,4 +1,4 @@
-# DOORIO provisional placement model R1
+# IOCTRL provisional placement model R1
 
 Blackocean Technologies / Adherent360 APDU
 
@@ -23,8 +23,8 @@ Reference: the user-supplied dimension image, labelled ESP32-S3-POE-ETH-8DI-8RO.
 
 ## Files and validation
 
-- DOORIO_Provisional_Placement_R1.step: separate solid parts, millimetres.
-- DOORIO_Provisional_Placement_R1.svg: isometric preview; colours are illustrative.
+- IOCTRL_Provisional_Placement_R1.step: separate solid parts, millimetres.
+- IOCTRL_Provisional_Placement_R1.svg: isometric preview; colours are illustrative.
 - build_ocp_R1.py: reproducible OpenCascade source using cadquery-ocp.
 - validation_R1.json: STEP reimport validity and bounding-box check.
 

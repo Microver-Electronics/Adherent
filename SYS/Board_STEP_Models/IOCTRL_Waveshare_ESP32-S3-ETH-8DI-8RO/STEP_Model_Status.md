@@ -1,11 +1,11 @@
-# DOORIO STEP model status
+# IOCTRL STEP model status
 
 Product: Waveshare ESP32-S3-ETH-8DI-8RO, RS485 version, standard Ethernet port.
 Checked: 2026-09-21.
 
 No publicly downloadable manufacturer STEP/STP model was found. The official wiki includes a dimension drawing, but its Resources section does not list a 3D model.
 
-A locally reconstructed provisional placement model is provided as `DOORIO_Provisional_Placement_R1.step`. This is not a downloaded manufacturer model. Read `MODEL_NOTES_R1.md` for assumptions, missing geometry and the PoE/non-PoE variant limitation.
+A locally reconstructed provisional placement model is provided as `IOCTRL_Provisional_Placement_R1.step`. This is not a downloaded manufacturer model. Read `MODEL_NOTES_R1.md` for assumptions, missing geometry and the PoE/non-PoE variant limitation.
 
 Sources:
 - Product: https://www.waveshare.com/esp32-s3-eth-8di-8ro.htm

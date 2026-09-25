@@ -11,7 +11,7 @@
 {"kind":"notes","id":"nt/y90nupkv","slide":1,"text":""}
 {"kind":"slide","id":"sl/hwbqtkby","slide":2,"title":"Review topics and meeting decisions","textShapes":24}
 {"kind":"textbox","id":"sh/9072xkry","slide":2,"name":"Text 0","text":"Review topics and meeting decisions","textPreview":"Review topics and meeting decisions","textChars":35,"textLines":1,"bbox":[57.6,52.8,1152,76.8]}
-{"kind":"textbox","id":"sh/ozy1ofad","slide":2,"name":"Text 1","text":"Already closed: no E-stop (vending machine) · table-door actuator out of scope · MAINCTRL and DOORIO are off-the-shelf boards.","textPreview":"Already closed: no E-stop (vending machine) · table-door actuator out of scope · MAINCTRL and DOORIO are off-the-shelf boards.","textChars":126,"textLines":1,"bbox":[57.6,124.8,1152,38.4]}
+{"kind":"textbox","id":"sh/ozy1ofad","slide":2,"name":"Text 1","text":"Already closed: no E-stop (vending machine) · table-door actuator out of scope · MAINCTRL and IOCTRL are off-the-shelf boards.","textPreview":"Already closed: no E-stop (vending machine) · table-door actuator out of scope · MAINCTRL and IOCTRL are off-the-shelf boards.","textChars":126,"textLines":1,"bbox":[57.6,124.8,1152,38.4]}
 {"kind":"shape","id":"sh/b29kza94","slide":2,"name":"Shape 2","bbox":[57.6,177.6,566.4,82.56]}
 {"kind":"shape","id":"sh/a10jqpsj","slide":2,"name":"Shape 3","bbox":[76.8,190.08,57.6,57.6]}
 {"kind":"textbox","id":"sh/w3i1sfa9","slide":2,"name":"Text 4","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[153.6,187.2,48,63.36]}
@@ -75,19 +75,19 @@
 {"kind":"textbox","id":"sh/m5cra54z","slide":3,"name":"Text 6","text":"custom boards\nSYSCTRL · LANECTRL ×10","textPreview":"custom boards | SYSCTRL · LANECTRL ×10","textChars":36,"textLines":2,"bbox":[374.4,216,249.6,57.6]}
 {"kind":"shape","id":"sh/n6ls3alk","slide":3,"name":"Shape 7","bbox":[652.8,144,278.4,134.4]}
 {"kind":"textbox","id":"sh/n2l4fq98","slide":3,"name":"Text 8","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[672,145.92,240,72]}
-{"kind":"textbox","id":"sh/m1c3mlsn","slide":3,"name":"Text 9","text":"COTS controllers\nMAINCTRL · DOORIO","textPreview":"COTS controllers | MAINCTRL · DOORIO","textChars":34,"textLines":2,"bbox":[672,216,249.6,57.6]}
+{"kind":"textbox","id":"sh/m1c3mlsn","slide":3,"name":"Text 9","text":"COTS controllers\nMAINCTRL · IOCTRL","textPreview":"COTS controllers | MAINCTRL · IOCTRL","textChars":34,"textLines":2,"bbox":[672,216,249.6,57.6]}
 {"kind":"shape","id":"sh/943mhgre","slide":3,"name":"Shape 10","bbox":[950.4,144,278.4,134.4]}
 {"kind":"textbox","id":"sh/83ulovat","slide":3,"name":"Text 11","text":"34","textPreview":"34","textChars":2,"textLines":1,"bbox":[969.6,145.92,240,72]}
 {"kind":"textbox","id":"sh/v6l4jq94","slide":3,"name":"Text 12","text":"cables W01–W34\n≈ 125 m","textPreview":"cables W01–W34 | ≈ 125 m","textChars":22,"textLines":2,"bbox":[969.6,216,249.6,57.6]}
 {"kind":"shape","id":"sh/a5c3ql8z","slide":3,"name":"Shape 13","bbox":[57.6,307.2,48,48]}
 {"kind":"textbox","id":"sh/w7ulsvqp","slide":3,"name":"Text 14","text":"Boards","textPreview":"Boards","textChars":6,"textLines":1,"bbox":[120,302.4,124.8,57.6]}
-{"kind":"textbox","id":"sh/ja54na9g","slide":3,"name":"Text 15","text":"MAINCTRL = COTS MYIR MYD-YF13X (STM32MP135, Linux) · SYSCTRL custom STM32 (gantry + labeling) · DOORIO = COTS relay / IO module on RS485 · LANECTRL ×10 custom, our design, with the lane buttons and LEDs on the board.","textPreview":"MAINCTRL = COTS MYIR MYD-YF13X (STM32MP135, Linux) · SYSCTRL custom STM32 (gantry + labeling) · DOORIO = COTS relay / IO module on RS485 ...","textChars":216,"textLines":1,"bbox":[240,299.52,393.6,81.6]}
+{"kind":"textbox","id":"sh/ja54na9g","slide":3,"name":"Text 15","text":"MAINCTRL = COTS MYIR MYD-YF13X (STM32MP135, Linux) · SYSCTRL custom STM32 (gantry + labeling) · IOCTRL = COTS relay / IO module on RS485 · LANECTRL ×10 custom, our design, with the lane buttons and LEDs on the board.","textPreview":"MAINCTRL = COTS MYIR MYD-YF13X (STM32MP135, Linux) · SYSCTRL custom STM32 (gantry + labeling) · IOCTRL = COTS relay / IO module on RS485 ...","textChars":216,"textLines":1,"bbox":[240,299.52,393.6,81.6]}
 {"kind":"shape","id":"sh/i9w3u58v","slide":3,"name":"Shape 16","bbox":[57.6,391.68,48,48]}
 {"kind":"textbox","id":"sh/f29gbyx0","slide":3,"name":"Text 17","text":"Power","textPreview":"Power","textChars":5,"textLines":1,"bbox":[120,386.88,124.8,57.6]}
 {"kind":"textbox","id":"sh/03ix43e5","slide":3,"name":"Text 18","text":"24 V motor rail · 12 V logic rail for every board · 48 V for the gantry drives · DIN fuses F1–F17.","textPreview":"24 V motor rail · 12 V logic rail for every board · 48 V for the gantry drives · DIN fuses F1–F17.","textChars":98,"textLines":1,"bbox":[240,384,393.6,81.6]}
 {"kind":"shape","id":"sh/14ryd8fq","slide":3,"name":"Shape 19","bbox":[57.6,476.16,48,48]}
 {"kind":"textbox","id":"sh/re9g7yxo","slide":3,"name":"Text 20","text":"Comms","textPreview":"Comms","textChars":5,"textLines":1,"bbox":[120,471.36,124.8,57.6]}
-{"kind":"textbox","id":"sh/sfix03y9","slide":3,"name":"Text 21","text":"CAN backbone to SYSCTRL and the 10 lane rows · RS485 to DOORIO · Ethernet / Wi-Fi to the site.","textPreview":"CAN backbone to SYSCTRL and the 10 lane rows · RS485 to DOORIO · Ethernet / Wi-Fi to the site.","textChars":94,"textLines":1,"bbox":[240,468.48,393.6,81.6]}
+{"kind":"textbox","id":"sh/sfix03y9","slide":3,"name":"Text 21","text":"CAN backbone to SYSCTRL and the 10 lane rows · RS485 to IOCTRL · Ethernet / Wi-Fi to the site.","textPreview":"CAN backbone to SYSCTRL and the 10 lane rows · RS485 to IOCTRL · Ethernet / Wi-Fi to the site.","textChars":94,"textLines":1,"bbox":[240,468.48,393.6,81.6]}
 {"kind":"shape","id":"sh/tgry9ofu","slide":3,"name":"Shape 22","bbox":[57.6,560.64,48,48]}
 {"kind":"textbox","id":"sh/batgjixs","slide":3,"name":"Text 23","text":"Connectors","textPreview":"Connectors","textChars":10,"textLines":1,"bbox":[120,555.84,124.8,57.6]}
 {"kind":"textbox","id":"sh/l4fi9cza","slide":3,"name":"Text 24","text":"Micro-Fit 3.0 on every PCB · one standard 4c 22 AWG cable · every cable named and listed.","textPreview":"Micro-Fit 3.0 on every PCB · one standard 4c 22 AWG cable · every cable named and listed.","textChars":89,"textLines":1,"bbox":[240,552.96,393.6,81.6]}

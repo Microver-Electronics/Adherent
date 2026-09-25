@@ -4,6 +4,7 @@
 # Local dependency cache and Python bytecode.
 /.work/cad-deps/
 node_modules/
+/.work/ioctrl/
 __pycache__/
 *.pyc
 
